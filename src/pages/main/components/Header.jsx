@@ -52,7 +52,7 @@ const Header = () => {
       </select>
 
       <div className="mob_box">
-        <img src="/img/logoWhite.svg" alt="" className="logo" />
+        <img src="/img/logo2.png" alt="" className="logo" />
         <img data-aos="fade-right" src="/img/head_1.png" alt="" />
         <img data-aos="fade-left" src="/img/head_2.png" alt="" />
       </div>
