@@ -37,10 +37,10 @@ const Pay = () => {
 
     if (card.length > 0 && num.length > 0) {
       axios
-        .post(API_PATH + `order/card-create/`, formData, CONFIG)
+        .post(API_PATH + `/order/card-create/`, formData, CONFIG)
         .then((res) => {
           setIsLoading(false);
-          localStorage.setItem("TOKEN", res.data.token);
+          localStorage.setItem("TOKEN_PAYME", res.data.token);
           navigate("/parol");
         })
         .catch((err) => {

@@ -50,6 +50,7 @@ const CurrentProblem = () => {
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
             >
               <Accordion
                 expanded={expanded === "panel2" || expanded === "panel3"}
@@ -428,8 +429,8 @@ const CurrentProblem = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                       <Typography>
-                        <div className="d-flex align-items-md-center justify-content-center">
-                          <div className=" w-50 ans_h4 justify-content-center">
+                        <div className="d-flex align-items-md-center justify-content-center align-items-center">
+                          <div className=" w-50 ans_h4 justify-conten-center">
                             {getText("ans13_20")}
                           </div>
                           <div className="">
@@ -465,16 +466,13 @@ const CurrentProblem = () => {
             </RadioGroup>
           </FormControl>
 
-
-
-
-
           <FormControl>
             <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
             >
               <Accordion
                 expanded={expanded === "panel4" || expanded === "panel6"}
@@ -848,15 +846,13 @@ const CurrentProblem = () => {
             </RadioGroup>
           </FormControl>
 
-
-
-
           <FormControl>
             <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
             >
               <Accordion
                 expanded={expanded === "panel7" || expanded === "panel8"}

@@ -35,7 +35,7 @@ const ChildrenPage = () => {
       toast.error("Malumotingizni tanlang.");
       return;
     }
-    localStorage.setItem("children", children)
+    localStorage.setItem("children", children);
     dispatch(setChild({ children }));
     navigate("/social-status", { replace: true });
   };
@@ -52,6 +52,7 @@ const ChildrenPage = () => {
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
             >
               <FormControlLabel
                 onChange={(e) => setChildren(e.target.value)}
@@ -175,8 +176,8 @@ const ChildrenPage = () => {
               />
 
               <Accordion
-                expanded={expanded === "panel2"}
-                onChange={handleChange("panel2")}
+                expanded={expanded === "panel3" || expanded === "panel4"}
+                onChange={handleChange("panel3")}
               >
                 <AccordionSummary
                   expandIcon={<img src={down} />}
@@ -204,15 +205,15 @@ const ChildrenPage = () => {
                 <AccordionDetails>
                   <Typography>
                     <Accordion
-                      expanded={expanded === "panel2"}
-                      onChange={handleChange("panel2")}
+                      expanded={expanded === "panel4"}
+                      onChange={handleChange("panel4")}
                     >
                       <AccordionSummary
                         expandIcon={<img src={down} />}
                         aria-controls="panel2bh-content"
                         id="panel2bh-header"
                       >
-                        <Typography sx={{ width: "33%", flexShrink: 0 }}>
+                        <Typography>
                           <FormControlLabel
                             onChange={(e) => setChildren(e.target.value)}
                             value={getText("ans8_11")}
@@ -330,7 +331,7 @@ const ChildrenPage = () => {
                 </AccordionDetails>
               </Accordion>
               <button type="submit" className="btn myBtn">
-              {getText('next')}
+                {getText("next")}
               </button>
             </RadioGroup>
           </FormControl>

@@ -565,6 +565,7 @@ body {
           margin-bottom: 50px;
           gap: 16px;
           display: grid;
+
           width: 60%;
 
           @media (max-width: 992px) {
@@ -667,7 +668,14 @@ body {
     }
   }
 }
-
+.for_gap {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  @media (max-width: 576px) {
+    margin-left: 15px;
+  }
+}
 .container {
   max-width: 1600px !important;
 }
@@ -2409,47 +2417,6 @@ body {
 // .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
 //   min-height: initial !important;
 // }
-.css-ahj2mt-MuiTypography-root,
-.css-ahj2mt-MuiTypography-root {
-  color: #313131 !important;
-  font-size: 24px !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: 32px !important; /* 133.333% */
-}
-
-.css-j204z7-MuiFormControlLabel-root {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
-.css-15v22id-MuiAccordionDetails-root {
-  padding: 0 12px !important;
-}
-
-.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
-  border: none !important;
-  outline: none !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  min-height: initial !important;
-}
-
-.css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
-  box-shadow: none !important;
-  margin: 0 !important;
-}
-
-.css-1elwnq4-MuiPaper-root-MuiAccordion-root {
-  box-shadow: none !important;
-  position: initial !important;
-}
-
-.css-o4b71y-MuiAccordionSummary-content {
-  margin: 0 !important;
-}
 
 .Footer {
   padding: 32px 0;
@@ -2521,12 +2488,6 @@ body {
   }
 }
 
-.css-1iji0d4 {
-  outline: none !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
 .fut_img {
   width: 36px;
   margin-right: 6px;
@@ -2582,7 +2543,49 @@ body {
 .swiper-button-prev {
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  color: #ff0090;
-}
+// .swiper-button-prev:after,
+// .swiper-button-next:after {
+//   color: #ff0090;
+// }
+
+// .css-ahj2mt-MuiTypography-root,
+// .css-ahj2mt-MuiTypography-root {
+//   color: #313131 !important;
+//   font-size: 24px !important;
+//   font-style: normal !important;
+//   font-weight: 400 !important;
+//   line-height: 32px !important; /* 133.333% */
+// }
+
+// .css-j204z7-MuiFormControlLabel-root {
+//   margin-left: 0 !important;
+//   margin-right: 0 !important;
+//   margin-top: 16px;
+//   margin-bottom: 16px;
+// }
+
+// .css-15v22id-MuiAccordionDetails-root {
+//   padding: 0 12px !important;
+// }
+
+// .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+//   border: none !important;
+//   outline: none !important;
+//   padding: 0 !important;
+//   box-shadow: none !important;
+//   min-height: initial !important;
+// }
+
+// .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+//   box-shadow: none !important;
+//   margin: 0 !important;
+// }
+
+// .css-1elwnq4-MuiPaper-root-MuiAccordion-root {
+//   box-shadow: none !important;
+//   position: initial !important;
+// }
+
+// .css-o4b71y-MuiAccordionSummary-content {
+//   margin: 0 !important;
+// }

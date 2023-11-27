@@ -73,6 +73,7 @@ const WorkProblem = () => {
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
             >
               <FormControlLabel
                 value={getText("ans20_2")}
@@ -708,7 +709,7 @@ const WorkProblem = () => {
                 // onClick={() => navigate("/end-questions")}
                 className="btn myBtn"
               >
-                Tugatish
+                {getText("next2")}
               </button>
             </RadioGroup>
           </FormControl>

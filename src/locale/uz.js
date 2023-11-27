@@ -2090,7 +2090,11 @@ Damirovna`,
   reg_ques_9: `8. Ijtimoiy statusingiz`,
 
   next: `Keyingi savol`,
+  next2: `Tugatish`,
   next_2: `Davom etish`,
+  result_page_buy: `Kursni sotib olish`,
+  result_page_h: `Sizda quyidagi muammolar bor !`,
+  result_page_p: `Muammolar`,
 
   modal_end_1: ` DEMАK, hozirda biz siz bilan hozirda registratsiya savollarini
 tugatdik va biz sizni ushbu qiyin bosqichdan oʼtishni uddalay

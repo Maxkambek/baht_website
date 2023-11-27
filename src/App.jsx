@@ -47,15 +47,15 @@ import Cabinet from "./components/Cabinet";
 import ResultPage from "./pages/workproblem/ResultPage";
 import Elon from "./components/Elon";
 import { StylesProvider } from "@mui/styles";
+import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 
 const App = () => {
   return (
     <>
-      <StylesProvider injectFirst>
+      <StyledEngineProvider injectFirst>
         <HashRouter>
           <Provider store={store}>
             <ScrollToTop />
-            {/* <CssBaseline /> */}
             <Routes>
               <Route path="/" element={<MainPage />} />
               <Route path="/cabinet" element={<Cabinet />} />
@@ -123,7 +123,7 @@ const App = () => {
             <ToastContainer />
           </Provider>
         </HashRouter>
-      </StylesProvider>
+      </StyledEngineProvider>
     </>
   );
 };

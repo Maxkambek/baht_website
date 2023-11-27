@@ -5,6 +5,7 @@ import vector3 from "../../assets/vector3.png";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { USER_INFO } from "../../constants";
+import { getText } from "../../locale";
 
 const ResultPage = () => {
   const data = [];
@@ -32,12 +33,12 @@ const ResultPage = () => {
           </div>
           <div className="col-12">
             <div className="container">
-              <div className="result_h">Sizda quyidagi muammolar bor !</div>
+              <div className="result_h">{getText("result_page_h")}</div>
             </div>
           </div>
           <div className="col-12 muommo_page">
             <div className="container">
-              <div className="result_p">Muammolar</div>
+              <div className="result_p">{getText("result_page_p")}</div>
               {data &&
                 data.map((item, index) => (
                   <div key={index} className="result_item">
@@ -52,7 +53,7 @@ const ResultPage = () => {
           <div className="col-12 buy_btn">
             <div className="container">
               <Link to="/buy" className="lib_h_buy">
-                Kursni sotib olish
+                {getText("result_page_buy")}
               </Link>
             </div>
           </div>

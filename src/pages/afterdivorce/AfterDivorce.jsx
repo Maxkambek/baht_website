@@ -51,6 +51,7 @@ const AfterDivorce = () => {
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
             >
               <FormControlLabel
                 value={getText("ans16_2")}

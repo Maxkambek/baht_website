@@ -44,7 +44,10 @@ const Buy = () => {
       {
         type_order: content,
       },
-      CONFIG
+      (headers = {
+        "Content-Type": "application/json",
+        Authorization: `Token ${token}`,
+      })
     );
     if (data) {
       localStorage.setItem(ORDER_ID, data.order_id);
@@ -55,7 +58,7 @@ const Buy = () => {
         window.location.href = `https://my.click.uz/services/pay?service_id=27907&merchant_id=20324&amount=350000.00&transaction_param=${data.order_id}&return_url=localhost:5173/#/elon`;
       }
       if (content === "month") {
-        window.location.href = `https://my.click.uz/services/pay?service_id=27907&merchant_id=20324&amount=700000.00&transaction_param=${data.order_id}&return_url=localhost:5173/#/elon`;
+        window.location.href = `https://my.click.uz/services/pay?service_id=27907&merchant_id=20324&amount=1000.00&transaction_param=${data.order_id}&return_url=localhost:5173/#/elon`;
       }
     } else {
       toast.error("Xatolik yuz berdi qaytadan urunib ko'ring");
@@ -140,7 +143,7 @@ const Buy = () => {
             <div className="col-lg-4 mt-lg-0 mt-5">
               <div className="b_box">
                 <div className="b_up">
-                  <div className="b_up_h">{getText("b_h_13")}</div>
+                  <div className="b_up_h">{getText("b_h_16")}</div>
                   <div className="b_up_h_2">{getText("b_h_17")}</div>
                   <div className="b_up_h">{getText("b_h_15")}</div>
                 </div>
@@ -216,7 +219,11 @@ const Buy = () => {
 
               <div className="b_h_4">
                 <img src="/icon_cor.png" alt="" />
-                {getText("b_h_36")} <span> <br /> {getText("b_h_37")}</span>{" "}
+                {getText("b_h_36")}{" "}
+                <span>
+                  {" "}
+                  <br /> {getText("b_h_37")}
+                </span>{" "}
                 {getText("b_h_38")}
               </div>
 

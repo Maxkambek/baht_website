@@ -24,7 +24,7 @@ const LocationPage = () => {
 
   const changeLocation = (e) => {
     e.preventDefault();
-    dispatch(setLocation(countryName + " " + regionName + " " + districName));
+    dispatch(setLocation(distric));
     navigate("/phone-number", { replace: true });
   };
 
@@ -90,41 +90,40 @@ const LocationPage = () => {
     <div className="LocationPage ">
       <div className="center">
         <form onSubmit={changeLocation} className="cards">
-          <h1>{getText('inp_q_5')}</h1>
-          <select
+          <h1>{getText("inp_q_5")}</h1>
+          {/* <select
             placeholder="Mamlakatni tanlang"
             className="form-control my_select"
             name="mamlakat"
             id="123"
             onChange={handleChangeCountry}
           >
-            <option
-              selected
-              disabled
-              hidden
-              value=""
-            >{getText('inp_q_6')}</option>
+            <option selected disabled hidden value="">
+              {getText("inp_q_6")}
+            </option>
             {countries &&
               countries.map((item) => (
                 <option key={item.id} value={item.name}>
                   {item.name}
                 </option>
               ))}
-          </select>
-
-          <select
+          </select> */}
+          <input
+            value={distric}
+            onChange={(e) => setDistric(e.target.value)}
+            type="text"
+            className="form-control"
+          />
+          {/* <select
             placeholder=""
             className="form-control "
             name="viloyat"
             id="1234"
             onChange={handleChangeRegion}
           >
-            <option
-              selected
-              disabled
-              hidden
-              value=""
-            >{getText('inp_q_7')}</option>
+            <option selected disabled hidden value="">
+              {getText("inp_q_7")}
+            </option>
             {regions &&
               regions.map((item) => (
                 <option key={item.id} value={item.name}>
@@ -140,22 +139,19 @@ const LocationPage = () => {
             id="1234"
             onChange={handleChangeDistric}
           >
-            <option
-              selected
-              disabled
-              hidden
-              value=""
-            >{getText('inp_q_8')}</option>
+            <option selected disabled hidden value="">
+              {getText("inp_q_8")}
+            </option>
             {districs &&
               districs.map((item) => (
                 <option key={item.id} value={item.name}>
                   {item.name}
                 </option>
               ))}
-          </select>
+          </select> */}
 
           <button type="submit" className="btn myBtn">
-            {getText('next')}
+            {getText("next")}
           </button>
         </form>
       </div>

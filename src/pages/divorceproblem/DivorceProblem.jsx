@@ -50,6 +50,7 @@ const DivorceProblem = () => {
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
             >
               <FormControlLabel
                 value={getText("ans15_3")}
@@ -179,6 +180,7 @@ const DivorceProblem = () => {
                 aria-labelledby="demo-controlled-radio-buttons-group"
                 name="controlled-radio-buttons-group"
                 onChange={handleChange}
+                className="for_gap"
               >
                 <Accordion
                   expanded={expanded === "panel2"}
@@ -859,13 +861,13 @@ const DivorceProblem = () => {
                         label={getText("ans15_42")}
                         onChange={(e) => collectData("15.39", e.target.value)}
                       />
-                      <div className="d-flex">
+                      {/* <div className="d-flex">
                         <input
                           placeholder={getText("ans15_43")}
                           type="text"
                           className="form-control"
                         />
-                      </div>
+                      </div> */}
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
@@ -879,6 +881,7 @@ const DivorceProblem = () => {
                 aria-labelledby="demo-controlled-radio-buttons-group"
                 name="controlled-radio-buttons-group"
                 onChange={handleChange}
+                className="for_gap"
               >
                 <Accordion
                   expanded={expanded === "panel5"}
@@ -1332,30 +1335,30 @@ const DivorceProblem = () => {
                   </AccordionDetails>
                   <AccordionDetails>
                     <Typography>
-                      <div className="d-flex">
-                        <FormControlLabel
-                          value={getText("ans15_66")}
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label={getText("ans15_66")}
-                          onChange={(e) => collectData("15.61", e.target.value)}
-                        />
-                        <div className="ps-5">
-                          <input
-                            placeholder={getText("ans15_67")}
-                            type="text"
-                            className="form-control w-100"
+                      <FormControlLabel
+                        value={getText("ans15_66")}
+                        control={
+                          <Checkbox
+                            sx={{
+                              color: "silver",
+                              "&.Mui-checked": {
+                                color: "#FFD0D4",
+                              },
+                            }}
+                            icon={<RadioButtonUnchecked />}
+                            checkedIcon={<CheckCircle />}
                           />
-                        </div>
-                      </div>
+                        }
+                        label={getText("ans15_66")}
+                        onChange={(e) => collectData("15.61", e.target.value)}
+                      />
+                      {/* <div className="ps-5">
+                        <input
+                          placeholder={getText("ans15_67")}
+                          type="text"
+                          className="form-control w-100"
+                        />
+                      </div> */}
                     </Typography>
                   </AccordionDetails>
                 </Accordion>

@@ -13,8 +13,9 @@ const Parol = () => {
   const PayLast = () => {
     const formData2 = new FormData();
     formData2.append("order_id", localStorage.getItem(ORDER_ID));
+    formData2.append("token", localStorage.getItem("TOKEN_PAYME"));
     axios
-      .post(API_PATH + `order/payment/`, formData2, CONFIG)
+      .post(API_PATH + `/order/payment/`, formData2, CONFIG)
       .then((res) => {
         setIsLoading(false);
       })
@@ -39,11 +40,11 @@ const Parol = () => {
     const formData = new FormData();
 
     formData.append("verify_code", parol);
-    formData.append("token", localStorage.getItem("TOKEN"));
+    formData.append("token", localStorage.getItem("TOKEN_PAYME"));
 
     if (parol.length > 0) {
       axios
-        .post(API_PATH + `order/verify-phone/`, formData, CONFIG)
+        .post(API_PATH + `/order/verify-phone/`, formData, CONFIG)
         .then((res) => {
           navigate("/start-questions-modal");
           PayLast();

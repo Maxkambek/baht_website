@@ -50,6 +50,7 @@ const RalativeProblem = () => {
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
             >
               <Accordion
                 expanded={expanded === "panel2"}
@@ -1182,6 +1183,7 @@ const RalativeProblem = () => {
                 aria-labelledby="demo-controlled-radio-buttons-group"
                 name="controlled-radio-buttons-group"
                 onChange={handleChange}
+                className="for_gap"
               >
                 <Accordion
                   expanded={expanded === "panel30"}
@@ -2041,6 +2043,7 @@ const RalativeProblem = () => {
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
+              className="for_gap"
               onChange={handleChange}
             >
               <Accordion
@@ -3383,6 +3386,7 @@ const RalativeProblem = () => {
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
+              className="for_gap"
               onChange={handleChange}
             >
               <Accordion
@@ -3613,7 +3617,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_167")}
-                          onChange={(e) => collectData("12.166", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.166", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>
@@ -3632,7 +3638,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_168")}
-                          onChange={(e) => collectData("12.167", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.167", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>
@@ -3682,7 +3690,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_170")}
-                          onChange={(e) => collectData("12.169", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.169", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>
@@ -3701,7 +3711,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_171")}
-                          onChange={(e) => collectData("12.170", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.170", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>
@@ -3752,7 +3764,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_173")}
-                          onChange={(e) => collectData("12.172", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.172", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>
@@ -3771,7 +3785,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_174")}
-                          onChange={(e) => collectData("12.173", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.173", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>
@@ -3822,7 +3838,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_176")}
-                          onChange={(e) => collectData("12.175", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.175", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>
@@ -3841,7 +3859,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_177")}
-                          onChange={(e) => collectData("12.176", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.176", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>
@@ -3860,7 +3880,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_178")}
-                          onChange={(e) => collectData("12.177", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.177", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>
@@ -3910,7 +3932,9 @@ const RalativeProblem = () => {
                               }}
                             />
                           }
-                          onChange={(e) => collectData("12.179", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.179", e.target.value)
+                          }
                           label={getText("ans12_180")}
                         />
                       </Typography>
@@ -3930,7 +3954,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_181")}
-                          onChange={(e) => collectData("12.180", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.180", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>
@@ -3949,7 +3975,9 @@ const RalativeProblem = () => {
                             />
                           }
                           label={getText("ans12_182")}
-                          onChange={(e) => collectData("12.181", e.target.value)}
+                          onChange={(e) =>
+                            collectData("12.181", e.target.value)
+                          }
                         />
                       </Typography>
                     </AccordionDetails>

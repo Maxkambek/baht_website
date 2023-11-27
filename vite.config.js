@@ -9,12 +9,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
-  // css: {
-  //   // To use custom scss file with Vuetify
-  //   preprocessorOptions: {
-  //     sass: {
-  //       additionalData: ['@import "src/style/main.scss"', ""].join("\n"),
-  //     },
-  //   },
-  // },
 });

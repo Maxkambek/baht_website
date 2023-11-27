@@ -14,4 +14,3 @@ export const CONFIG = {
     Authorization: `Token ${localStorage.getItem(TOKEN)}`,
   },
 };
-

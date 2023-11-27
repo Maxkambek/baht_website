@@ -50,6 +50,8 @@ const FamilyStatusPage = () => {
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
+
             >
               <FormControlLabel
                 onChange={(e) => setStatus(e.target.value)}
@@ -375,7 +377,7 @@ const FamilyStatusPage = () => {
               </Accordion>
 
               <button type="submit" className="btn myBtn">
-                {getText('next')}
+                {getText("next")}
               </button>
             </RadioGroup>
           </FormControl>

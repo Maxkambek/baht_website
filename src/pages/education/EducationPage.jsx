@@ -45,6 +45,7 @@ const EducationPage = () => {
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
             >
               <FormControlLabel
                 onChange={(e) => setEducation(e.target.value)}

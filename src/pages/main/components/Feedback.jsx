@@ -39,6 +39,7 @@ const Feedback = () => {
       setIsLoading(false);
       setName("");
       setPhone("+998");
+      setMes("");
     }
   };
   return (

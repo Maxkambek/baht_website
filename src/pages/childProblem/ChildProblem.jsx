@@ -49,6 +49,7 @@ const ChildProblem = () => {
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
               onChange={handleChange}
+              className="for_gap"
             >
               <FormControlLabel
                 value={getText("ans19_2")}
@@ -752,7 +753,7 @@ const ChildProblem = () => {
                 onClick={() => navigate("/work-problem")}
                 className="btn myBtn"
               >
-                Keyingi savol
+                {getText("next")}
               </button>
             </RadioGroup>
           </FormControl>
