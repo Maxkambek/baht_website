@@ -2589,3 +2589,219 @@ body {
 // .css-o4b71y-MuiAccordionSummary-content {
 //   margin: 0 !important;
 // }
+
+.Pr_1 {
+  .pr_h {
+    margin-bottom: 18px;
+    color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px; /* 125% */
+  }
+
+  .pr_h_2 {
+    margin-bottom: 18px;
+    color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 125% */
+
+    span {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 38px;
+    }
+
+    .span_2 {
+      color: #ff0090;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 40px;
+    }
+  }
+
+  .pr_h_3 {
+    margin-bottom: 18px;
+    color: #ff0090;
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 125% */
+  }
+
+  .pr_h_4 {
+    margin-bottom: 18px;
+    color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px; /* 125% */
+  }
+
+  .pr_box {
+    padding: 12px;
+    margin-bottom: 28px;
+    border: 1px solid rgba(0, 0, 0, 0.75);
+  }
+
+  .pr_p_1 {
+    margin-bottom: 18px;
+    color: #ff0090;
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px; /* 125% */
+  }
+
+  .pr_p_2 {
+    margin-bottom: 32px;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 125% */
+
+    &::first-letter {
+      margin-left: 36px;
+    }
+
+    span {
+      color: #ff0090;
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 700;
+    }
+  }
+
+  .pr_p_3 {
+    margin-bottom: 32px;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 125% */
+
+    &::first-letter {
+      margin-left: 36px;
+    }
+
+    span {
+      color: #ff0090;
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 700;
+    }
+  }
+
+  .pr_p_4 {
+    margin-left: 64px;
+    margin-bottom: 32px;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 125% */
+    position: relative;
+
+    span {
+      color: #ff0090;
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 700;
+    }
+
+    .span_2 {
+      color: rgba(0, 0, 0, 0.75);
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 700;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -18px;
+      top: 12px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  .pr_h_5 {
+    text-align: center;
+    margin-bottom: 32px;
+    color: #e40000;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px; /* 125% */
+  }
+
+  .pr_p_5 {
+    margin-bottom: 32px;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 125% */
+
+    span {
+      color: #ff0090;
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 700;
+    }
+  }
+
+  .pr_p_6 {
+    margin-left: 94px;
+    margin-bottom: 32px;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 125% */
+    position: relative;
+
+    span {
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 700;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -18px;
+      top: 12px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  .pr_word_box {
+    padding-top: 18px;
+    display: flex;
+
+    .pr_l {
+      margin-right: 12px;
+      color: rgba(0, 0, 0, 0.75);
+      text-align: center;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 38px; /* 125% */
+    }
+  }
+}

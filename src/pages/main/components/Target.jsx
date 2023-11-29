@@ -11,6 +11,7 @@ const Target = () => {
       duration: 1200,
     });
   }, []);
+  
   return (
     <>
       <div className="Target HomeStyle">

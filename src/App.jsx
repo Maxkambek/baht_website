@@ -48,6 +48,8 @@ import ResultPage from "./pages/workproblem/ResultPage";
 import Elon from "./components/Elon";
 import { StylesProvider } from "@mui/styles";
 import StyledEngineProvider from "@mui/material/StyledEngineProvider";
+import PrarabotkaLayout from "./components/PrarabotkaLayout";
+import Prarobotka1 from "./pages/PRARABOTKA/Prarobotka1";
 
 const App = () => {
   return (
@@ -115,6 +117,11 @@ const App = () => {
                 path="/hundred-questions-start"
                 element={<HundredQuestionsLayout />}
               />
+
+              <Route element={<PrarabotkaLayout />}>
+                <Route path="/prorabotka" element={<Prarobotka1 />} />
+              </Route>
+
               {/* <Route element={<HundredQuestionsLayout />}>
               <Route path="/hundred-questions-start" element={<HundredQuestionsStartPage />} />
               <Route path="/hundred-questions-start-2" element={<HundredQuestionsStartPage2 />} />

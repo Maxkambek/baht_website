@@ -44,10 +44,7 @@ const Buy = () => {
       {
         type_order: content,
       },
-      (headers = {
-        "Content-Type": "application/json",
-        Authorization: `Token ${token}`,
-      })
+      CONFIG
     );
     if (data) {
       localStorage.setItem(ORDER_ID, data.order_id);
