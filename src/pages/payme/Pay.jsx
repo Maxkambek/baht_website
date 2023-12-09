@@ -45,7 +45,7 @@ const Pay = () => {
         })
         .catch((err) => {
           setIsLoading(false);
-          toast.error("Invalid order")
+          toast.error("Ma'lumotlaringizda xatolik mavjud");
         });
     } else {
       setIsLoading(false);
@@ -91,7 +91,6 @@ const Pay = () => {
                   />
                 </div>
                 <button
-                  
                   className="pay_a btn myBtn"
                   disabled={isLoading}
                   type="submit"

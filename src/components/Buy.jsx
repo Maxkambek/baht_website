@@ -74,9 +74,9 @@ const Buy = () => {
         className={`myModal ${isOpen && "active"}`}
       >
         <div className="cards">
-          <div onClick={() => handlePost("click")} className="pay">
+          {/* <div onClick={() => handlePost("click")} className="pay">
             <img src="/img/click.svg" alt="" />
-          </div>
+          </div> */}
           <div onClick={() => handlePost2("payme")} className="pay">
             <img src="/img/pay.svg" alt="" />
           </div>
@@ -115,8 +115,8 @@ const Buy = () => {
               </div>
 
               <div className="b_name_2"> {getText("b_h_10")}</div>
-              <div className="b_p_1">{getText("b_h_11")}</div>
-              <div className="b_p_2">{getText("b_h_12")}</div>
+              {/* <div className="b_p_1">{getText("b_h_11")}</div> */}
+              {/* <div className="b_p_2">{getText("b_h_12")}</div> */}
             </div>
 
             <div className="col-lg-4 mt-lg-0 mt-5">
@@ -165,7 +165,6 @@ const Buy = () => {
                   </div>
                   <div className="b_up_h_2_2">{getText("b_h_21")}</div>
                   <div className="b_up_h_2">{getText("b_h_22")}</div>
-                  {/* <div className="b_up_h">{getText('b_h_15')}</div> */}
                 </div>
                 <button
                   onClick={() => {
@@ -176,6 +175,14 @@ const Buy = () => {
                 >
                   {getText("b_h_buy")}
                 </button>
+              </div>
+            </div>
+            <div className="col-12 mt-5">
+              <div className="b_h_2">
+                {getText("b_h_problem")}{" "}
+                <Link to="https://t.me/bahtwoman_uz">
+                  <div className="b_h_2_2">https://t.me/bahtwoman_uz</div>
+                </Link>
               </div>
             </div>
             <div className="col-12 mt-5">

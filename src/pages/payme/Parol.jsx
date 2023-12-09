@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 const Parol = () => {
   const [isLoading, setIsLoading] = useState("");
   const [parol, setParol] = useState("");
+  const navigate = useNavigate();
 
   const PayLast = () => {
     const formData2 = new FormData();
@@ -18,13 +19,16 @@ const Parol = () => {
       .post(API_PATH + `/order/payment/`, formData2, CONFIG)
       .then((res) => {
         setIsLoading(false);
+        navigate("/dashboard");
       })
       .catch((err) => {
         setIsLoading(false);
+        toast(
+          "Xatolik yuz berdi qayta urunib ko'ring yoki hisobingizni tekshiring"
+        );
+        navigate("/buy");
       });
   };
-
-  const navigate = useNavigate();
 
   const post = (e) => {
     e.preventDefault();
@@ -46,9 +50,8 @@ const Parol = () => {
       axios
         .post(API_PATH + `/order/verify-phone/`, formData, CONFIG)
         .then((res) => {
-          navigate("/start-questions-modal");
-          PayLast();
           setIsLoading(false);
+          PayLast();
         })
         .catch((err) => {
           setIsLoading(false);

@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { getText } from "../../locale";
 import { useState } from "react";
-import { API_PATH, USER_ID, USER_INFO } from "../../constants";
+import { API_PATH, CONFIG, USER_ID, USER_INFO } from "../../constants";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { CheckCircle, RadioButtonUnchecked } from "@mui/icons-material";
@@ -37,16 +37,48 @@ const WorkProblem = () => {
 
     const existingData = JSON.parse(localStorage.getItem(USER_INFO));
     const newData = { ...existingData, ...data };
-
     localStorage.setItem(USER_INFO, JSON.stringify(newData));
   };
 
   const navigate = useNavigate();
 
   const allData = JSON.parse(localStorage.getItem(USER_INFO));
-  const id = localStorage.getItem(USER_ID);
 
-  const finish = async () => {
+  const finish = () => {
+    const last_name = localStorage.getItem("lastname");
+    const first_name = localStorage.getItem("name");
+    const given_name = localStorage.getItem("surname");
+    const age = localStorage.getItem("age");
+    const address = localStorage.getItem("districs");
+    const phone = localStorage.getItem("phone");
+    const eduction = localStorage.getItem("education");
+    const family_status = localStorage.getItem("family_status");
+    const children = localStorage.getItem("children");
+    const social_status = localStorage.getItem("social");
+    console.log(CONFIG);
+    axios
+      .post(
+        API_PATH + "/register-questions/question/",
+        {
+          last_name,
+          first_name,
+          given_name,
+          age,
+          address,
+          phone,
+          eduction,
+          family_status,
+          children,
+          social_status,
+        },
+        CONFIG
+      )
+      .then((res) => {
+        finish2(res.data.id);
+      });
+  };
+
+  const finish2 = (id) => {
     Object.entries(allData).forEach(([key, value]) => {
       axios
         .post(API_PATH + "/register-questions/question-variant/", {
@@ -54,11 +86,15 @@ const WorkProblem = () => {
           variant_name: value,
           question: id,
         })
-        .then((response) => {})
-        .catch((error) => {});
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     });
     toast.success("Malumotingiz muvaffaqiyatli jo'natildi");
-    navigate("/result-page", { replace: true });
+    navigate("/end-questions", { replace: true });
   };
 
   return (

@@ -32,7 +32,7 @@ const NavigationLayout = () => {
     <div className="NavigationLayout">
       <div className="row">
         <div className="col-12 top">
-          <Link to="/" className="logo nav_110_logo">
+          <Link to="/dashboard" className="logo nav_110_logo">
             <img src={logo} alt="" />
           </Link>
           <div className="d-flex align-items-center">
@@ -80,7 +80,7 @@ const NavigationLayout = () => {
             </span>
             <h1>Azimova Dildora</h1>
           </div> */}
-          <h2>{getText('reg_ques_1')}</h2>
+          <h2>{getText("reg_ques_1")}</h2>
           <Link
             onClick={() => setBurger(!burger)}
             className={`${
@@ -88,21 +88,21 @@ const NavigationLayout = () => {
             }`}
             to={"/first-last-name"}
           >
-            {getText('reg_ques_2')}
+            {getText("reg_ques_2")}
           </Link>
           <Link
             onClick={() => setBurger(!burger)}
             className={`${location.pathname === "/age" ? "active" : ""}`}
             to={"/age"}
           >
-            {getText('reg_ques_3')}
+            {getText("reg_ques_3")}
           </Link>
           <Link
             onClick={() => setBurger(!burger)}
             className={`${location.pathname === "/location" ? "active" : ""}`}
             to={"/location"}
           >
-            {getText('reg_ques_4')}
+            {getText("reg_ques_4")}
           </Link>
           <Link
             onClick={() => setBurger(!burger)}
@@ -111,14 +111,14 @@ const NavigationLayout = () => {
             }`}
             to={"/phone-number"}
           >
-            {getText('reg_ques_5')}
+            {getText("reg_ques_5")}
           </Link>
           <Link
             onClick={() => setBurger(!burger)}
             className={`${location.pathname === "/education" ? "active" : ""}`}
             to={"/education"}
           >
-            {getText('reg_ques_6')}
+            {getText("reg_ques_6")}
           </Link>
           <Link
             onClick={() => setBurger(!burger)}
@@ -127,14 +127,14 @@ const NavigationLayout = () => {
             }`}
             to={"/family-status"}
           >
-            {getText('reg_ques_7')}
+            {getText("reg_ques_7")}
           </Link>
           <Link
             onClick={() => setBurger(!burger)}
             className={`${location.pathname === "/children" ? "active" : ""}`}
             to={"/children"}
           >
-            {getText('reg_ques_8')}
+            {getText("reg_ques_8")}
           </Link>
           <Link
             onClick={() => setBurger(!burger)}
@@ -143,7 +143,7 @@ const NavigationLayout = () => {
             }`}
             to={"/social-status"}
           >
-            {getText('reg_ques_9')}
+            {getText("reg_ques_9")}
           </Link>
           {/* <Link
             className={`${
@@ -167,7 +167,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/moral-problem"}
               >
-             9.   {getText('ans10_1')}
+                9. {getText("ans10_1")}
               </Link>
             </AccordionSummary>
             <AccordionDetails>
@@ -178,7 +178,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/moral-problem"}
               >
-           9.1      {getText('ans10_2')}
+                9.1 {getText("ans10_2")}
               </Link>
             </AccordionDetails>
             <AccordionDetails>
@@ -189,7 +189,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/relative-problem"}
               >
-           9.2  {getText('ans12_1')}
+                9.2 {getText("ans12_1")}
               </Link>
             </AccordionDetails>
             <AccordionDetails>
@@ -200,7 +200,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/current-problem"}
               >
-              9.3   {getText('ans13_1')}
+                9.3 {getText("ans13_1")}
               </Link>
             </AccordionDetails>
             <AccordionDetails>
@@ -211,7 +211,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/husband-problem"}
               >
-               9.4  {getText('ans14_1')}
+                9.4 {getText("ans14_1")}
               </Link>
             </AccordionDetails>
             <AccordionDetails>
@@ -222,7 +222,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/divorce-problem"}
               >
-                9.5 {getText('ans15_1')}
+                9.5 {getText("ans15_1")}
               </Link>
             </AccordionDetails>
             <AccordionDetails>
@@ -233,7 +233,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/after-divorce-problem"}
               >
-                9.6. {getText('ans16_1')}
+                9.6. {getText("ans16_1")}
               </Link>
             </AccordionDetails>
             <AccordionDetails>
@@ -244,7 +244,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/no-marriage-problem"}
               >
-                9.7. {getText('ans17_1')}
+                9.7. {getText("ans17_1")}
               </Link>
             </AccordionDetails>
             <AccordionDetails>
@@ -255,7 +255,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/sex-problem"}
               >
-                9.8. {getText('ans18_1')}
+                9.8. {getText("ans18_1")}
               </Link>
             </AccordionDetails>
             <AccordionDetails>
@@ -266,7 +266,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/child-problem"}
               >
-                9.9. {getText('ans19_1')}
+                9.9. {getText("ans19_1")}
               </Link>
             </AccordionDetails>
             <AccordionDetails>
@@ -277,7 +277,7 @@ const NavigationLayout = () => {
                 }`}
                 to={"/work-problem"}
               >
-                9.10. {getText('ans20_1')}
+                9.10. {getText("ans20_1")}
               </Link>
             </AccordionDetails>
           </Accordion>

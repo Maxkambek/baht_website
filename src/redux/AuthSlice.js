@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API_PATH, CODE, PHONE, TOKEN } from "../constants";
+import { toast } from "react-toastify";
 
 const register = createAsyncThunk(`auth/register`, async (phone) => {
   const { data } = await axios.post(API_PATH + "/user/register/", { phone });
@@ -23,11 +24,11 @@ const login = createAsyncThunk(
       phone,
       password,
     });
-    localStorage.setItem(TOKEN, data.token);
-    if (!data.is_paid) {
-      navigate("/buy", { replace: true });
+    toast("Ma");
+    if (data.success) {
+      navigate("/welcome-note");
     } else {
-      navigate("/elon", { replace: true });
+      toast.error("Ma'lumotlaringizni to'g'ri kiriting");
     }
   }
 );

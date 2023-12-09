@@ -5,7 +5,7 @@ import { useState } from "react";
 import { getText } from "../../locale";
 
 const AgePage = () => {
-  const [age, setAge] = useState("");
+  const [age, setAge] = useState(localStorage.getItem("age") || "");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();

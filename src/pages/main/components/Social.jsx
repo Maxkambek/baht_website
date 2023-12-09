@@ -18,9 +18,9 @@ const Social = () => {
   }, []);
   return (
     <div className="Social">
-      <div data-aos-delay="500" data-aos="fade-right" className="leftPat">
+      {/* <div data-aos-delay="500" data-aos="fade-right" className="leftPat">
         <img src="/patLeft.png" alt="" />
-      </div>
+      </div> */}
 
       <div className="container">
         <div className="row">

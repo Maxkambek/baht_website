@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RegistrationLayout } from "../../../components";
 import InputMask from "react-input-mask";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,11 +7,13 @@ import { useDispatch } from "react-redux";
 import { authAction } from "../../../redux/AuthSlice";
 import { toast } from "react-toastify";
 import { PHONE } from "../../../constants";
+import { CheckCircle, RadioButtonUnchecked } from "@mui/icons-material";
+import { Checkbox } from "@mui/material";
 
 const RegisterPhone = () => {
   const [phone, setPhone] = useState("+998");
   const [isLoading, setIsLoading] = useState(false);
-
+  const [checked, setChecked] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,6 +26,7 @@ const RegisterPhone = () => {
     localStorage.setItem(PHONE, phone);
     navigate("/phone-verify");
   };
+  useEffect(() => {}, [checked]);
   return (
     <div className="RegisterPhone Register">
       <RegistrationLayout />
@@ -49,6 +52,21 @@ const RegisterPhone = () => {
                 </button>
 
                 <Link to={"/login"}>Akkauntingiz bormi?</Link>
+                <div className="check_box">
+                  <Checkbox
+                    sx={{
+                      color: "silver",
+                      "&.Mui-checked": {
+                        color: "#FFD0D4",
+                      },
+                    }}
+                    checked={checked}
+                  />
+                  <div onClick={() => setChecked(!checked)}>
+                    Siz ro'yhatdan o'tish orqali Maxfiylik siyosatiga
+                    roziligingizni bildirasiz
+                  </div>
+                </div>
               </div>
             </div>
           </div>

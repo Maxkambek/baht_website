@@ -24,22 +24,29 @@ import { CheckCircleOutline, RadioButtonUnchecked } from "@mui/icons-material";
 const MoralProblem2 = () => {
   const [expanded, setExpanded] = useState(false);
   const [data, setData] = useState({});
+  const existingData = JSON.parse(localStorage.getItem(USER_INFO));
+  const navigate = useNavigate();
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-  const navigate = useNavigate();
 
+  const checkAnswers = (a) => {
+    if (existingData) {
+      if (existingData[a]) {
+        return true;
+      }
+    } else {
+      return false;
+    }
+  };
   const collectData = (index, value) => {
-    if (data.index) {
+    if (data.length > 0 && data.index) {
       data.index = value;
     } else {
       data[index] = value;
     }
-    console.log(data);
-    const existingData = JSON.parse(localStorage.getItem(USER_INFO));
     const newData = { ...existingData, ...data };
-
     localStorage.setItem(USER_INFO, JSON.stringify(newData));
   };
   return (
@@ -68,6 +75,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.1")}
                     />
                   }
                   onChange={(e) => collectData("10.1", e.target.value)}
@@ -91,6 +99,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.2")}
                     />
                   }
                   label={getText("ans10_5")}
@@ -112,6 +121,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.3")}
                     />
                   }
                   label={getText("ans10_6")}
@@ -132,6 +142,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.4")}
                     />
                   }
                   onChange={(e) => collectData("10.4", e.target.value)}
@@ -154,6 +165,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.5")}
                     />
                   }
                   label={getText("ans10_8")}
@@ -174,6 +186,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.6")}
                     />
                   }
                   onChange={(e) => collectData("10.6", e.target.value)}
@@ -195,6 +208,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.7")}
                     />
                   }
                   onChange={(e) => collectData("10.7", e.target.value)}
@@ -216,6 +230,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.8")}
                     />
                   }
                   onChange={(e) => collectData("10.8", e.target.value)}
@@ -237,6 +252,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.9")}
                     />
                   }
                   onChange={(e) => collectData("10.9", e.target.value)}
@@ -258,6 +274,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.10")}
                     />
                   }
                   onChange={(e) => collectData("10.10", e.target.value)}
@@ -279,6 +296,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.11")}
                     />
                   }
                   onChange={(e) => collectData("10.11", e.target.value)}
@@ -300,6 +318,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.12")}
                     />
                   }
                   onChange={(e) => collectData("10.12", e.target.value)}
@@ -321,6 +340,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.13")}
                     />
                   }
                   onChange={(e) => collectData("10.13", e.target.value)}
@@ -342,6 +362,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.14")}
                     />
                   }
                   onChange={(e) => collectData("10.14", e.target.value)}
@@ -363,6 +384,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.15")}
                     />
                   }
                   onChange={(e) => collectData("10.15", e.target.value)}
@@ -384,6 +406,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.16")}
                     />
                   }
                   onChange={(e) => collectData("10.16", e.target.value)}
@@ -405,6 +428,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.17")}
                     />
                   }
                   onChange={(e) => collectData("10.17", e.target.value)}
@@ -426,6 +450,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.18")}
                     />
                   }
                   onChange={(e) => collectData("10.18", e.target.value)}
@@ -448,6 +473,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.19")}
                     />
                   }
                   onChange={(e) => collectData("10.19", e.target.value)}
@@ -469,6 +495,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.20")}
                     />
                   }
                   onChange={(e) => collectData("10.20", e.target.value)}
@@ -490,6 +517,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.21")}
                     />
                   }
                   onChange={(e) => collectData("10.21", e.target.value)}
@@ -511,6 +539,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.22")}
                     />
                   }
                   onChange={(e) => collectData("10.22", e.target.value)}
@@ -532,6 +561,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.23")}
                     />
                   }
                   onChange={(e) => collectData("10.23", e.target.value)}
@@ -553,6 +583,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.24")}
                     />
                   }
                   onChange={(e) => collectData("10.24", e.target.value)}
@@ -574,6 +605,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.25")}
                     />
                   }
                   onChange={(e) => collectData("10.25", e.target.value)}
@@ -595,6 +627,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.26")}
                     />
                   }
                   onChange={(e) => collectData("10.26", e.target.value)}
@@ -616,6 +649,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.27")}
                     />
                   }
                   onChange={(e) => collectData("10.27", e.target.value)}
@@ -637,6 +671,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.28")}
                     />
                   }
                   onChange={(e) => collectData("10.28", e.target.value)}
@@ -658,6 +693,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.29")}
                     />
                   }
                   onChange={(e) => collectData("10.29", e.target.value)}
@@ -679,6 +715,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.30")}
                     />
                   }
                   onChange={(e) => collectData("10.30", e.target.value)}
@@ -700,6 +737,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.31")}
                     />
                   }
                   onChange={(e) => collectData("10.31", e.target.value)}
@@ -721,6 +759,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.32")}
                     />
                   }
                   onChange={(e) => collectData("10.32", e.target.value)}
@@ -760,6 +799,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.33")}
                     />
                   }
                   onChange={(e) => collectData("10.33", e.target.value)}
@@ -782,6 +822,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.34")}
                     />
                   }
                   onChange={(e) => collectData("10.34", e.target.value)}
@@ -803,6 +844,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.35")}
                     />
                   }
                   onChange={(e) => collectData("10.35", e.target.value)}
@@ -824,6 +866,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.36")}
                     />
                   }
                   onChange={(e) => collectData("10.36", e.target.value)}
@@ -845,6 +888,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.37")}
                     />
                   }
                   onChange={(e) => collectData("10.37", e.target.value)}
@@ -866,6 +910,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.38")}
                     />
                   }
                   onChange={(e) => collectData("10.38", e.target.value)}
@@ -887,6 +932,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.39")}
                     />
                   }
                   onChange={(e) => collectData("10.39", e.target.value)}
@@ -908,6 +954,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.40")}
                     />
                   }
                   onChange={(e) => collectData("10.40", e.target.value)}
@@ -929,6 +976,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.41")}
                     />
                   }
                   onChange={(e) => collectData("10.41", e.target.value)}
@@ -950,6 +998,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.42")}
                     />
                   }
                   onChange={(e) => collectData("10.42", e.target.value)}
@@ -971,6 +1020,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.43")}
                     />
                   }
                   onChange={(e) => collectData("10.43", e.target.value)}
@@ -992,6 +1042,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.44")}
                     />
                   }
                   onChange={(e) => collectData("10.44", e.target.value)}
@@ -1013,6 +1064,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.45")}
                     />
                   }
                   onChange={(e) => collectData("10.45", e.target.value)}
@@ -1034,6 +1086,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.46")}
                     />
                   }
                   onChange={(e) => collectData("10.46", e.target.value)}
@@ -1055,6 +1108,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.47")}
                     />
                   }
                   onChange={(e) => collectData("10.47", e.target.value)}
@@ -1076,6 +1130,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.48")}
                     />
                   }
                   onChange={(e) => collectData("10.48", e.target.value)}
@@ -1097,6 +1152,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.49")}
                     />
                   }
                   onChange={(e) => collectData("10.49", e.target.value)}
@@ -1143,6 +1199,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.50")}
                     />
                   }
                   onChange={(e) => collectData("10.50", e.target.value)}
@@ -1165,6 +1222,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.51")}
                     />
                   }
                   onChange={(e) => collectData("10.51", e.target.value)}
@@ -1200,6 +1258,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.52")}
                         />
                       }
                       onChange={(e) => collectData("10.52", e.target.value)}
@@ -1221,6 +1280,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.53")}
                         />
                       }
                       onChange={(e) => collectData("10.53", e.target.value)}
@@ -1242,6 +1302,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.54")}
                         />
                       }
                       onChange={(e) => collectData("10.54", e.target.value)}
@@ -1263,6 +1324,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.55")}
                         />
                       }
                       onChange={(e) => collectData("10.55", e.target.value)}
@@ -1284,6 +1346,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.56")}
                         />
                       }
                       onChange={(e) => collectData("10.56", e.target.value)}
@@ -1305,6 +1368,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.57")}
                         />
                       }
                       onChange={(e) => collectData("10.57", e.target.value)}
@@ -1326,6 +1390,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.58")}
                         />
                       }
                       onChange={(e) => collectData("10.58", e.target.value)}
@@ -1347,6 +1412,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.59")}
                         />
                       }
                       onChange={(e) => collectData("10.59", e.target.value)}
@@ -1368,6 +1434,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.60")}
                         />
                       }
                       onChange={(e) => collectData("10.60", e.target.value)}
@@ -1398,11 +1465,10 @@ const MoralProblem2 = () => {
                               }}
                               icon={<RadioButtonUnchecked />}
                               checkedIcon={<CheckCircle />}
+                              defaultChecked={checkAnswers("10.61")}
                             />
                           }
-                          onChange={(e) =>
-                            collectData("10.61", e.target.value)
-                          }
+                          onChange={(e) => collectData("10.61", e.target.value)}
                           label={getText("ans10_67")}
                         />
                       </AccordionSummary>
@@ -1420,6 +1486,7 @@ const MoralProblem2 = () => {
                                 }}
                                 icon={<RadioButtonUnchecked />}
                                 checkedIcon={<CheckCircle />}
+                                defaultChecked={checkAnswers("10.62")}
                               />
                             }
                             onChange={(e) =>
@@ -1443,6 +1510,7 @@ const MoralProblem2 = () => {
                                 }}
                                 icon={<RadioButtonUnchecked />}
                                 checkedIcon={<CheckCircle />}
+                                defaultChecked={checkAnswers("10.63")}
                               />
                             }
                             onChange={(e) =>
@@ -1478,11 +1546,10 @@ const MoralProblem2 = () => {
                               }}
                               icon={<RadioButtonUnchecked />}
                               checkedIcon={<CheckCircle />}
+                              defaultChecked={checkAnswers("10.64")}
                             />
                           }
-                          onChange={(e) =>
-                            collectData("10.64", e.target.value)
-                          }
+                          onChange={(e) => collectData("10.64", e.target.value)}
                           label={getText("ans10_70")}
                         />
                       </AccordionSummary>
@@ -1500,6 +1567,7 @@ const MoralProblem2 = () => {
                                 }}
                                 icon={<RadioButtonUnchecked />}
                                 checkedIcon={<CheckCircle />}
+                                defaultChecked={checkAnswers("10.65")}
                               />
                             }
                             onChange={(e) =>
@@ -1523,6 +1591,7 @@ const MoralProblem2 = () => {
                                 }}
                                 icon={<RadioButtonUnchecked />}
                                 checkedIcon={<CheckCircle />}
+                                defaultChecked={checkAnswers("10.66")}
                               />
                             }
                             onChange={(e) =>
@@ -1549,6 +1618,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.67")}
                         />
                       }
                       onChange={(e) => collectData("10.67", e.target.value)}
@@ -1570,6 +1640,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.68")}
                         />
                       }
                       onChange={(e) => collectData("10.68", e.target.value)}
@@ -1591,6 +1662,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.69")}
                         />
                       }
                       onChange={(e) => collectData("10.69", e.target.value)}
@@ -1612,6 +1684,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.70")}
                         />
                       }
                       onChange={(e) => collectData("10.70", e.target.value)}
@@ -1633,6 +1706,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.71")}
                         />
                       }
                       onChange={(e) => collectData("10.71", e.target.value)}
@@ -1654,6 +1728,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.72")}
                         />
                       }
                       onChange={(e) => collectData("10.72", e.target.value)}
@@ -1675,6 +1750,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.73")}
                         />
                       }
                       onChange={(e) => collectData("10.73", e.target.value)}
@@ -1696,6 +1772,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.74")}
                         />
                       }
                       onChange={(e) => collectData("10.74", e.target.value)}
@@ -1719,6 +1796,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.75")}
                     />
                   }
                   onChange={(e) => collectData("10.75", e.target.value)}
@@ -1740,6 +1818,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.76")}
                     />
                   }
                   onChange={(e) => collectData("10.76", e.target.value)}
@@ -1761,6 +1840,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.77")}
                     />
                   }
                   onChange={(e) => collectData("10.77", e.target.value)}
@@ -1782,6 +1862,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.78")}
                     />
                   }
                   onChange={(e) => collectData("10.78", e.target.value)}
@@ -1803,6 +1884,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.79")}
                     />
                   }
                   onChange={(e) => collectData("10.79", e.target.value)}
@@ -1824,6 +1906,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.80")}
                     />
                   }
                   onChange={(e) => collectData("10.80", e.target.value)}
@@ -1845,6 +1928,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.81")}
                     />
                   }
                   onChange={(e) => collectData("10.81", e.target.value)}
@@ -1866,6 +1950,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.82")}
                     />
                   }
                   onChange={(e) => collectData("10.82", e.target.value)}
@@ -1887,6 +1972,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.83")}
                     />
                   }
                   onChange={(e) => collectData("10.83", e.target.value)}
@@ -1908,6 +1994,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.84")}
                     />
                   }
                   onChange={(e) => collectData("10.84", e.target.value)}
@@ -1929,6 +2016,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.85")}
                     />
                   }
                   onChange={(e) => collectData("10.85", e.target.value)}
@@ -1950,6 +2038,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.86")}
                     />
                   }
                   onChange={(e) => collectData("10.86", e.target.value)}
@@ -1971,6 +2060,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.87")}
                     />
                   }
                   onChange={(e) => collectData("10.87", e.target.value)}
@@ -1992,6 +2082,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.88")}
                     />
                   }
                   onChange={(e) => collectData("10.88", e.target.value)}
@@ -2013,6 +2104,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.89")}
                     />
                   }
                   onChange={(e) => collectData("10.89", e.target.value)}
@@ -2034,6 +2126,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.90")}
                     />
                   }
                   onChange={(e) => collectData("10.90", e.target.value)}
@@ -2055,6 +2148,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.91")}
                     />
                   }
                   onChange={(e) => collectData("10.91", e.target.value)}
@@ -2076,6 +2170,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.92")}
                     />
                   }
                   onChange={(e) => collectData("10.92", e.target.value)}
@@ -2097,6 +2192,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.93")}
                     />
                   }
                   onChange={(e) => collectData("10.93", e.target.value)}
@@ -2118,6 +2214,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.94")}
                     />
                   }
                   onChange={(e) => collectData("10.94", e.target.value)}
@@ -2139,6 +2236,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.95")}
                     />
                   }
                   onChange={(e) => collectData("10.95", e.target.value)}
@@ -2160,6 +2258,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.96")}
                     />
                   }
                   onChange={(e) => collectData("10.96", e.target.value)}
@@ -2181,6 +2280,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.97")}
                     />
                   }
                   onChange={(e) => collectData("10.97", e.target.value)}
@@ -2202,6 +2302,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.98")}
                     />
                   }
                   onChange={(e) => collectData("10.98", e.target.value)}
@@ -2223,6 +2324,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.99")}
                     />
                   }
                   onChange={(e) => collectData("10.99", e.target.value)}
@@ -2244,6 +2346,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.100")}
                     />
                   }
                   onChange={(e) => collectData("10.100", e.target.value)}
@@ -2265,6 +2368,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.101")}
                     />
                   }
                   onChange={(e) => collectData("10.101", e.target.value)}
@@ -2286,6 +2390,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.102")}
                     />
                   }
                   onChange={(e) => collectData("10.102", e.target.value)}
@@ -2307,6 +2412,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.103")}
                     />
                   }
                   onChange={(e) => collectData("10.103", e.target.value)}
@@ -2328,6 +2434,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.104")}
                     />
                   }
                   onChange={(e) => collectData("10.104", e.target.value)}
@@ -2349,6 +2456,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.105")}
                     />
                   }
                   onChange={(e) => collectData("10.105", e.target.value)}
@@ -2370,6 +2478,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.106")}
                     />
                   }
                   onChange={(e) => collectData("10.106", e.target.value)}
@@ -2391,6 +2500,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.107")}
                     />
                   }
                   onChange={(e) => collectData("10.107", e.target.value)}
@@ -2412,6 +2522,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.108")}
                     />
                   }
                   onChange={(e) => collectData("10.108", e.target.value)}
@@ -2602,6 +2713,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.116")}
                     />
                   }
                   onChange={(e) => collectData("10.116", e.target.value)}
@@ -2624,6 +2736,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.117")}
                     />
                   }
                   label={getText("ans10_124")}
@@ -2645,6 +2758,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.118")}
                     />
                   }
                   label={getText("ans10_125")}
@@ -2675,6 +2789,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.119")}
                         />
                       }
                       label={getText("ans10_126")}
@@ -2745,6 +2860,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.122")}
                         />
                       }
                       label={getText("ans10_129")}
@@ -2806,6 +2922,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.125")}
                     />
                   }
                   label={getText("ans10_132")}
@@ -2827,6 +2944,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.126")}
                     />
                   }
                   label={getText("ans10_133")}
@@ -2848,6 +2966,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.127")}
                     />
                   }
                   label={getText("ans10_134")}
@@ -2869,6 +2988,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.128")}
                     />
                   }
                   label={getText("ans10_135")}
@@ -2890,6 +3010,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.129")}
                     />
                   }
                   label={getText("ans10_136")}
@@ -2911,6 +3032,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.130")}
                     />
                   }
                   label={getText("ans10_137")}
@@ -2932,6 +3054,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.131")}
                     />
                   }
                   label={getText("ans10_138")}
@@ -2953,6 +3076,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.132")}
                     />
                   }
                   label={getText("ans10_139")}
@@ -2974,6 +3098,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.133")}
                     />
                   }
                   label={getText("ans10_140")}
@@ -2995,6 +3120,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.134")}
                     />
                   }
                   label={getText("ans10_141")}
@@ -3036,6 +3162,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.135")}
                     />
                   }
                   label={getText("ans10_143")}
@@ -3057,6 +3184,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.136")}
                     />
                   }
                   label={getText("ans10_144")}
@@ -3078,6 +3206,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.137")}
                     />
                   }
                   label={getText("ans10_145")}
@@ -3099,6 +3228,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.138")}
                     />
                   }
                   label={getText("ans10_146")}
@@ -3120,6 +3250,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.139")}
                     />
                   }
                   label={getText("ans10_147")}
@@ -3141,6 +3272,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.140")}
                     />
                   }
                   label={getText("ans10_148")}
@@ -3162,6 +3294,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.141")}
                     />
                   }
                   label={getText("ans10_149")}
@@ -3183,6 +3316,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.142")}
                     />
                   }
                   label={getText("ans10_150")}
@@ -3204,6 +3338,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.143")}
                     />
                   }
                   label={getText("ans10_151")}
@@ -3225,6 +3360,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.144")}
                     />
                   }
                   label={getText("ans10_152")}
@@ -3246,6 +3382,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.145")}
                     />
                   }
                   label={getText("ans10_153")}
@@ -3267,6 +3404,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.146")}
                     />
                   }
                   label={getText("ans10_154")}
@@ -3288,6 +3426,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.147")}
                     />
                   }
                   label={getText("ans10_155")}
@@ -3309,6 +3448,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.148")}
                     />
                   }
                   label={getText("ans10_156")}
@@ -3330,6 +3470,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.149")}
                     />
                   }
                   label={getText("ans10_157")}
@@ -3351,6 +3492,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.150")}
                     />
                   }
                   label={getText("ans10_158")}
@@ -3381,6 +3523,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.151")}
                         />
                       }
                       label={getText("ans10_159")}
@@ -3402,6 +3545,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.152")}
                         />
                       }
                       label={getText("ans10_160")}
@@ -3423,6 +3567,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.153")}
                         />
                       }
                       label={getText("ans10_161")}
@@ -3444,6 +3589,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.154")}
                         />
                       }
                       label={getText("ans10_162")}
@@ -3465,6 +3611,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.155")}
                         />
                       }
                       label={getText("ans10_163")}
@@ -3486,6 +3633,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.156")}
                         />
                       }
                       label={getText("ans10_164")}
@@ -3509,6 +3657,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.157")}
                     />
                   }
                   label={getText("ans10_165")}
@@ -3530,6 +3679,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.158")}
                     />
                   }
                   label={getText("ans10_166")}
@@ -3569,6 +3719,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.159")}
                     />
                   }
                   label={getText("ans10_167")}
@@ -3591,6 +3742,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.160")}
                     />
                   }
                   onChange={(e) => collectData("10.160", e.target.value)}
@@ -3613,6 +3765,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.161")}
                     />
                   }
                   onChange={(e) => collectData("10.161", e.target.value)}
@@ -3635,6 +3788,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.162")}
                     />
                   }
                   onChange={(e) => collectData("10.162", e.target.value)}
@@ -3657,6 +3811,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.163")}
                     />
                   }
                   onChange={(e) => collectData("10.163", e.target.value)}
@@ -3678,6 +3833,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.164")}
                     />
                   }
                   onChange={(e) => collectData("10.164", e.target.value)}
@@ -3699,6 +3855,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.165")}
                     />
                   }
                   onChange={(e) => collectData("10.165", e.target.value)}
@@ -3720,6 +3877,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.166")}
                     />
                   }
                   onChange={(e) => collectData("10.166", e.target.value)}
@@ -3741,6 +3899,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.167")}
                     />
                   }
                   onChange={(e) => collectData("10.167", e.target.value)}
@@ -3762,6 +3921,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.168")}
                     />
                   }
                   onChange={(e) => collectData("10.168", e.target.value)}
@@ -3783,6 +3943,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.169")}
                     />
                   }
                   onChange={(e) => collectData("10.169", e.target.value)}
@@ -3804,6 +3965,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.170")}
                     />
                   }
                   onChange={(e) => collectData("10.170", e.target.value)}
@@ -3825,6 +3987,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.171")}
                     />
                   }
                   onChange={(e) => collectData("10.171", e.target.value)}
@@ -3846,6 +4009,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.172")}
                     />
                   }
                   onChange={(e) => collectData("10.172", e.target.value)}
@@ -3867,6 +4031,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.173")}
                     />
                   }
                   onChange={(e) => collectData("10.173", e.target.value)}
@@ -3888,6 +4053,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.174")}
                     />
                   }
                   onChange={(e) => collectData("10.174", e.target.value)}
@@ -3909,6 +4075,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.175")}
                     />
                   }
                   onChange={(e) => collectData("10.175", e.target.value)}
@@ -3930,6 +4097,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.176")}
                     />
                   }
                   onChange={(e) => collectData("10.176", e.target.value)}
@@ -3951,6 +4119,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.177")}
                     />
                   }
                   onChange={(e) => collectData("10.177", e.target.value)}
@@ -3972,6 +4141,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.178")}
                     />
                   }
                   onChange={(e) => collectData("10.178", e.target.value)}
@@ -3993,6 +4163,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.179")}
                     />
                   }
                   onChange={(e) => collectData("10.179", e.target.value)}
@@ -4014,6 +4185,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.180")}
                     />
                   }
                   onChange={(e) => collectData("10.180", e.target.value)}
@@ -4035,6 +4207,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.181")}
                     />
                   }
                   onChange={(e) => collectData("10.181", e.target.value)}
@@ -4056,6 +4229,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.182")}
                     />
                   }
                   onChange={(e) => collectData("10.182", e.target.value)}
@@ -4077,6 +4251,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.183")}
                     />
                   }
                   onChange={(e) => collectData("10.183", e.target.value)}
@@ -4098,6 +4273,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.184")}
                     />
                   }
                   onChange={(e) => collectData("10.184", e.target.value)}
@@ -4119,6 +4295,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.185")}
                     />
                   }
                   onChange={(e) => collectData("10.185", e.target.value)}
@@ -4140,6 +4317,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.186")}
                     />
                   }
                   onChange={(e) => collectData("10.186", e.target.value)}
@@ -4161,6 +4339,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.187")}
                     />
                   }
                   onChange={(e) => collectData("10.187", e.target.value)}
@@ -4182,6 +4361,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.188")}
                     />
                   }
                   onChange={(e) => collectData("10.188", e.target.value)}
@@ -4203,6 +4383,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.189")}
                     />
                   }
                   onChange={(e) => collectData("10.189", e.target.value)}
@@ -4224,6 +4405,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.190")}
                     />
                   }
                   onChange={(e) => collectData("10.190", e.target.value)}
@@ -4262,6 +4444,7 @@ const MoralProblem2 = () => {
                               }}
                               icon={<RadioButtonUnchecked />}
                               checkedIcon={<CheckCircle />}
+                              defaultChecked={checkAnswers("10.191")}
                             />
                           }
                           onChange={(e) =>
@@ -4286,6 +4469,7 @@ const MoralProblem2 = () => {
                               }}
                               icon={<RadioButtonUnchecked />}
                               checkedIcon={<CheckCircle />}
+                              defaultChecked={checkAnswers("10.192")}
                             />
                           }
                           onChange={(e) =>
@@ -4310,6 +4494,7 @@ const MoralProblem2 = () => {
                               }}
                               icon={<RadioButtonUnchecked />}
                               checkedIcon={<CheckCircle />}
+                              defaultChecked={checkAnswers("10.193")}
                             />
                           }
                           onChange={(e) =>
@@ -4334,6 +4519,7 @@ const MoralProblem2 = () => {
                               }}
                               icon={<RadioButtonUnchecked />}
                               checkedIcon={<CheckCircle />}
+                              defaultChecked={checkAnswers("10.194")}
                             />
                           }
                           onChange={(e) =>
@@ -4392,6 +4578,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.195")}
                     />
                   }
                   onChange={(e) => collectData("10.195", e.target.value)}
@@ -4422,6 +4609,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.196")}
                         />
                       }
                       label={getText("ans10_205")}
@@ -4443,6 +4631,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.197")}
                         />
                       }
                       label={getText("ans10_206")}
@@ -4464,6 +4653,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.198")}
                         />
                       }
                       label={getText("ans10_207")}
@@ -4496,6 +4686,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.199")}
                         />
                       }
                       label={getText("ans10_208")}
@@ -4517,6 +4708,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.200")}
                         />
                       }
                       label={getText("ans10_209")}
@@ -4538,6 +4730,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.201")}
                         />
                       }
                       label={getText("ans10_210")}
@@ -4570,6 +4763,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.202")}
                         />
                       }
                       label={getText("ans10_211")}
@@ -4591,6 +4785,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.203")}
                         />
                       }
                       label={getText("ans10_212")}
@@ -4612,6 +4807,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.204")}
                         />
                       }
                       label={getText("ans10_213")}
@@ -4633,6 +4829,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.205")}
                         />
                       }
                       label={getText("ans10_214")}
@@ -4665,6 +4862,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.206")}
                         />
                       }
                       label={getText("ans10_211")}
@@ -4686,6 +4884,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.207")}
                         />
                       }
                       label={getText("ans10_212")}
@@ -4707,6 +4906,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.208")}
                         />
                       }
                       label={getText("ans10_213")}
@@ -4728,6 +4928,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.209")}
                         />
                       }
                       label={getText("ans10_214")}
@@ -4760,6 +4961,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.210")}
                         />
                       }
                       label={getText("ans10_215")}
@@ -4781,6 +4983,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.211")}
                         />
                       }
                       label={getText("ans10_216")}
@@ -4802,6 +5005,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.212")}
                         />
                       }
                       label={getText("ans10_217")}
@@ -4834,6 +5038,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.213")}
                         />
                       }
                       label={getText("ans10_218")}
@@ -4855,6 +5060,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.214")}
                         />
                       }
                       label={getText("ans10_219")}
@@ -4876,6 +5082,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.215")}
                         />
                       }
                       label={getText("ans10_220")}
@@ -4908,6 +5115,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.216")}
                         />
                       }
                       label={getText("ans10_221")}
@@ -4929,6 +5137,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.217")}
                         />
                       }
                       label={getText("ans10_222")}
@@ -4950,6 +5159,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.218")}
                         />
                       }
                       label={getText("ans10_223")}
@@ -4971,6 +5181,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.219")}
                         />
                       }
                       label={getText("ans10_224")}
@@ -5003,6 +5214,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.220")}
                         />
                       }
                       label={getText("ans10_225")}
@@ -5024,6 +5236,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.221")}
                         />
                       }
                       label={getText("ans10_226")}
@@ -5045,6 +5258,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.222")}
                         />
                       }
                       label={getText("ans10_227")}
@@ -5077,6 +5291,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.223")}
                         />
                       }
                       label={getText("ans10_228")}
@@ -5098,6 +5313,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.224")}
                         />
                       }
                       label={getText("ans10_229")}
@@ -5119,6 +5335,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.225")}
                         />
                       }
                       label={getText("ans10_230")}
@@ -5140,6 +5357,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.226")}
                         />
                       }
                       label={getText("ans10_231")}
@@ -5172,6 +5390,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.227")}
                         />
                       }
                       label={getText("ans10_228")}
@@ -5193,6 +5412,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.228")}
                         />
                       }
                       label={getText("ans10_229")}
@@ -5214,6 +5434,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.229")}
                         />
                       }
                       label={getText("ans10_230")}
@@ -5235,6 +5456,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.230")}
                         />
                       }
                       label={getText("ans10_231")}
@@ -5267,6 +5489,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.231")}
                         />
                       }
                       label={getText("ans10_232")}
@@ -5288,6 +5511,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.232")}
                         />
                       }
                       label={getText("ans10_233")}
@@ -5309,6 +5533,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.233")}
                         />
                       }
                       label={getText("ans10_234")}
@@ -5330,6 +5555,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.234")}
                         />
                       }
                       label={getText("ans10_235")}
@@ -5371,6 +5597,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.235")}
                     />
                   }
                   label={getText("ans10_236")}
@@ -5393,6 +5620,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.236")}
                     />
                   }
                   label={getText("ans10_238")}
@@ -5414,6 +5642,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.237")}
                     />
                   }
                   label={getText("ans10_239")}
@@ -5435,6 +5664,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.238")}
                     />
                   }
                   label={getText("ans10_240")}
@@ -5456,6 +5686,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.239")}
                     />
                   }
                   label={getText("ans10_241")}
@@ -5477,6 +5708,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.240")}
                     />
                   }
                   label={getText("ans10_242")}
@@ -5498,6 +5730,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.241")}
                     />
                   }
                   label={getText("ans10_243")}
@@ -5519,6 +5752,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.242")}
                     />
                   }
                   label={getText("ans10_244")}
@@ -5540,6 +5774,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.243")}
                     />
                   }
                   label={getText("ans10_245")}
@@ -5579,6 +5814,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.244")}
                     />
                   }
                   label={getText("ans10_246")}
@@ -5600,6 +5836,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.245")}
                     />
                   }
                   label={getText("ans10_247")}
@@ -5621,6 +5858,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.246")}
                     />
                   }
                   label={getText("ans10_248")}
@@ -5642,6 +5880,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.247")}
                     />
                   }
                   label={getText("ans10_249")}
@@ -5663,6 +5902,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.248")}
                     />
                   }
                   label={getText("ans10_250")}
@@ -5684,6 +5924,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.249")}
                     />
                   }
                   label={getText("ans10_251")}
@@ -5705,6 +5946,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.250")}
                     />
                   }
                   label={getText("ans10_252")}
@@ -5726,6 +5968,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.251")}
                     />
                   }
                   label={getText("ans10_253")}
@@ -5747,6 +5990,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.252")}
                     />
                   }
                   label={getText("ans10_254")}
@@ -5768,6 +6012,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.253")}
                     />
                   }
                   label={getText("ans10_255")}
@@ -5789,6 +6034,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.254")}
                     />
                   }
                   label={getText("ans10_256")}
@@ -5810,6 +6056,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.255")}
                     />
                   }
                   label={getText("ans10_257")}
@@ -5831,6 +6078,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.256")}
                     />
                   }
                   label={getText("ans10_258")}
@@ -5852,6 +6100,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.257")}
                     />
                   }
                   label={getText("ans10_259")}
@@ -5887,6 +6136,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.258")}
                         />
                       }
                       label={getText("ans10_261")}
@@ -5908,6 +6158,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.259")}
                         />
                       }
                       label={getText("ans10_262")}
@@ -5929,6 +6180,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.260")}
                         />
                       }
                       label={getText("ans10_263")}
@@ -5950,6 +6202,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.261")}
                         />
                       }
                       label={getText("ans10_264")}
@@ -5971,6 +6224,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.262")}
                         />
                       }
                       label={getText("ans10_265")}
@@ -5992,6 +6246,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.263")}
                         />
                       }
                       label={getText("ans10_266")}
@@ -6013,6 +6268,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.264")}
                         />
                       }
                       label={getText("ans10_267")}
@@ -6034,6 +6290,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.265")}
                         />
                       }
                       label={getText("ans10_268")}
@@ -6055,6 +6312,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.266")}
                         />
                       }
                       label={getText("ans10_269")}
@@ -6076,6 +6334,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.267")}
                         />
                       }
                       label={getText("ans10_270")}
@@ -6097,6 +6356,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.268")}
                         />
                       }
                       label={getText("ans10_271")}
@@ -6138,6 +6398,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.269")}
                     />
                   }
                   label={getText("ans10_272")}
@@ -6159,6 +6420,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.270")}
                     />
                   }
                   label={getText("ans10_273")}
@@ -6180,6 +6442,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.271")}
                     />
                   }
                   label={getText("ans10_274")}
@@ -6201,6 +6464,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.272")}
                     />
                   }
                   label={getText("ans10_275")}
@@ -6222,6 +6486,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.273")}
                     />
                   }
                   label={getText("ans10_276")}
@@ -6243,6 +6508,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.274")}
                     />
                   }
                   label={getText("ans10_277")}
@@ -6264,6 +6530,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.275")}
                     />
                   }
                   label={getText("ans10_278")}
@@ -6285,6 +6552,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.276")}
                     />
                   }
                   label={getText("ans10_279")}
@@ -6306,6 +6574,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.277")}
                     />
                   }
                   label={getText("ans10_280")}
@@ -6327,6 +6596,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.278")}
                     />
                   }
                   label={getText("ans10_281")}
@@ -6372,6 +6642,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.279")}
                     />
                   }
                   label={getText("ans10_282")}
@@ -6402,6 +6673,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.280")}
                         />
                       }
                       label={getText("ans10_283")}
@@ -6422,6 +6694,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.281")}
                       />
                     }
                     label={getText("ans10_284")}
@@ -6441,6 +6714,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.282")}
                       />
                     }
                     label={getText("ans10_285")}
@@ -6460,6 +6734,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.283")}
                       />
                     }
                     label={getText("ans10_286")}
@@ -6479,6 +6754,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.284")}
                       />
                     }
                     label={getText("ans10_287")}
@@ -6498,6 +6774,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.285")}
                       />
                     }
                     label={getText("ans10_288")}
@@ -6517,6 +6794,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.286")}
                       />
                     }
                     label={getText("ans10_289")}
@@ -6536,6 +6814,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.287")}
                       />
                     }
                     label={getText("ans10_290")}
@@ -6555,6 +6834,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.288")}
                       />
                     }
                     label={getText("ans10_291")}
@@ -6574,6 +6854,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.289")}
                       />
                     }
                     label={getText("ans10_292")}
@@ -6593,6 +6874,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.290")}
                       />
                     }
                     label={getText("ans10_293")}
@@ -6612,6 +6894,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.291")}
                       />
                     }
                     label={getText("ans10_294")}
@@ -6631,6 +6914,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.292")}
                       />
                     }
                     label={getText("ans10_295")}
@@ -6650,6 +6934,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.293")}
                       />
                     }
                     label={getText("ans10_296")}
@@ -6669,6 +6954,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.294")}
                       />
                     }
                     label={getText("ans10_297")}
@@ -6688,6 +6974,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.295")}
                       />
                     }
                     label={getText("ans10_298")}
@@ -6707,6 +6994,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.296")}
                       />
                     }
                     label={getText("ans10_299")}
@@ -6738,6 +7026,7 @@ const MoralProblem2 = () => {
                           }}
                           icon={<RadioButtonUnchecked />}
                           checkedIcon={<CheckCircle />}
+                          defaultChecked={checkAnswers("10.297")}
                         />
                       }
                       label={getText("ans10_300")}
@@ -6758,6 +7047,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.298")}
                       />
                     }
                     label={getText("ans10_301")}
@@ -6777,6 +7067,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.299")}
                       />
                     }
                     label={getText("ans10_302")}
@@ -6796,6 +7087,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.300")}
                       />
                     }
                     label={getText("ans10_303")}
@@ -6815,6 +7107,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.301")}
                       />
                     }
                     label={getText("ans10_304")}
@@ -6834,6 +7127,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.302")}
                       />
                     }
                     label={getText("ans10_305")}
@@ -6853,6 +7147,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.303")}
                       />
                     }
                     label={getText("ans10_306")}
@@ -6872,6 +7167,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.304")}
                       />
                     }
                     label={getText("ans10_307")}
@@ -6891,6 +7187,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.305")}
                       />
                     }
                     label={getText("ans10_308")}
@@ -6910,6 +7207,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.306")}
                       />
                     }
                     label={getText("ans10_309")}
@@ -6929,6 +7227,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.307")}
                       />
                     }
                     label={getText("ans10_310")}
@@ -6948,6 +7247,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.308")}
                       />
                     }
                     onChange={(e) => collectData("10.308", e.target.value)}
@@ -6967,6 +7267,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.309")}
                       />
                     }
                     label={getText("ans10_312")}
@@ -6986,6 +7287,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.310")}
                       />
                     }
                     label={getText("ans10_313")}
@@ -7005,6 +7307,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.311")}
                       />
                     }
                     label={getText("ans10_314")}
@@ -7024,6 +7327,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.312")}
                       />
                     }
                     label={getText("ans10_315")}
@@ -7043,6 +7347,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.313")}
                       />
                     }
                     label={getText("ans10_316")}
@@ -7062,6 +7367,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.314")}
                       />
                     }
                     label={getText("ans10_317")}
@@ -7083,6 +7389,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.315")}
                   />
                 }
                 label={getText("ans10_318")}
@@ -7102,6 +7409,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.316")}
                   />
                 }
                 onChange={(e) => collectData("10.316", e.target.value)}
@@ -7121,6 +7429,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.317")}
                   />
                 }
                 onChange={(e) => collectData("10.317", e.target.value)}
@@ -7149,6 +7458,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.318")}
                       />
                     }
                     label={getText("ans10_321")}
@@ -7168,6 +7478,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.319")}
                       />
                     }
                     label={getText("ans10_322")}
@@ -7187,6 +7498,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.320")}
                       />
                     }
                     label={getText("ans10_323")}
@@ -7206,6 +7518,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.321")}
                       />
                     }
                     label={getText("ans10_324")}
@@ -7225,6 +7538,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.322")}
                       />
                     }
                     label={getText("ans10_325")}
@@ -7244,6 +7558,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.323")}
                       />
                     }
                     label={getText("ans10_326")}
@@ -7263,6 +7578,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.324")}
                       />
                     }
                     label={getText("ans10_327")}
@@ -7282,6 +7598,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.325")}
                       />
                     }
                     label={getText("ans10_328")}
@@ -7301,6 +7618,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.326")}
                       />
                     }
                     label={getText("ans10_329")}
@@ -7320,6 +7638,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.327")}
                       />
                     }
                     label={getText("ans10_330")}
@@ -7339,6 +7658,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.328")}
                       />
                     }
                     label={getText("ans10_331")}
@@ -7358,6 +7678,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.329")}
                       />
                     }
                     label={getText("ans10_332")}
@@ -7377,6 +7698,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.330")}
                       />
                     }
                     label={getText("ans10_333")}
@@ -7396,6 +7718,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.331")}
                       />
                     }
                     label={getText("ans10_334")}
@@ -7415,6 +7738,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.332")}
                       />
                     }
                     label={getText("ans10_335")}
@@ -7434,6 +7758,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.333")}
                       />
                     }
                     label={getText("ans10_336")}
@@ -7453,6 +7778,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.334")}
                       />
                     }
                     label={getText("ans10_337")}
@@ -7472,6 +7798,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.335")}
                       />
                     }
                     label={getText("ans10_338")}
@@ -7491,6 +7818,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.336")}
                       />
                     }
                     label={getText("ans10_339")}
@@ -7510,6 +7838,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.337")}
                       />
                     }
                     label={getText("ans10_340")}
@@ -7529,6 +7858,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.338")}
                       />
                     }
                     label={getText("ans10_341")}
@@ -7548,6 +7878,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.339")}
                       />
                     }
                     label={getText("ans10_342")}
@@ -7567,6 +7898,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.340")}
                       />
                     }
                     onChange={(e) => collectData("10.340", e.target.value)}
@@ -7598,6 +7930,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.341")}
                       />
                     }
                     label={getText("ans10_344")}
@@ -7617,6 +7950,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.342")}
                       />
                     }
                     label={getText("ans10_345")}
@@ -7636,6 +7970,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.343")}
                       />
                     }
                     label={getText("ans10_346")}
@@ -7657,6 +7992,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.344")}
                   />
                 }
                 label={getText("ans10_347")}
@@ -7676,6 +8012,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.345")}
                   />
                 }
                 label={getText("ans10_348")}
@@ -7695,6 +8032,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.346")}
                   />
                 }
                 label={getText("ans10_349")}
@@ -7714,6 +8052,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.347")}
                   />
                 }
                 label={getText("ans10_350")}
@@ -7733,6 +8072,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.348")}
                   />
                 }
                 label={getText("ans10_351")}
@@ -7752,6 +8092,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.349")}
                   />
                 }
                 label={getText("ans10_353")}
@@ -7771,6 +8112,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.350")}
                   />
                 }
                 label={getText("ans10_354")}
@@ -7790,6 +8132,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.351")}
                   />
                 }
                 label={getText("ans10_355")}
@@ -7809,6 +8152,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.352")}
                   />
                 }
                 label={getText("ans10_356")}
@@ -7828,6 +8172,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.353")}
                   />
                 }
                 label={getText("ans10_357")}
@@ -7847,6 +8192,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.354")}
                   />
                 }
                 label={getText("ans10_358")}
@@ -7866,6 +8212,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.355")}
                   />
                 }
                 label={getText("ans10_359")}
@@ -7885,6 +8232,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.356")}
                   />
                 }
                 label={getText("ans10_360")}
@@ -7904,6 +8252,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.357")}
                   />
                 }
                 label={getText("ans10_361")}
@@ -7923,6 +8272,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.358")}
                   />
                 }
                 label={getText("ans10_362")}
@@ -7942,6 +8292,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.359")}
                   />
                 }
                 label={getText("ans10_363")}
@@ -7961,6 +8312,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.360")}
                   />
                 }
                 label={getText("ans10_364")}
@@ -7980,6 +8332,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.361")}
                   />
                 }
                 label={getText("ans10_365")}
@@ -7999,6 +8352,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.362")}
                   />
                 }
                 label={getText("ans10_366")}
@@ -8018,6 +8372,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.363")}
                   />
                 }
                 label={getText("ans10_367")}
@@ -8037,6 +8392,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.364")}
                   />
                 }
                 label={getText("ans10_368")}
@@ -8056,6 +8412,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.365")}
                   />
                 }
                 label={getText("ans10_369")}
@@ -8075,6 +8432,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.366")}
                   />
                 }
                 label={getText("ans10_370")}
@@ -8094,6 +8452,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.367")}
                   />
                 }
                 label={getText("ans10_371")}
@@ -8113,6 +8472,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.368")}
                   />
                 }
                 label={getText("ans10_372")}
@@ -8132,6 +8492,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.369")}
                   />
                 }
                 label={getText("ans10_373")}
@@ -8151,6 +8512,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.370")}
                   />
                 }
                 label={getText("ans10_374")}
@@ -8170,6 +8532,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.371")}
                   />
                 }
                 label={getText("ans10_375")}
@@ -8189,6 +8552,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.372")}
                   />
                 }
                 label={getText("ans10_376")}
@@ -8208,6 +8572,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.373")}
                   />
                 }
                 label={getText("ans10_377")}
@@ -8227,6 +8592,7 @@ const MoralProblem2 = () => {
                     }}
                     icon={<RadioButtonUnchecked />}
                     checkedIcon={<CheckCircle />}
+                    defaultChecked={checkAnswers("10.374")}
                   />
                 }
                 label={getText("ans10_378")}
@@ -8265,6 +8631,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.375")}
                     />
                   }
                   label={getText("ans10_379")}
@@ -8286,6 +8653,7 @@ const MoralProblem2 = () => {
                       }}
                       icon={<RadioButtonUnchecked />}
                       checkedIcon={<CheckCircle />}
+                      defaultChecked={checkAnswers("10.376")}
                     />
                   }
                   label={getText("ans10_380")}
@@ -8315,6 +8683,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.377")}
                       />
                     }
                     label={getText("ans10_381")}
@@ -8334,6 +8703,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.378")}
                       />
                     }
                     label={getText("ans10_382")}
@@ -8353,6 +8723,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.379")}
                       />
                     }
                     label={getText("ans10_383")}
@@ -8372,6 +8743,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.380")}
                       />
                     }
                     label={getText("ans10_384")}
@@ -8391,6 +8763,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.381")}
                       />
                     }
                     label={getText("ans10_385")}
@@ -8410,6 +8783,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.382")}
                       />
                     }
                     label={getText("ans10_386")}
@@ -8429,6 +8803,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.383")}
                       />
                     }
                     label={getText("ans10_387")}
@@ -8448,6 +8823,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.384")}
                       />
                     }
                     label={getText("ans10_388")}
@@ -8467,6 +8843,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.385")}
                       />
                     }
                     label={getText("ans10_389")}
@@ -8486,6 +8863,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.386")}
                       />
                     }
                     label={getText("ans10_390")}
@@ -8505,6 +8883,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.387")}
                       />
                     }
                     label={getText("ans10_391")}
@@ -8524,6 +8903,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.388")}
                       />
                     }
                     label={getText("ans10_392")}
@@ -8543,6 +8923,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.389")}
                       />
                     }
                     label={getText("ans10_393")}
@@ -8562,6 +8943,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.390")}
                       />
                     }
                     label={getText("ans10_394")}
@@ -8581,6 +8963,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.391")}
                       />
                     }
                     label={getText("ans10_395")}
@@ -8600,6 +8983,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.392")}
                       />
                     }
                     onChange={(e) => collectData("10.392", e.target.value)}
@@ -8619,6 +9003,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.393")}
                       />
                     }
                     onChange={(e) => collectData("10.393", e.target.value)}
@@ -8638,6 +9023,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.394")}
                       />
                     }
                     label={getText("ans10_398")}
@@ -8657,6 +9043,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.395")}
                       />
                     }
                     label={getText("ans10_399")}
@@ -8676,6 +9063,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.396")}
                       />
                     }
                     label={getText("ans10_400")}
@@ -8695,6 +9083,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.397")}
                       />
                     }
                     label={getText("ans10_401")}
@@ -8714,6 +9103,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.398")}
                       />
                     }
                     onChange={(e) => collectData("10.398", e.target.value)}
@@ -8733,6 +9123,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.399")}
                       />
                     }
                     label={getText("ans10_403")}
@@ -8752,6 +9143,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.400")}
                       />
                     }
                     label={getText("ans10_404")}
@@ -8771,6 +9163,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.401")}
                       />
                     }
                     label={getText("ans10_405")}
@@ -8790,6 +9183,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.402")}
                       />
                     }
                     label={getText("ans10_406")}
@@ -8809,6 +9203,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.403")}
                       />
                     }
                     label={getText("ans10_407")}
@@ -8828,6 +9223,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.404")}
                       />
                     }
                     label={getText("ans10_408")}
@@ -8847,6 +9243,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.405")}
                       />
                     }
                     label={getText("ans10_409")}
@@ -8866,6 +9263,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.406")}
                       />
                     }
                     label={getText("ans10_410")}
@@ -8885,6 +9283,7 @@ const MoralProblem2 = () => {
                         }}
                         icon={<RadioButtonUnchecked />}
                         checkedIcon={<CheckCircle />}
+                        defaultChecked={checkAnswers("10.407")}
                       />
                     }
                     label={getText("ans10_411")}

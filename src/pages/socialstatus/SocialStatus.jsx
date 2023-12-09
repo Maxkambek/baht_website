@@ -35,6 +35,7 @@ const SocialStatus = () => {
       toast.error("Malumotingizni tanlang.");
       return;
     }
+    localStorage.setItem("social", status);
     dispatch(setSocialStatus({ status }));
 
     dispatch(userAction.registerQuestions({ user, status }));

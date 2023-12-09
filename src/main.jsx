@@ -7,6 +7,6 @@ import "aos/dist/aos.js";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style/main.scss";
-import "./style/main.css";
+import "./style/pro.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);

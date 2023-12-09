@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { RegistrationLayout } from "../../components";
+import { getText } from "../../locale";
 
 const StartQuestionsModalpage = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const StartQuestionsModalpage = () => {
                 onClick={() => navigate("/hundred-questions-start")}
                 className="btn myBtn"
               >
-                Davom etish
+                {getText("next_2")}
               </button>
             </div>
           </div>

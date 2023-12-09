@@ -6,7 +6,7 @@ import vector2 from "../assets/vector2.png";
 import vector3 from "../assets/vector3.png";
 import profile from "../assets/profile.svg";
 import ptich from "../assets/ptich.png";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
   Accordion,
   AccordionDetails,
@@ -18,7 +18,7 @@ import {
   RadioGroup,
 } from "@mui/material";
 import down from "../assets/down.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { API_PATH, CONFIG } from "../constants";
 import { getLanguage, getText } from "../locale";
@@ -28,14 +28,17 @@ const HundredQuestionsLayout = () => {
   const [expanded, setExpanded] = useState(true);
   const [pk, setPk] = useState(1);
   const location = useLocation();
+  const navigate = useNavigate("");
   const [allQues, setAllQues] = useState([]);
   const [oneQues, setOneQues] = useState([]);
   const [answer, setAnswer] = useState("");
-  const [yesOrNo, setYesOrNo] = useState("");
+  const [yesOrNo, setYesOrNo] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  useEffect(() => {}, [pk]);
 
   const [expanded2, setExpanded2] = useState(false);
 
@@ -52,24 +55,26 @@ const HundredQuestionsLayout = () => {
   const getById = () => {
     axios.get(API_PATH + `/ru/question/by-id/${pk}/`).then((res) => {
       setOneQues(res.data);
-      // console.log(res.data);
+      window.scrollTo(0, 0);
     });
   };
-  useEffect(() => {
-    getAllQues();
-    getById();
-  }, [pk]);
 
   const sendAnswer = () => {
-    axios.post(
-      API_PATH + "ru/question/check-test/",
-      {
-        question_id: pk,
-        yes_or_no: yesOrNo,
-        answer,
-      },
-      CONFIG
-    );
+    axios
+      .post(
+        API_PATH + "/ru/question/check-test/",
+        {
+          question_id: pk,
+          yes_or_no: yesOrNo,
+        },
+        CONFIG
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     setPk(pk + 1);
   };
 
@@ -79,12 +84,16 @@ const HundredQuestionsLayout = () => {
     localStorage.setItem(LANGUANGE, e.target.value);
     document.location.reload(true);
   };
+  useEffect(() => {
+    getAllQues();
+    getById();
+  }, [pk]);
 
   return (
     <div className="NavigationLayout HundredQuestionsLayout">
       <div className="row">
         <div className="col-12 top">
-          <Link to="/" className="logo nav_110_logo">
+          <Link to="/dashboard" className="logo nav_110_logo">
             <img src={logo} alt="" />
           </Link>
           <div className="d-flex align-items-center">
@@ -132,7 +141,7 @@ const HundredQuestionsLayout = () => {
             </span> */}
             {/* <h1>Azimova Dildora</h1> */}
           </div>
-          <h2>{getText('reg_ques_1')}</h2>
+          <h2>{getText("reg_ques_1")}</h2>
           {allQues &&
             allQues.slice(0, 55).map((item, index) => (
               <>
@@ -167,7 +176,7 @@ const HundredQuestionsLayout = () => {
 
         {pk == 200 ? (
           <>
-            <div className="col-lg-9 right">
+            <div className={`col-lg-9 right ${burger ? "d-none" : ""}`}>
               <div className="HundredQuestionsStartPage HundredRight">
                 <div className="hundered_ques_title">
                   56. Сизнинг онангиз борми?
@@ -595,7 +604,7 @@ const HundredQuestionsLayout = () => {
           </>
         ) : (
           <>
-            <div className="col-lg-9 right">
+            <div className={`col-lg-9 right ${burger ? "d-none" : ""}`}>
               <div className="HundredQuestionsStartPage HundredRight">
                 <div
                   className="hundered_ques_title"
@@ -661,6 +670,7 @@ const HundredQuestionsLayout = () => {
                     {oneQues?.for_question_2?.map((item, index) => (
                       <>
                         <FormControlLabel
+                          key={index}
                           value={
                             <div
                               contentEditable="false"
@@ -727,7 +737,7 @@ const HundredQuestionsLayout = () => {
                               />
                             }
                             label={item.variant_1}
-                            onChange={() => setYesOrNo("true")}
+                            onChange={() => setYesOrNo(true)}
                           />
                           <FormControlLabel
                             value={item.variant_2}
@@ -742,7 +752,7 @@ const HundredQuestionsLayout = () => {
                               />
                             }
                             label={item.variant_2}
-                            onChange={() => setYesOrNo("false")}
+                            onChange={() => setYesOrNo(false)}
                           />
                         </RadioGroup>
                       </FormControl>
@@ -751,12 +761,17 @@ const HundredQuestionsLayout = () => {
                 ))}
                 {pk === 110 ? (
                   <>
-                    <button className="btn myBtn">Tugatish</button>
+                    <button
+                      onClick={() => navigate("/result-page")}
+                      className="btn myBtn"
+                    >
+                      {getText("next2")}
+                    </button>
                   </>
                 ) : (
                   <>
-                    <button onClick={sendAnswer} className="btn myBtn">
-                      Keyingi savol
+                    <button onClick={() => sendAnswer()} className="btn myBtn">
+                      {getText("next")}
                     </button>
                   </>
                 )}

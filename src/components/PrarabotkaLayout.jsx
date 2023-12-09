@@ -82,7 +82,7 @@ const PrarabotkaLayout = () => {
   };
 
   return (
-    <div className="NavigationLayout HundredQuestionsLayout">
+    <div className="NavigationLayout2 HundredQuestionsLayout">
       <div className="row">
         <div className="col-12 top">
           <Link to="/" className="logo nav_110_logo">
@@ -134,470 +134,47 @@ const PrarabotkaLayout = () => {
             {/* <h1>Azimova Dildora</h1> */}
           </div>
           <h2>{getText("reg_ques_1")}</h2>
-          {allQues &&
-            allQues.slice(0, 55).map((item, index) => (
-              <>
-                <Link
-                  onClick={() => setPk(item.id) & setBurger(false)}
-                  key={index}
-                  className={`${item.id === pk ? "active" : ""}`}
-                >
-                  {index + 1}. Савол
-                </Link>
-              </>
-            ))}
           <Link
-            onClick={() => setPk(200) & setBurger(false)}
-            className={`${pk == 200 ? "active" : ""}`}
+            to="/prorabotka-1"
+            className={`${
+              location.pathname === "/prorabotka-1" ? "active" : ""
+            }`}
           >
-            56. Савол
+            1. Савол
           </Link>
-          {allQues &&
-            allQues.slice(55, allQues.length).map((item, index) => (
-              <>
-                <Link
-                  onClick={() => setPk(item.id) & setBurger(false)}
-                  key={index}
-                  className={`${item.id === pk ? "active" : ""}`}
-                >
-                  {item.id}. Савол
-                </Link>
-              </>
-            ))}
+          <Link
+            to="/prorabotka-2"
+            className={`${
+              location.pathname === "/prorabotka-2" ? "active" : ""
+            }`}
+          >
+            2. Савол
+          </Link>
+          <Link
+            to="/prorabotka-3"
+            className={`${
+              location.pathname === "/prorabotka-3" ? "active" : ""
+            }`}
+          >
+            3. Савол
+          </Link>
+          <Link
+            to="/prorabotka-4"
+            className={`${
+              location.pathname === "/prorabotka-4" ? "active" : ""
+            }`}
+          >
+            4. Савол
+          </Link>
+          <Link
+            to="/prorabotka-5"
+            className={`${
+              location.pathname === "/prorabotka-5" ? "active" : ""
+            }`}
+          >
+            5. Савол
+          </Link>
         </div>
-
-        {pk == 200 ? (
-          <>
-            <div className="col-lg-9 right">
-              <div className="HundredQuestionsStartPage HundredRight">
-                <div className="hundered_ques_title">
-                  56. Сизнинг онангиз борми?
-                </div>
-                <FormControl>
-                  <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
-
-                  <RadioGroup
-                    aria-labelledby="demo-controlled-radio-buttons-group"
-                    name="controlled-radio-buttons-group"
-                    onChange={handleChange2}
-                  >
-                    <Accordion
-                      expanded={expanded === "panel2"}
-                      onChange={handleChange("panel2")}
-                    >
-                      <AccordionSummary
-                        expandIcon={<img src={down} />}
-                        aria-controls="panel2bh-content"
-                        id="panel2bh-header"
-                      >
-                        <FormControlLabel
-                          value="Ҳа"
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Ҳа"
-                        />
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <div className="ans_h3">
-                          У билан алоқа қилиб турасизми?
-                        </div>
-                        <FormControlLabel
-                          value="Ҳа, доимий равишда ҳар куни алоқадаман"
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Ҳа, доимий равишда ҳар куни алоқадаман"
-                        />
-                      </AccordionDetails>
-                      <AccordionDetails>
-                        <FormControlLabel
-                          value="Ҳа, ҳафтада 1-2 маротаба албатта гаплашаман"
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Ҳа, ҳафтада 1-2 маротаба албатта гаплашаман"
-                        />
-                      </AccordionDetails>
-                      <AccordionDetails>
-                        <FormControlLabel
-                          value="Ҳа, алоқам бор, лекин камдан кам гаплашамиз"
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Ҳа, алоқам бор, лекин камдан кам гаплашамиз"
-                        />
-                      </AccordionDetails>
-                      <AccordionDetails>
-                        <FormControlLabel
-                          value="Йўқ, мен онам билан умуман алоқам йўқ, чунки улар оламдан ўтганлар"
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Йўқ, мен онам билан умуман алоқам йўқ, чунки улар оламдан ўтганлар
-                          "
-                        />
-                      </AccordionDetails>
-                      <AccordionDetails>
-                        <FormControlLabel
-                          value="Йўқ, мен онам билан гаплашмайман, ўтмишда бўлиб ўтган воқеалар сабабли деб айтсам ҳам бўлади"
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Йўқ, мен онам билан гаплашмайман, ўтмишда бўлиб ўтган воқеалар сабабли деб айтсам ҳам бўлади"
-                        />
-                      </AccordionDetails>
-                    </Accordion>
-                    <Accordion
-                      expanded={expanded === "panel4"}
-                      onChange={handleChange("panel4")}
-                    >
-                      <AccordionSummary
-                        expandIcon={<img src={down} />}
-                        aria-controls="panel2bh-content"
-                        id="panel2bh-header"
-                      >
-                        <FormControlLabel
-                          value="Йўқ"
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Йўқ"
-                        />
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <div className="ans_h3">
-                          Агар онангиз (ёки онангиз ўлган бўлса, уни ўрнини
-                          эгаллаган шахс: ўгай онангиз, бувингиз, холангиз,
-                          аммангиз ва ҳ.к.з) билан алоқангиз бўлса, у билан
-                          ҳозирги кундаги муносабатларингиз қандай?
-                        </div>
-                        <FormControlLabel
-                          value="Аъло даражада"
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Аъло даражада"
-                        />
-                      </AccordionDetails>
-                      <AccordionDetails>
-                        <FormControlLabel
-                          value="Яхши, ноълимайман"
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Яхши, ноълимайман"
-                        />
-                      </AccordionDetails>
-                      <AccordionDetails>
-                        <FormControlLabel
-                          value="Ёмонмас – ўртача деб айтса ҳам бўлади"
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Ёмонмас – ўртача деб айтса ҳам бўлади"
-                        />
-                      </AccordionDetails>
-                      <AccordionDetails>
-                        <FormControlLabel
-                          value="Гапимиз кўпинча бир-биримизникига тўғри келмайди – улар мени тушунмайдилар, мен уларни. Лекин бари-бир мен уларни яхши кўраман
-                          "
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Гапимиз кўпинча бир-биримизникига тўғри келмайди – улар мени тушунмайдилар, мен уларни. Лекин бари-бир мен уларни яхши кўраман
-                          "
-                        />
-                      </AccordionDetails>
-                      <AccordionDetails>
-                        <FormControlLabel
-                          value="Ёмон десам ҳам бўлади, шунинг учун камроқ учрашишга / ёки умуман учрашмасликка ҳаракат қиламан.
-                          "
-                          control={
-                            <Radio
-                              sx={{
-                                color: "silver",
-                                "&.Mui-checked": {
-                                  color: "#FFD0D4",
-                                },
-                              }}
-                            />
-                          }
-                          label="Ёмон десам ҳам бўлади, шунинг учун камроқ учрашишга / ёки умуман учрашмасликка ҳаракат қиламан.
-                          "
-                        />
-                      </AccordionDetails>
-                    </Accordion>
-                  </RadioGroup>
-                </FormControl>
-
-                <FormControl>
-                  <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
-                  <div className="hundered_ques_titlee">
-                    Агар сиз 18 ёшингизгача онангиз / бувингиз / ёки онангизни
-                    ўрнини эгаллаган бошқа аёл билан ўсган бўлсангиз, сиз унинг
-                    меҳр-муҳаббатини қозонишингизга тўғри келиб, бунинг учун:{" "}
-                  </div>
-
-                  <RadioGroup
-                    aria-labelledby="demo-controlled-radio-buttons-group"
-                    name="controlled-radio-buttons-group"
-                    onChange={handleChange}
-                  ></RadioGroup>
-                </FormControl>
-                <div className="d-flex flex-column mb-5">
-                  <div className="hundered_ptichkas">
-                    <div className="ptichka_image">
-                      <img className="" src={ptich} alt="" />
-                    </div>
-                    <div className="hundered_ptichkas_p">
-                      эсли ва ўта одобли қиз бўлишга,
-                    </div>
-                  </div>
-                  <div className="hundered_ptichkas">
-                    <div className="ptichka_image">
-                      <img className="" src={ptich} alt="" />
-                    </div>
-                    <div className="hundered_ptichkas_p">
-                      унинг кўнглини олишга ва айтганини қилишга,
-                    </div>
-                  </div>
-                  <div className="hundered_ptichkas">
-                    <div className="ptichka_image">
-                      <img className="" src={ptich} alt="" />
-                    </div>
-                    <div className="hundered_ptichkas_p">
-                      барча уй ишларини бекаму-кўст бажаришга,
-                    </div>
-                  </div>
-                  <div className="hundered_ptichkas">
-                    <div className="ptichka_image">
-                      <img className="" src={ptich} alt="" />
-                    </div>
-                    <div className="hundered_ptichkas_p">
-                      яхши ва ҳатто аъло баҳоларга ўқишга,
-                    </div>
-                  </div>
-                  <div className="hundered_ptichkas">
-                    <div className="ptichka_image">
-                      <img className="" src={ptich} alt="" />
-                    </div>
-                    <div className="hundered_ptichkas_p">
-                      ҳамда ойингиз сўраганидан ҳам кўпроқ ишларни
-                      бажаришингизга тўғри келар эдими?
-                    </div>
-                  </div>
-                </div>
-
-                <FormControl>
-                  <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
-                  <RadioGroup
-                    aria-labelledby="demo-controlled-radio-buttons-group"
-                    name="controlled-radio-buttons-group"
-                    onChange={handleChange2}
-                  >
-                    <FormControlLabel
-                      value="Ҳа, менда шундай бўлган. Онам (ёки ўгай онам / ёки онамнинг ўрнини эгаллаган бошқа шахс: бувим, холам, келинойим ва ҳ.к.з) мени фақат яхши ўқиганимда, ёки уйларни яхши йиғиштирганимда, чаққон ва ўта одобли қиз бўлганимда, яъни ўша пайтда ва келажакда “келинликка” ярайдиган аълочи хизматкор ва улар бировларга мақтана оладиган ўта одобли яхши қиз бўлганимда менга меҳр бергандек бўлардилар ва ҳатто мақтар эдилар, ва мен уларга ёқиш учун унданда такомил қиз бўлишга ҳаракат қилар эдим.
-                      "
-                      control={
-                        <Radio
-                          sx={{
-                            color: "silver",
-                            "&.Mui-checked": {
-                              color: "#FFD0D4",
-                            },
-                          }}
-                        />
-                      }
-                      label="Ҳа, менда шундай бўлган. Онам (ёки ўгай онам / ёки онамнинг ўрнини эгаллаган бошқа шахс: бувим, холам, келинойим ва ҳ.к.з) мени фақат яхши ўқиганимда, ёки уйларни яхши йиғиштирганимда, чаққон ва ўта одобли қиз бўлганимда, яъни ўша пайтда ва келажакда “келинликка” ярайдиган аълочи хизматкор ва улар бировларга мақтана оладиган ўта одобли яхши қиз бўлганимда менга меҳр бергандек бўлардилар ва ҳатто мақтар эдилар, ва мен уларга ёқиш учун унданда такомил қиз бўлишга ҳаракат қилар эдим.
-                      "
-                      onChange={(e) => setAnswer(e.target.value)}
-                    />
-                    <FormControlLabel
-                      value="Онам мендан шундай бўлишимни талаб қилардилар, лекин мен бундай бўлмаганман / ишларни қилсам қилар эдим, қилгим келмаса, баҳоналар топиб қилмас эдим. Гап эшитиб юраверардим. Чунки онамдан ўзим истаган меҳр-муҳаббат барибир ололмаслигимни шунчалик билар эдим.
-                      "
-                      control={
-                        <Radio
-                          sx={{
-                            color: "silver",
-                            "&.Mui-checked": {
-                              color: "#FFD0D4",
-                            },
-                          }}
-                        />
-                      }
-                      label="Онам мендан шундай бўлишимни талаб қилардилар, лекин мен бундай бўлмаганман / ишларни қилсам қилар эдим, қилгим келмаса, баҳоналар топиб қилмас эдим. Гап эшитиб юраверардим. Чунки онамдан ўзим истаган меҳр-муҳаббат барибир ололмаслигимни шунчалик билар эдим.
-                      "
-                      onChange={(e) => setAnswer(e.target.value)}
-                    />
-                    <FormControlLabel
-                      value="Йўқ, мен онамнинг меҳр-муҳаббатини қозониш учун улар менга турли-ҳил талаблар қўймаганлар. Мен эркинликда ва онамнинг шартсиз севгисида катта бўлганман. Ойим мени борлигимча яхши кўрар эдилар. Талаблар борасида фақат яхши ўқишимни жуда қаттиқ хоҳлар эдилар, холос.
-                    "
-                      control={
-                        <Radio
-                          sx={{
-                            color: "silver",
-                            "&.Mui-checked": {
-                              color: "#FFD0D4",
-                            },
-                          }}
-                        />
-                      }
-                      label="Йўқ, мен онамнинг меҳр-муҳаббатини қозониш учун улар менга турли-ҳил талаблар қўймаганлар. Мен эркинликда ва онамнинг шартсиз севгисида катта бўлганман. Ойим мени борлигимча яхши кўрар эдилар. Талаблар борасида фақат яхши ўқишимни жуда қаттиқ хоҳлар эдилар, холос.
-                    "
-                      onChange={(e) => setAnswer(e.target.value)}
-                    />
-                  </RadioGroup>
-                </FormControl>
-                <div className="second_side_question">
-                  <div className="second_side_1">
-                    {"Сиз ушбу саволнинг проработкасини олишни ("}
-                    яъни, онангизнинг / ёки онангизни ўрнини босган бошқа
-                    авторитет аёлнинг турли ҳил талабларга тўла шартли севгисини
-                    кўриб катта бўлганингиз, аниқроғи
-                  </div>
-                  <div className="second_side_2">
-                    “Шартли севги – энг яқин инсонингизни эътиборига ва
-                    севгисига эришиш учун фақат уни айтганини қилишингиз ёки
-                    айнан у истагандек қиз бўлишингиз кераклиги”
-                  </div>
-                  <div className="second_side_3">
-                    психологик моделларининг гувоҳи бўлганингиз – сизнинг
-                    келажак тақдирингизга қандай таъсир қилганини билишни ва
-                    ушбу ҳолат юзасидан қалбингиз даво топишини, ҳамда махсус
-                    Онг ости машқларини ёзиш орқали бундан кейинги ҳаётингиз
-                    ўзгаришини
-                    {")"} <span>хоҳлайсизми ёки йўқми?</span>
-                  </div>
-                  <div className="second_side_4"></div>
-                </div>
-                <div className="for_second_side_hundered">
-                  <FormControl className="d-flex flex-column align-items-center justify-content-center">
-                    <RadioGroup
-                      aria-labelledby="demo-controlled-radio-buttons-group"
-                      name="controlled-radio-buttons-group"
-                      onChange={handleChange2}
-                    >
-                      <FormControlLabel
-                        value="Ҳа, албатта хоҳлайман"
-                        control={
-                          <Radio
-                            sx={{
-                              color: "silver",
-                              "&.Mui-checked": {
-                                color: "#FFD0D4",
-                              },
-                            }}
-                          />
-                        }
-                        label="Ҳа, албатта хоҳлайман"
-                        onChange={() => setYesOrNo("true")}
-                      />
-                      <FormControlLabel
-                        value="Йўқ, чунки бу савол менга тааллуқли эмас"
-                        control={
-                          <Radio
-                            sx={{
-                              color: "silver",
-                              "&.Mui-checked": {
-                                color: "#FFD0D4",
-                              },
-                            }}
-                          />
-                        }
-                        label="Йўқ, чунки бу савол менга тааллуқли эмас"
-                        onChange={() => setYesOrNo("false")}
-                      />
-                    </RadioGroup>
-                  </FormControl>
-                </div>
-                <button onClick={() => setPk(57)} className="btn myBtn">
-                  Keyingi savol
-                </button>
-              </div>
-            </div>
-          </>
-        ) : (
-          <></>
-        )}
-
         <div className="col-lg-9 right">
           <Outlet />
         </div>

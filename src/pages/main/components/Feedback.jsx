@@ -25,23 +25,37 @@ const Feedback = () => {
 
   let text = `Name: ${name}.%0APhone number: ${phone}.%0AMessage: ${mes}`;
 
+  // const sendFeedback = (e) => {
+  //   setIsLoading(true);
+  //   e.preventDefault();
+  //   if (phone.length !== 19) {
+  //     toast.error("Phone number is required. Try again.");
+  //     setIsLoading(false);
+  //   } else {
+  //     const { data } = axios.post(
+  //       `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`
+  //     );
+  //     toast.success(`Ma'lumotlaringiz jo'natildi!`);
+  //     setIsLoading(false);
+  //     // setName("");
+  //     setPhone("@");
+  //     // setMes("");
+  //   }
+  // };
+
   const sendFeedback = (e) => {
     setIsLoading(true);
     e.preventDefault();
-    if (phone.length !== 19) {
-      toast.error("Phone number is required. Try again.");
-      setIsLoading(false);
-    } else {
-      const { data } = axios.post(
-        `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`
-      );
-      toast.success(`Ma'lumotlaringiz jo'natildi!`);
-      setIsLoading(false);
-      setName("");
-      setPhone("+998");
-      setMes("");
-    }
+    const { data } = axios.post(
+      `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`
+    );
+    toast.success(`Ma'lumotlaringiz jo'natildi!`);
+    setIsLoading(false);
+    // setName("");
+    setPhone("@");
+    // setMes("");
   };
+
   return (
     <>
       <div className="Feedback">
@@ -52,7 +66,7 @@ const Feedback = () => {
                 {getText("h_n_24")}
               </h1>
               <form onSubmit={sendFeedback} className="cards">
-                <input
+                {/* <input
                   data-aos-delay="500"
                   data-aos="fade-up"
                   value={name}
@@ -60,22 +74,22 @@ const Feedback = () => {
                   placeholder={getText(`feed_inp_1`)}
                   type="text"
                   className="form-control "
-                />
+                /> */}
 
                 <InputMask
                   data-aos-delay="500"
                   data-aos="fade-up"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  mask="+998 (99) 999-99-99"
+                  // mask="@"
                   maskChar=""
                   id="phone"
                   type="text"
-                  placeholder="+998 (_) _ _ _"
+                  placeholder="@ _ _ _"
                   className="form-control"
                 />
 
-                <input
+                {/* <input
                   data-aos-delay="500"
                   data-aos="fade-up"
                   value={mes}
@@ -83,7 +97,7 @@ const Feedback = () => {
                   placeholder={getText(`feed_inp_2`)}
                   type="text"
                   className="form-control "
-                />
+                /> */}
 
                 <button
                   data-aos-delay="500"

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Feedback from "./components/Feedback";
 import Future from "./components/Future";
 import Header from "./components/Header";
 import Social from "./components/Social";
@@ -23,7 +22,6 @@ const MainPage = () => {
           <Target />
           <Future />
           <Social />
-          <Feedback />
         </>
       )}
     </>

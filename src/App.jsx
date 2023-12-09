@@ -49,7 +49,16 @@ import Elon from "./components/Elon";
 import { StylesProvider } from "@mui/styles";
 import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 import PrarabotkaLayout from "./components/PrarabotkaLayout";
-import Prarobotka1 from "./pages/PRARABOTKA/Prarobotka1";
+import Prarobotka1 from "./Prorabotka/Prarobotka1";
+import Buy2 from "./components/Buy2";
+import Agreement from "./components/Agreement";
+import { Dashboard } from "@mui/icons-material";
+import DashboardPage from "./pages/main/DashboardPage";
+import Prarobotka2 from "./Prorabotka/Prarobotka2";
+import Prarobotka3 from "./Prorabotka/Prarobotka3";
+import Prarobotka4 from "./Prorabotka/Prarobotka4";
+import Prarobotka5 from "./Prorabotka/Prarobotka5";
+import WhatPro from "./Prorabotka/WhatPro";
 
 const App = () => {
   return (
@@ -60,11 +69,14 @@ const App = () => {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<MainPage />} />
+              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/agreement" element={<Agreement />} />
               <Route path="/cabinet" element={<Cabinet />} />
               <Route path="/about" element={<About />} />
               <Route path="/library" element={<Library />} />
               <Route path="/benef" element={<Benef />} />
               <Route path="/buy" element={<Buy />} />
+              <Route path="/buy2" element={<Buy2 />} />
               <Route path="/dashboard" element={<Cabinet />} />
               <Route path="/register" element={<RegistrationPhonePage />} />
               <Route path="/login" element={<Login />} />
@@ -103,6 +115,7 @@ const App = () => {
                 <Route path="/child-problem" element={<ChildProblem />} />
                 <Route path="/work-problem" element={<WorkProblem />} />
               </Route>
+
               <Route path="/result-page" element={<ResultPage />} />
               <Route path="/elon" element={<Elon />} />
 
@@ -119,13 +132,13 @@ const App = () => {
               />
 
               <Route element={<PrarabotkaLayout />}>
-                <Route path="/prorabotka" element={<Prarobotka1 />} />
+                <Route path="/prorabotka-1" element={<Prarobotka1 />} />
+                <Route path="/what-pro" element={<WhatPro />} />
+                <Route path="/prorabotka-2" element={<Prarobotka2 />} />
+                <Route path="/prorabotka-3" element={<Prarobotka3 />} />
+                <Route path="/prorabotka-4" element={<Prarobotka4 />} />
+                <Route path="/prorabotka-5" element={<Prarobotka5 />} />
               </Route>
-
-              {/* <Route element={<HundredQuestionsLayout />}>
-              <Route path="/hundred-questions-start" element={<HundredQuestionsStartPage />} />
-              <Route path="/hundred-questions-start-2" element={<HundredQuestionsStartPage2 />} />
-            </Route> */}
             </Routes>
             <ToastContainer />
           </Provider>

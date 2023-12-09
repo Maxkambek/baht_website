@@ -19,7 +19,7 @@ const Elon = () => {
 
                 <div className="reg_elon">{getText("plat_4")}</div>
 
-                <Link to="/" className="btn myBtn">
+                <Link to="/dashboard" className="btn myBtn">
                   {getText("plat_5")}
                 </Link>
               </div>

@@ -1,18 +1,18 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import InputMask from "react-input-mask";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { RegistrationLayout } from "../../components";
-import { authAction } from "../../redux/AuthSlice";
+import axios from "axios";
+import { API_PATH, TOKEN } from "../../constants";
+import { Checkbox } from "@mui/material";
 
 const Login = () => {
   const [phone, setPhone] = useState("+998");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [checked, setChecked] = useState(false);
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const login = () => {
@@ -20,8 +20,16 @@ const Login = () => {
       toast.error("Phone number must be at least 19 characters.");
       return;
     }
-    dispatch(authAction.login({ phone, password, navigate }));
-    // navigate("/phone-verify");
+    axios
+      .post(API_PATH + "/user/login/", { phone, password })
+      .then((res) => {
+        navigate("/dashboard");
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem(TOKEN, res.data.token);
+      })
+      .catch((err) => {
+        toast.error("Ma'lumotlaringizni to'g'ri kiriting");
+      });
   };
   return (
     <div className="RegisterPhone Register">

@@ -35,6 +35,7 @@ const FamilyStatusPage = () => {
       toast.error("Malumotingizni tanlang.");
       return;
     }
+    localStorage.setItem("family_status", status);
     dispatch(setFamilyStatus({ status }));
     navigate("/children", { replace: true });
   };
@@ -51,7 +52,6 @@ const FamilyStatusPage = () => {
               name="controlled-radio-buttons-group"
               onChange={handleChange}
               className="for_gap"
-
             >
               <FormControlLabel
                 onChange={(e) => setStatus(e.target.value)}

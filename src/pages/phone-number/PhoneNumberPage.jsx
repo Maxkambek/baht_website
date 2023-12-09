@@ -5,7 +5,7 @@ import { setPhoneNumber } from "../../redux/UserSlice";
 import { getText } from "../../locale";
 
 const PhoneNumberPage = () => {
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState(localStorage.getItem("phone") || "");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();

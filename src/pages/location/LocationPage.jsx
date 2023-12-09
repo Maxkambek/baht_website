@@ -16,7 +16,9 @@ const LocationPage = () => {
   const [regionName, setRegionName] = useState("");
 
   const [districs, setDistrics] = useState([]);
-  const [distric, setDistric] = useState("");
+  const [distric, setDistric] = useState(
+    localStorage.getItem("districs") || ""
+  );
   const [districName, setDistricName] = useState("");
 
   const navigate = useNavigate();
@@ -25,6 +27,7 @@ const LocationPage = () => {
   const changeLocation = (e) => {
     e.preventDefault();
     dispatch(setLocation(distric));
+    localStorage.setItem("districs", distric);
     navigate("/phone-number", { replace: true });
   };
 

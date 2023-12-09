@@ -635,7 +635,7 @@ Damirovna`,
 
   b_h_1: `“Baxtli ayol” kursini o'tish va sotib olish bo'yicha `,
   b_h_2: `Yo'riqnoma`,
-  b_h_3: `“Baxtli ayol” kursi
+  b_h_3: `110 ta darsdan iborat  “Baxtli ayol” kursi
   4 oyni tashkil etadi.`,
   b_h_4: `1 –  BOSQICHDA`,
   b_h_5: `Kursni sotib olishdan oldin biz siz bilan eng avvalam bor o'zingizda bor bo'lgan barcha muammolaringizni aniqlab olishimiz kerak bo'ladi. Bu uchun`,
@@ -644,8 +644,8 @@ Damirovna`,
   b_h_8: `Muammolaringizni belgilab bo'lganingizdan so'ng, siz “Baxtli Ayol” kursini sotib olsangiz bo'ladi. Bu  uchun`,
   b_h_9: `quyidagi havola orqali o'tishingiz mumkin`,
   b_h_10: `NARXLAR`,
-  b_h_11: `“Baxtli Ayol” kursining 4 oylik umumiy narxi 
-  – 2.800.000 so'mni tashkil etadi.`,
+  b_h_11: `“Baxtli Ayol” kursining davomiyligi 4 oyni tashkil etadi.`,
+  b_h_problem: `Agarda to'lov qilishga qiynalayotgan bo'lsangiz quyidagi adres bo'yicha Telegram  kanalimizdagi adminimizga murojaat qiling:: `,
 
   b_h_buy: `Sotib olish`,
 
@@ -697,7 +697,7 @@ Damirovna`,
   h_n_7: `o'quv platformamiz aynan siz uchun!`,
   h_n_8: `BIZNING  MAQSADIMIZ`,
   h_n_9: ` O'zbekiston Respublikasining shahar va qishloqlarida yashovchi xotin-qizlarning ruhiyatini chuqur o'rganish orqali ularning oilaviy, moliyaviy va shaxslararo nizolarini bartaraf etish bo'yicha professional psixologik yordam ko'rsatish, hamda ularning mental va jismoniy sog'lig'ini yaxshilashdir.`,
-  h_n_10: ` Psixologik muammolaringizni aniqlash bo'yicha test savollari
+  h_n_10: `Test savollari
   `,
   h_n_11: `Bizning o'quv platformamizdan oladigan foyda va natijalaringiz `,
   h_n_12: `“Baxtli ayol” kursini o'tish va sotib olish bo'yicha Yo'riqnoma`,
@@ -712,7 +712,7 @@ Damirovna`,
   h_n_21: `Bizning kelajakdagi rejalarimiz:`,
   h_n_22: `BahtWOMAN brendi orqali tanilgan  bizning Baxt Maktabimiz shu kungacha minglab ayollarni hayotini tubdan o'zgartirishga qodir bo'lgan psixologik kurslarni tashkil qilayotgan ulkan Loyiha hisoblangani sababli, kelajakda O'zbekiston xotin-qizlarini qo'llab-quvvatlashga hamda ularning hayot tarzini rivojlantirish bo'yicha faoliyat olib borayotgan Davlat Idoralari va xususiy kompaniyalar, shuningdek, NNT hamda NTT bilan hamkorlikni rejalashtirgan.`,
   h_n_23: `BIZ    IJTIMOIY  TARMOQLARDA`,
-  h_n_24: `Texnik nosozliklar boʼyicha biz bilan bogʼlaning !`,
+  h_n_24: `Telegramdagi adresingizni ( nikingizni ) yozib qoldiring`,
   h_n_25: `Yuborish`,
 
   bosh: `Bosh sahifaga qaytish`,
@@ -2094,7 +2094,7 @@ Damirovna`,
   next_2: `Davom etish`,
   result_page_buy: `Kursni sotib olish`,
   result_page_h: `Sizda quyidagi muammolar bor !`,
-  result_page_p: `Muammolar`,
+  result_page_p: `Savollar`,
 
   modal_end_1: ` DEMАK, hozirda biz siz bilan hozirda registratsiya savollarini
 tugatdik va biz sizni ushbu qiyin bosqichdan oʼtishni uddalay
@@ -2131,7 +2131,7 @@ berishingiz kerak boʼladi.`,
   plat_2: `Baxt
   maktabining platformasiga xush kelibsiz.`,
   plat_3: `ESLАTMА!`,
-  plat_4: ` Darslarimiz 05.12.2024 sanadan boshlanadi`,
+  plat_4: ` Darslarimiz tez kunda boshlanadi`,
   plat_5: `  Bosh sahifaga qaytish`,
   plat_6: ` Hozirda sizga beriladigan savollarga tugʼridan toʼgʼri javob
   berishingizni soʼraymiz! Chunki sizga beriladigan psixologik yordam
@@ -2179,4 +2179,8 @@ berishingiz kerak boʼladi.`,
   rev_16: `Bilmadim kursni tugatsam yana o'zimni qanday his qilaman  kamalakdak his qilsam kerak .`,
   rev_17: `Barchasi uchun bir umr minnatdorman. `,
   rev_18: `Mohira`,
+  dash_1: `Kirish qismi Registratsiya savollari`,
+  dash_2: `Kursga tegishli 110 ta test savollari`,
+  dash_3: `Mening darslarim`,
+  dash_4: `Kirish`,
 };

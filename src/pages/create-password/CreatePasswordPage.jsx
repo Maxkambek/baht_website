@@ -18,7 +18,7 @@ const CreatePasswordPage = () => {
       return;
     }
     dispatch(authAction.password(password));
-    navigate("/buy", { replace: true });
+    navigate("/dashboard", { replace: true });
   };
 
   return (
