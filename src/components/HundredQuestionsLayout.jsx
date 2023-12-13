@@ -11,6 +11,7 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Checkbox,
   FormControl,
   FormControlLabel,
   FormLabel,
@@ -20,9 +21,10 @@ import {
 import down from "../assets/down.svg";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { API_PATH, CONFIG } from "../constants";
+import { API_PATH, CONFIG, TOKEN } from "../constants";
 import { getLanguage, getText } from "../locale";
 import { LANGUANGE } from "../tools/constant";
+import { CheckCircle, RadioButtonUnchecked } from "@mui/icons-material";
 
 const HundredQuestionsLayout = () => {
   const [expanded, setExpanded] = useState(true);
@@ -67,7 +69,12 @@ const HundredQuestionsLayout = () => {
           question_id: pk,
           yes_or_no: yesOrNo,
         },
-        CONFIG
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Token ${localStorage.getItem(TOKEN)}`,
+          },
+        }
       )
       .then((res) => {
         console.log(res);
@@ -670,28 +677,27 @@ const HundredQuestionsLayout = () => {
                     {oneQues?.for_question_2?.map((item, index) => (
                       <>
                         <FormControlLabel
-                          key={index}
                           value={
                             <div
-                              contentEditable="false"
                               dangerouslySetInnerHTML={{
                                 __html: `${item.name}`,
                               }}
                             />
                           }
                           control={
-                            <Radio
+                            <Checkbox
                               sx={{
                                 color: "silver",
                                 "&.Mui-checked": {
                                   color: "#FFD0D4",
                                 },
                               }}
+                              icon={<RadioButtonUnchecked />}
+                              checkedIcon={<CheckCircle />}
                             />
                           }
                           label={
                             <div
-                              contentEditable="false"
                               dangerouslySetInnerHTML={{
                                 __html: `${item.name}`,
                               }}

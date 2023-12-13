@@ -3,9 +3,10 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { setPhoneNumber } from "../../redux/UserSlice";
 import { getText } from "../../locale";
+import InputMask from "react-input-mask";
 
 const PhoneNumberPage = () => {
-  const [phone, setPhone] = useState(localStorage.getItem("phone") || "");
+  const [phone, setPhone] = useState(localStorage.getItem("phone") || "+998");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -22,9 +23,12 @@ const PhoneNumberPage = () => {
         <form onSubmit={changePhone} className="cards">
           <h1>4. {getText("inp_q_9")}</h1>
 
-          <input
-            placeholder={getText("inp_q_9")}
-            type="number"
+          <InputMask
+            mask="+998 (99) 999-99-99"
+            maskChar=""
+            id="phone"
+            type="text"
+            placeholder="+998 (_) _ _ _"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             className="form-control "

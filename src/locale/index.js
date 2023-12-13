@@ -13,5 +13,5 @@ export const getText = (word) => {
 };
 
 export const getText2 = (word) => {
-  return getLanguage() === "uz" ? pr_uz[word] : pr_kr[word];
+  return getLanguage() === "ru" ? pr_kr[word] : pr_uz[word];
 };

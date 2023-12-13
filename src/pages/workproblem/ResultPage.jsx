@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import vector1 from "../../assets/vector1.png";
 import vector2 from "../../assets/vector2.png";
 import vector3 from "../../assets/vector3.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
-import { API_PATH, CONFIG, USER_INFO } from "../../constants";
+import { API_PATH, CONFIG, TOKEN, USER_INFO } from "../../constants";
 import { getText } from "../../locale";
 import axios from "axios";
 
@@ -16,11 +16,19 @@ const ResultPage = () => {
   // });
 
   const [data, setData] = useState([]);
-
+  const nav = useNavigate();
   useEffect(() => {
-    axios.get(API_PATH + "/uz/question/result-test/", CONFIG).then((res) => {
-      setData(res.data);
-    });
+    axios
+      .get(API_PATH + "/uz/question/result-test/", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Token ${localStorage.getItem(TOKEN)}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      });
   }, []);
 
   return (
@@ -54,16 +62,28 @@ const ResultPage = () => {
               {data &&
                 data.map((item, index) => (
                   <div key={index} className="result_item">
-                    <p
-                      dangerouslySetInnerHTML={{ __html: item.question.name }}
-                    ></p>
+                    <p>{item.question.id} - Savol</p>
                   </div>
                 ))}
             </div>
           </div>
         </div>
+        <div className="container pb-5">
+          <div className="row">
+            <div className="col-lg-6 d-flex justify-content-center align-items-center">
+              <div onClick={() => nav("/buy")} className="myBtn10 ta">
+                {getText("result_page_buy")}
+              </div>
+            </div>
+            <div className="col-lg-6 d-flex justify-content-center align-items-center">
+              <div onClick={() => nav("/dashboard")} className="myBtn10 ta">
+                {getText("result_page_buy_2")}
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div className="row">
+        {/* <div className="row">
           <div className="col-12 buy_btn">
             <div className="container">
               <Link to="/buy" className="lib_h_buy">
@@ -71,8 +91,7 @@ const ResultPage = () => {
               </Link>
             </div>
           </div>
-        </div>
-        
+        </div> */}
       </div>
     </>
   );

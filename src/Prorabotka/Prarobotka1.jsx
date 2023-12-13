@@ -5,11 +5,21 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import {} from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Prarobotka1 = () => {
   const nav = useNavigate();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
     <>
@@ -90,7 +100,7 @@ const Prarobotka1 = () => {
               </div>
             </div>
             <div className="s24 mt-4 f500 ">
-              <span className="f600 fil s28 pl">Tushunib yetganingizdek, </span>
+              <span className="f600 fil s28 pl">Tushunib yetganingizdek, </span>{" "}
               – “O‘g‘il bola yoki istalmagan qiz farzand” kompleksining
               ildizlari qiz farzand onaning bachadoni ichida shakllangan
               jarayondan boshlab, to tug‘ilgan vaqtigacha bo‘lgan sahnalarga
@@ -105,7 +115,7 @@ const Prarobotka1 = () => {
             <div className="s24 mt-4 f500 ">
               <span className="f600 color_main s28 pl">
                 Ong osti darajasida qizcha
-              </span>
+              </span>{" "}
               o‘zining ota-onaga kerak emasligi to‘g‘risidagi fikr bilan dunyoga
               keladi. Bunday farzand jismonan tirik qola olishi qiyinligi bois –
               hayotdan mahrum bo‘lish, ya'ni, o‘limdan qo‘rqish hisi uni Ong
@@ -115,7 +125,7 @@ const Prarobotka1 = () => {
             <div className="s24 mt-4 f500 ">
               <span className="f600 yashil s28 pl">
                 Klinik psixologiya va tibbiyot nuqtai nazaridan,
-              </span>
+              </span>{" "}
               Klinik psixologiya va tibbiyot nuqtai nazaridan, X (iks) xromosoma
               uzun yelkasi mikroduplikatsiyalarini diagnostika qilish imkoniyati
               paydo bo‘lgach («Array CGH 3, 18—22» kabi yuqori yechimli to‘liq
@@ -129,7 +139,7 @@ const Prarobotka1 = () => {
               <span className="f600 fil s28 pl">
                 Ma'lumki, MECP2 genidagi o‘zgarishlar bilan bir nechta
                 nevrologik kasallik bog‘liq bo‘lib,
-              </span>
+              </span>{" "}
               ularning natijasida tegishli oqsil moddalar yetishmovchiligi yoki
               anomal tuzilma emas, balki aksincha ushbu moddalarning judayam
               ko‘p miqdorda ishlab chiqarilishi kuzatiladi.
@@ -140,7 +150,7 @@ const Prarobotka1 = () => {
               <div className="f500  s24">
                 <span className="f600 toq_fil s28 ">
                   Bunday kasalliklar belgilari sirasiga, ko‘pincha,
-                </span>
+                </span>{" "}
                 nutq buzilishi, tana o‘sish sur'atining pastligi, birinchi
                 qadamlarni qo‘yishdagi, ya'ni yurishdagi qiyinchiliklar va
                 hattoki bosh o‘lchamining kichikroq bo‘lishi kabilar kiradi.
@@ -154,7 +164,7 @@ const Prarobotka1 = () => {
                 <span className="f600 kok s28 ">
                   Agar qiz/ ayol organizmning aksariyat to‘qimalaridagi
                   duplikatsiyali X xromosoma faol bo‘lmasa,
-                </span>
+                </span>{" "}
                 ko‘p holatlarda ayol mazkur genning tashuvchisiga aylanib, 50 %
                 holatda onasidan X xromosoma uzun yelkasining duplikatsiyasini
                 meros qilib olgan o‘g‘il farzand ko‘rishi mumkin. Ya'ni ayol
@@ -163,27 +173,36 @@ const Prarobotka1 = () => {
               </div>
             </div>
 
-            <div className="s24 mt-4 f500 ">
-              <span className="f600 color_main s28 pl">Ayrim holatlarda</span>
-              (1/15.000) tashuvchi ayollarda xavotirli tushkunlik ko‘rinishidagi
-              ruhiy og‘ishlar ham kuzatilishi mumkin.
+            <div className="list_item s24 mt-4 f500 ">
+              <div>
+                {" "}
+                <span className="f600 color_main s28 pl">
+                  Ayrim holatlarda
+                </span>{" "}
+                (1/15.000) tashuvchi ayollarda xavotirli tushkunlik
+                ko‘rinishidagi ruhiy og‘ishlar ham kuzatilishi mumkin.
+              </div>
             </div>
-            <div className="s24 mt-4 f500 ">
-              <span className="f600 color_main s28 pl">Shuningdek</span>
-              orttirilgan yoki nasl-nasabdan o‘tgan mutatsiyaga uchragan / yoki
-              qisman mutatsiyaga uchragan MECP2 geni yoki X xromosomali qizlarda
-              buyrak usti bezlari qobig‘ining tug‘ma disfunktsiyasi aniqlanishi
-              mumkin.
+
+            <div className="list_item s24 mt-4 f500 ">
+              <div>
+                {" "}
+                <span className="f600 color_main s28 pl">Shuningdek</span>{" "}
+                orttirilgan yoki nasl-nasabdan o‘tgan mutatsiyaga uchragan /
+                yoki qisman mutatsiyaga uchragan MECP2 geni yoki X xromosomali
+                qizlarda buyrak usti bezlari qobig‘ining tug‘ma disfunktsiyasi
+                aniqlanishi mumkin.
+              </div>
             </div>
 
             <div className="list_item pl">
               <img src="/img/1.png" alt="" />
               <div className="f500  s24">
-                <span className="f600 kok s28 ">Bundan tashqari,</span>
-                ular, ko‘pincha, immunitet yetishmasligidan ham azob chekib, bu
-                o‘z navbatida yuqori nafas olish yo‘llarining infeksiyalariga
-                olib keladi. Bunga qo‘shimcha ravishda shuni aytish mumkin-ki,
-                bunday qizlar ichak peristal'tikasining buzilishi natijasida,
+                <span className="f600 kok s28 ">Bundan tashqari,</span> ular,
+                ko‘pincha, immunitet yetishmasligidan ham azob chekib, bu o‘z
+                navbatida yuqori nafas olish yo‘llarining infeksiyalariga olib
+                keladi. Bunga qo‘shimcha ravishda shuni aytish mumkin-ki, bunday
+                qizlar ichak peristal'tikasining buzilishi natijasida,
                 ko‘pincha, qabziyatdan ham azob chekadilar. 0-2 yosh atrofida
                 ularda ichak psevdoobstruktsiyasi belgilari kuzatilishi mumkin
                 bo‘lib, o‘tkir xuruj paytida ba'zan qayt qilish yoki qorindagi
@@ -194,7 +213,7 @@ const Prarobotka1 = () => {
             <div className="list_item pl">
               <img src="/img/3.png" alt="" />
               <div className="f500  s24">
-                <span className="f600 kok s28 ">Kamdan-kam holatlarda</span>
+                <span className="f600 kok s28 ">Kamdan-kam holatlarda</span>{" "}
                 (1/15.0000) ayollarda jinsiy organlarining anomaliyalari, yurak
                 nuqsonlari (yurak poroki), qo‘l kaftlari yoki tovonlarning
                 kichik bo‘lishi, ko‘zlar anomaliyalari, yoki eshitish
@@ -215,7 +234,7 @@ const Prarobotka1 = () => {
             <div className="s24 mt-4 f500 ">
               <span className="f600 fil s28 pl">
                 To‘g‘ri, mazkur Ong osti dasturi
-              </span>
+              </span>{" "}
               qiz bolani tom ma'noda baxtsiz qilib qo‘yishi mumkin. Negaki uning
               eng katta istagi – ota-ona tomonidan sevilishdir.
             </div>
@@ -237,7 +256,7 @@ const Prarobotka1 = () => {
             <div className="s24 mt-4 f500 ">
               <span className="f600 color_main s28 pl">
                 “Noto‘g‘ri jins”li qizcha
-              </span>
+              </span>{" "}
               o‘zini umr bo‘yi aybdor his qiladi. Turfa xil ko‘rinishdagi
               aybdorlik hisi uni umr davomida ta'qib qilishi mumkin. U yoki
               o‘zini doimo aybdor deb his qiladigan vaziyatlar bilan to‘qnash
@@ -247,9 +266,9 @@ const Prarobotka1 = () => {
             <div className="list_item pl">
               <img src="/img/1.png" alt="" />
               <div className="f500  s24">
-                <span className="f600 kok s28 pl">Bundan tashqari,</span>
-                bunday qizlar ko‘pincha bekamu-ko‘stlikka intilishadi. Umr bo‘yi
-                ular dunyodagi barchaga yashashga haqli ekanini isbotlashga
+                <span className="f600 kok s28 pl">Bundan tashqari,</span> bunday
+                qizlar ko‘pincha bekamu-ko‘stlikka intilishadi. Umr bo‘yi ular
+                dunyodagi barchaga yashashga haqli ekanini isbotlashga
                 urinishadi. Qiz farzand ota-ona kutgan o‘g‘il farzanddan
                 hech-qayeri kam emasligi va hattoki undan ham yaxshiroq ekanini
                 isbotlashga urinadi. Ya'ni hayot doim tirik qolish uchun kurash
@@ -257,17 +276,20 @@ const Prarobotka1 = () => {
               </div>
             </div>
 
-            <div className="s24 mt-4 f500 ">
-              <span className="f600 color_main s28 pl">
-                Hattoki ona bo‘lgach,
-              </span>
-              u o‘zini haqiqiy onadek tutolmaydi. Aksariyat holatlarda u o‘zini
-              erkaklardek qattiqqo‘llik bilan tutishi farzandlarining
-              kelajakdagi taqdiriga ham salbiy ta'sir ko‘rsatadi. Bunday
-              ayollarning deyarli barcha qiz farzandlari shaxsiy hayotda baxtsiz
-              bo‘ladi (chunki o‘z turmush o‘rtog‘i va qaynonasining timsolida
-              ular shafqatsiz ona va kuchsiz otani uchratadi), o‘g‘illari esa
-              ko‘pincha irodasiz “erkaklar” bo‘lib yetishadi.
+            <div className="list_item ab s24 mt-4 f500 ">
+              <div>
+                {" "}
+                <span className="f600 color_main s28 pl">
+                  Hattoki ona bo‘lgach,
+                </span>{" "}
+                u o‘zini haqiqiy onadek tutolmaydi. Aksariyat holatlarda u
+                o‘zini erkaklardek qattiqqo‘llik bilan tutishi farzandlarining
+                kelajakdagi taqdiriga ham salbiy ta'sir ko‘rsatadi. Bunday
+                ayollarning deyarli barcha qiz farzandlari shaxsiy hayotda
+                baxtsiz bo‘ladi (chunki o‘z turmush o‘rtog‘i va qaynonasining
+                timsolida ular shafqatsiz ona va kuchsiz otani uchratadi),
+                o‘g‘illari esa ko‘pincha irodasiz “erkaklar” bo‘lib yetishadi.
+              </div>
             </div>
           </div>
 
@@ -283,62 +305,43 @@ const Prarobotka1 = () => {
             hayotingizga mos kelyapti
           </div>
 
-          <div className="harf mt-5">
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">A.</div>
             <div className="">
               <div className="s28 ">
                 <span className="s30 kok f600">
                   Siz bolaligingizda tez-tez kasal bo‘lgansiz,
-                </span>
+                </span>{" "}
                 chunki – agar ko‘proq kasal bo‘lsam, otamning, hech bo‘lmasa,
                 bilvosita mehrini qozonaman, deb o‘ylagansiz. Axir bu orqali siz
                 dadangizning rahmini keltirib, tug‘ilganingizda sizga berilmay
                 qolib ketgan mehrni undan chiqarib olishingiz mumkin bo‘lgan.
               </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  <span className=" kok f600">Negaki </span>
-                  butun dunyo bo‘ylab o‘tkazilgan ko‘plab tadqiqotlar shuni
-                  ko‘rsatdiki, bola hayotining 3-7 kunlarida uning qalbi va
-                  organizmi o‘ta sezgir va u mehrga juda tashna bo‘lib, bu
-                  dunyoda uni qanday kutib olganlarini bilib turadi.
-                </div>
-              </div>
             </div>
           </div>
-          <div className="harf mt-5">
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              <span className=" kok f600">Negaki </span> butun dunyo bo‘ylab
+              o‘tkazilgan ko‘plab tadqiqotlar shuni ko‘rsatdiki, bola hayotining
+              3-7 kunlarida uning qalbi va organizmi o‘ta sezgir va u mehrga
+              juda tashna bo‘lib, bu dunyoda uni qanday kutib olganlarini bilib
+              turadi.
+            </div>
+          </div>
+
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">B.</div>
             <div className="">
               <div className="s28 ">
                 <span className="s30 seriy f600">
                   Agar siz opangiz yoki opalaringiz kabi qiz bola bo‘lib
                   tug‘ilgan bo‘lsangizu,
-                </span>
+                </span>{" "}
                 ammo otangiz o‘g‘il farzand kutib, yana qiz tug‘ilganidan
                 afsusda ekanini yashirib ham o‘tirmagan bo‘lsa, kelajakda u
                 sizni qiz bola, deb tan olmagan va Ong osti darajasida sizga
                 o‘g‘il boladek munosabat qilgan bo‘lishi – ehtimoldan xoli emas.
-              </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  <span className=" kok f600">
-                    Ehtimol, ular ongli yoki o‘zi anglamagan tarzda{" "}
-                  </span>
-                  erkakcha ismning sinonimi yoki majozi bo'lgan ism qo'ygan
-                  bo'lishlari ham mumkin, masalan: O'g'il(oy), Tursin(oy),
-                  Umid(a), Yorqin(oy), Said(a), Shoir(a), Shod(iya), Sohib(a),
-                  Rahim(a), Nodir(a), Nazir(a), Naim(a), Kamol(a), Komil(a),
-                  Shaxzod(a), Shaxrizod(a), Shaxri(xon) yoki Shaxri(niso),
-                  Qadr(iya), Bekzod(a), Sabr(iya), Aziz(a), Laziz(a), Muslim(a),
-                  Muhsin(a), Dilshod(a), Xurshid(a), Sarvar(a), Matlyub(a),
-                  Mohir(a), Qunduz(hon), Sharif(a), Iymon(a), Salim(a),
-                  Samir(a), Karim(a), Solih(a), Shahzod(a), Kumush, Saodat,
-                  Mohidil, Inobat, Ijobat, Adolat, «Robim» so'zidan olingan
-                  Robiya, «Farz» so'zidan olingan Fariza yoki Farzona va shunga
-                  o'xshash ismlar.
-                </div>
               </div>
               <div className="list_item pl50">
                 <img src="/img/3.png" alt="" />
@@ -352,208 +355,219 @@ const Prarobotka1 = () => {
             </div>
           </div>
 
-          <div className="harf mt-5">
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              <span className=" kok f600">
+                Ehtimol, ular ongli yoki o‘zi anglamagan tarzda{" "}
+              </span>
+              erkakcha ismning sinonimi yoki majozi bo'lgan ism qo'ygan
+              bo'lishlari ham mumkin, masalan: O'g'il(oy), Tursin(oy), Umid(a),
+              Yorqin(oy), Said(a), Shoir(a), Shod(iya), Sohib(a), Rahim(a),
+              Nodir(a), Nazir(a), Naim(a), Kamol(a), Komil(a), Shaxzod(a),
+              Shaxrizod(a), Shaxri(xon) yoki Shaxri(niso), Qadr(iya), Bekzod(a),
+              Sabr(iya), Aziz(a), Laziz(a), Muslim(a), Muhsin(a), Dilshod(a),
+              Xurshid(a), Sarvar(a), Matlyub(a), Mohir(a), Qunduz(hon),
+              Sharif(a), Iymon(a), Salim(a), Samir(a), Karim(a), Solih(a),
+              Shahzod(a), Kumush, Saodat, Mohidil, Inobat, Ijobat, Adolat,
+              «Robim» so'zidan olingan Robiya, «Farz» so'zidan olingan Fariza
+              yoki Farzona va shunga o'xshash ismlar.
+            </div>
+          </div>
+
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">C.</div>
             <div className="">
               <div className="s28 ">
-                Ismingiz qanday bo'lishidan qat'iy nazar,
+                Ismingiz qanday bo'lishidan qat'iy nazar,{" "}
                 <span className="s30 toq_fil f600">
                   siz bolaligingizdan ko'pincha o'zingizni o'g'il-bolalardek his
                   qilgansiz
                 </span>
+                {"  "}
                 va sizda yilma-yil (o'zingiz buni sezmagan holda) otangizning
                 umidlariga to'liq moslashish jarayoni, ya'ni erkaklashish
                 jarayoni – mas'uliyatli, ishbilarmon va hamma muammoni hal qila
                 oladigan inson bo'lish jarayoni ro'y bergan.
               </div>
-              <div className="list_item pl">
-                <img src="/img/2.png" alt="" />
-                <div className="f500  s24">
-                  Kichkinaligidan bo'yniga katta mas'uliyat yuklangan qizning /
-                  ayolning hayotida, tabiiy ravishda, oldiga qo'ygan maqsadiga
-                  erishish, pul topish yoki xizmat pog'onasidan ko'tarilish –
-                  birinchi o'rinda turadi. Bunday ayollar ko'pincha erkaklarga
-                  xos bo'lgan xislatlar talab qilinadigan ishlar bilan
-                  shug'ullanishadi va hatto rahbar ham bo'lishadi. Yoki juda
-                  bo'lmaganda uyda o'tirib ham, onlayn savdo qilib ham, pul topa
-                  olishadi.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  <span className="color_main">
-                    Ya'ni 30 yoshda ham, 40 va 50 yoshda ham
-                  </span>
-                  Ong osti darajasida siz hali ham ota-onangizga o'g'il bola
-                  ekaningizni isbotlashni davom etayaptgan bo'lasiz.
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  Bu degani siz hayotingizga kam pul topadigan yoki umuman pul
-                  topmaydigan erkakni jalb qilgan bo'lishingizni ehtimoli juda
-                  katta.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  Chunki sizning Ong ostingiz uchun SIZ erkaksiz va tabiiy
-                  ravishda unga “oilada ikkinchi erkak” kerak emas. Biroq siz
-                  buni anglamagan holda boy, kuchli va muvaffaqiyatli erkak
-                  haqida orzu qilaverasiz.
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/2.png" alt="" />
-                <div className="f500  s24">
-                  Ya'ni, agarda siz yaxshi pul topadigan erkakni / yigitni /
-                  yoki boy oilaning o'g'lini uchratib, unga turmushga chiqsangiz
-                  ham, siz bari-bir uni kuchsiz va kam pul topadigan qilib
-                  qo'yasiz. Shuning uchun ham sizning eringiz – Bor o'zing pul
-                  topaqol – deb aytadi.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  Negaki sizning Ong ostingizda “Men erkak bo'lishim kerak”
-                  degan majburiy dastur o'tirgan bo'lib, o'zining ishini
-                  qilayotgan hisoblanadi. Va sizga eringizdan ko'p pul
-                  topishingiz aslida juda ham yoqadi. Chunki siz o'sha payt
-                  o'zingizni qudratingizni – otangiz istagan o'g'il
-                  ekanligingizni his qilasiz.
-                </div>
-              </div>
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/2.png" alt="" />
+            <div className="f500  s24">
+              Kichkinaligidan bo'yniga katta mas'uliyat yuklangan qizning /
+              ayolning hayotida, tabiiy ravishda, oldiga qo'ygan maqsadiga
+              erishish, pul topish yoki xizmat pog'onasidan ko'tarilish –
+              birinchi o'rinda turadi. Bunday ayollar ko'pincha erkaklarga xos
+              bo'lgan xislatlar talab qilinadigan ishlar bilan shug'ullanishadi
+              va hatto rahbar ham bo'lishadi. Yoki juda bo'lmaganda uyda o'tirib
+              ham, onlayn savdo qilib ham, pul topa olishadi.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              <span className="color_main">
+                Ya'ni 30 yoshda ham, 40 va 50 yoshda ham
+              </span>{" "}
+              Ong osti darajasida siz hali ham ota-onangizga o'g'il bola
+              ekaningizni isbotlashni davom etayaptgan bo'lasiz.
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              Bu degani siz hayotingizga kam pul topadigan yoki umuman pul
+              topmaydigan erkakni jalb qilgan bo'lishingizni ehtimoli juda
+              katta.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              Chunki sizning Ong ostingiz uchun SIZ erkaksiz va tabiiy ravishda
+              unga “oilada ikkinchi erkak” kerak emas. Biroq siz buni anglamagan
+              holda boy, kuchli va muvaffaqiyatli erkak haqida orzu qilaverasiz.
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/2.png" alt="" />
+            <div className="f500  s24">
+              Ya'ni, agarda siz yaxshi pul topadigan erkakni / yigitni / yoki
+              boy oilaning o'g'lini uchratib, unga turmushga chiqsangiz ham, siz
+              bari-bir uni kuchsiz va kam pul topadigan qilib qo'yasiz. Shuning
+              uchun ham sizning eringiz – Bor o'zing pul topaqol – deb aytadi.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              Negaki sizning Ong ostingizda “Men erkak bo'lishim kerak” degan
+              majburiy dastur o'tirgan bo'lib, o'zining ishini qilayotgan
+              hisoblanadi. Va sizga eringizdan ko'p pul topishingiz aslida juda
+              ham yoqadi. Chunki siz o'sha payt o'zingizni qudratingizni –
+              otangiz istagan o'g'il ekanligingizni his qilasiz.
             </div>
           </div>
 
-          <div className="harf mt-5">
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">D.</div>
             <div className="">
-              <div className="s28 ">
-                <span className="s30 toq_fil f600">
+              <div className="s24">
+                <span className="toq_fil f600">
                   Agar otangiz siz tug'ilganingizdan keyin yoki onangiz sizga
                   homiladorlik paytida sizlarni tashlab ketgan bo'lsa
-                </span>
+                </span>{" "}
                 va onangiz umr bo'yi sizga to'g'ridan-to'g'ri yoki bilvosita
                 tarzda:
               </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  “Mana, sen tug'ilganingdan keyin / yoki senga ikkiqatligimda
-                  otang meni tashlab ketdi. Balki u o'g'il farzand istagandir,
-                  o'rniga esa sen tug'ilding” yoki “Men senga ikkiqat
-                  bo'lganimdan keyin, otang seni tan olishni istamasdan mendan
-                  yuz o'girib ketgan”, deb aytib kelgan bo'lsa (ya'ni u o'zining
-                  nomukammalligini tan olmasdan, barcha aybni otangizning va
-                  qisman sizning zimmangizga yuklagan bo'lsa) siz, tabiiyki, shu
-                  dunyoga kelganingiz uchun bilvosita tarzda aybdorlik hisi
-                  bilan katta bo'lgansiz.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  Kelajakda, katta ehtimol bilan, siz “baxtsiz” onangizni eng
-                  yaqin o'rtog'iga – ya'ni, uning psixologik sherigiga aylanib,
-                  dadangizni o'rnini bosgansiz.
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  Bu degani siz hayotingizga kam pul topadigan yoki umuman pul
-                  topmaydigan erkakni jalb qilgan bo'lishingizni ehtimoli juda
-                  katta.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  Kelajakda, katta ehtimol bilan, siz “baxtsiz” onangizni eng
-                  yaqin o'rtog'iga – ya'ni, uning psixologik sherigiga aylanib,
-                  dadangizni o'rnini bosgansiz.
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  <span className="toq_fil">
-                    Lekin, bu yerda eng asosiy kalit shundaki,
-                  </span>
-                  siz ko'pincha / yoki har doim kutilmagan vaqtda kutilmagan
-                  joyda yomonotliq bo'lib chiqasiz va aybsiz aybdor bo'lib
-                  qolganingizdan ko'nglingiz ko'p ranjiydi. Sizga bu
-                  adolatsizliklarga qarshi kurashasiz. Xuddi dunyoga
-                  kelyaptganingizda kurashgandek kurashasiz va aybingiz
-                  nimaligini tushuna olmasdan azob chekasiz.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  <span className="f600 toq_fil">Chunki</span>
-                  otangiz ham, onangiz ham o'zlarining qilgan xato ishlarini
-                  sizning zimmangizga yuklashgan va siz shu dunyoga kelganingiz
-                  uchun aybdor ham bo'lib chiqqansiz – negiz qayerdaligini
-                  tushunyaptgandirsiz?!
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  <span className="f600 toq_fil">
-                    Psixologiyada bu “Beayb parvardigor” kompleksi deyiladi
-                  </span>
-                  va ushbu kompleks bola dunyoga kelayotgan paytda otasi
-                  tarafidan tan olinmaslik bilan bog'liq ruhiy travmaga
-                  taqaladi.
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  Keyinchalik esa siz yoki umuman turmushga chiqmasdan qari qiz
-                  bo'lib o'tib ketgansiz / yoki hozirda turmush qurishni
-                  istasangiz ham, chiqa olmayapsiz, chunki hayotingizdagi sevgan
-                  yigitlaringiz / yoki erkaklaringiz xuddi otangiz kabi siz
-                  uchun kurashishni istamaydi, ota-onasi ham sizni umuman tan
-                  olishni xohlamaydi;
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  Yoki turmush qursangiz ham katta ehtimol bilan siz ko'p vaqt
-                  o'tmasdan ajrashib, onangizning yoniga qaytgansiz. Chunki siz
-                  uni tashlab ketganingiz uchun o'zingizni aybdor deb his
-                  qilgansiz.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  Ya'ni u holda ham, bu holda ham sizni har-doyimdagidek:
-                  <span className="f600 toq_fil">
-                    Aybdorlik, Burch va Erkak sevgisiga noloyiqlik
-                  </span>
-                  hislari boshqaradi.
-                </div>
-              </div>
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              “Mana, sen tug'ilganingdan keyin / yoki senga ikkiqatligimda otang
+              meni tashlab ketdi. Balki u o'g'il farzand istagandir, o'rniga esa
+              sen tug'ilding” yoki “Men senga ikkiqat bo'lganimdan keyin, otang
+              seni tan olishni istamasdan mendan yuz o'girib ketgan”, deb aytib
+              kelgan bo'lsa (ya'ni u o'zining nomukammalligini tan olmasdan,
+              barcha aybni otangizning va qisman sizning zimmangizga yuklagan
+              bo'lsa) siz, tabiiyki, shu dunyoga kelganingiz uchun bilvosita
+              tarzda aybdorlik hisi bilan katta bo'lgansiz.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              Kelajakda, katta ehtimol bilan, siz “baxtsiz” onangizni eng yaqin
+              o'rtog'iga – ya'ni, uning psixologik sherigiga aylanib, dadangizni
+              o'rnini bosgansiz.
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              Bu degani siz hayotingizga kam pul topadigan yoki umuman pul
+              topmaydigan erkakni jalb qilgan bo'lishingizni ehtimoli juda
+              katta.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              Kelajakda, katta ehtimol bilan, siz “baxtsiz” onangizni eng yaqin
+              o'rtog'iga – ya'ni, uning psixologik sherigiga aylanib, dadangizni
+              o'rnini bosgansiz.
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              <span className="toq_fil">
+                Lekin, bu yerda eng asosiy kalit shundaki,
+              </span>{" "}
+              siz ko'pincha / yoki har doim kutilmagan vaqtda kutilmagan joyda
+              yomonotliq bo'lib chiqasiz va aybsiz aybdor bo'lib qolganingizdan
+              ko'nglingiz ko'p ranjiydi. Sizga bu adolatsizliklarga qarshi
+              kurashasiz. Xuddi dunyoga kelyaptganingizda kurashgandek
+              kurashasiz va aybingiz nimaligini tushuna olmasdan azob chekasiz.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              <span className="f600 toq_fil">Chunki</span> otangiz ham, onangiz
+              ham o'zlarining qilgan xato ishlarini sizning zimmangizga
+              yuklashgan va siz shu dunyoga kelganingiz uchun aybdor ham bo'lib
+              chiqqansiz – negiz qayerdaligini tushunyaptgandirsiz?!
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              <span className="f600 toq_fil">
+                Psixologiyada bu “Beayb parvardigor” kompleksi deyiladi
+              </span>{" "}
+              va ushbu kompleks bola dunyoga kelayotgan paytda otasi tarafidan
+              tan olinmaslik bilan bog'liq ruhiy travmaga taqaladi.
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              Keyinchalik esa siz yoki umuman turmushga chiqmasdan qari qiz
+              bo'lib o'tib ketgansiz / yoki hozirda turmush qurishni istasangiz
+              ham, chiqa olmayapsiz, chunki hayotingizdagi sevgan yigitlaringiz
+              / yoki erkaklaringiz xuddi otangiz kabi siz uchun kurashishni
+              istamaydi, ota-onasi ham sizni umuman tan olishni xohlamaydi;
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              Yoki turmush qursangiz ham katta ehtimol bilan siz ko'p vaqt
+              o'tmasdan ajrashib, onangizning yoniga qaytgansiz. Chunki siz uni
+              tashlab ketganingiz uchun o'zingizni aybdor deb his qilgansiz.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              Ya'ni u holda ham, bu holda ham sizni har-doyimdagidek:{" "}
+              <span className="f600 toq_fil">
+                Aybdorlik, Burch va Erkak sevgisiga noloyiqlik
+              </span>{" "}
+              hislari boshqaradi.
             </div>
           </div>
 
-          <div className="harf mt-5">
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">E.</div>
             <div className="">
-              <div className="s28 ">
-                <span className="s30 seriy f600">
+              <div className="s24 f500">
+                <span className="seriy f600">
                   Siz hayotingizga mas'uliyatsiz erkaklarni jalb qilasiz
-                </span>
+                </span>{" "}
                 va ular hayotingizning eng mushkul davrlarida mas'uliyatni o‘z
                 zimmasiga olishni istamaydi. Chunki tug‘ilish / dunyoga kelish –
                 odam uchun eng og‘ir jarayondir. Dunyoga kelish chog‘ida
@@ -561,231 +575,224 @@ const Prarobotka1 = () => {
                 qilmagani bois, tabiiyki, Ong osti darajasida siz erkaklardan
                 xuddi shuni kutasiz.
               </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  <span className="seriy f600">
-                    {" "}
-                    Ya'ni o‘zingiz anglamagan tarzda sizga yaqin bo‘lgan
-                    erkakka, siz taxminan mana bunday signal yuborasiz
-                  </span>
-                  – “Men sizdan yomonlik kutyapman, chunki meni hayotimdagi ilk
-                  erkak – meni otam ham o‘zini xuddi shunday yomon tutgan. U o‘z
-                  spermatozoidlarining ishi uchun mas'uliyatni o‘z zimmasiga
-                  olishni ISTAMAGAN va hamma narsada onamni ayblagan.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  Shu bois men sizdan ham xuddi shuni kutaman: siz men uchun,
-                  ya'ni mening hayotim uchun, munosabatlarimiz uchun
-                  mas'uliyatni o‘z zimmangizga olishni istamasdan, hamma narsada
-                  meni o‘zimni ayblashingizni kutaman”.
-                </div>
-              </div>
-              <div className="list_item">
-                <img src="/img/3.png" alt="" />
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              <span className="seriy f600">
+                {" "}
+                Ya'ni o‘zingiz anglamagan tarzda sizga yaqin bo‘lgan erkakka,
+                siz taxminan mana bunday signal yuborasiz
+              </span>{" "}
+              – “Men sizdan yomonlik kutyapman, chunki meni hayotimdagi ilk
+              erkak – meni otam ham o‘zini xuddi shunday yomon tutgan. U o‘z
+              spermatozoidlarining ishi uchun mas'uliyatni o‘z zimmasiga olishni
+              ISTAMAGAN va hamma narsada onamni ayblagan.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              Shu bois men sizdan ham xuddi shuni kutaman: siz men uchun, ya'ni
+              mening hayotim uchun, munosabatlarimiz uchun mas'uliyatni o‘z
+              zimmangizga olishni istamasdan, hamma narsada meni o‘zimni
+              ayblashingizni kutaman”.
+            </div>
+          </div>
+          <div className="list_item">
+            <img src="/img/3.png" alt="" />
 
-                <div className="f500  s24">
-                  Sizning erkagingiz
-                  <span className="color_main f600">
-                    Ong osti ma'lumotlar almashinuv tizimida
-                  </span>
-                  sizdan bu signalni olgach, sizning 3-D real hayotingizda
-                  tabiiy ravishda sizning Ong osti ko‘rsatmangizni bajaradi,
-                  xolos.
-                </div>
-              </div>
+            <div className="f500  s24">
+              Sizning erkagingiz{" "}
+              <span className="color_main f600">
+                Ong osti ma'lumotlar almashinuv tizimida
+              </span>{" "}
+              sizdan bu signalni olgach, sizning 3-D real hayotingizda tabiiy
+              ravishda sizning Ong osti ko‘rsatmangizni bajaradi, xolos.
             </div>
           </div>
 
-          <div className="harf mt-5">
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">F.</div>
-            <div className="">
-              <div className="s28 ">
-                <span className="s30 toq_fil f600">
-                  Siz turli sabablarga ko‘ra sizni o‘z o‘g‘liga munosib
-                  ko‘rmagan qaynona va qaynotani
-                </span>
-                hayotingizga jalb qilgansiz. Axir otangiz, oiladagi 1-chi shaxs
-                bo‘la turib, sizni bu dunyoga kelish uchun nomunosib deb bilgan,
-                shunday emasmi?! Xuddi shu kabi sevgan insoningizning oilasidagi
-                avtoritar odamlar ham otangizning sizga avvalboshdan ko‘rsatgan
-                munosabatini ko‘zgu qilib aks ettirgan, xolos.
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500 s24">
-                  <span className="toq_fil f600">
-                    Bunga qo‘shimcha ravishda,
-                  </span>
-                  yigitingiz / sevgan insoningizning ota-onasi bir qarashdayoq
-                  sizning kuchli qiz ekaningizni sezib, kelajakda ularga
-                  bo’ysunmasligingiz natijasida ular o‘z o‘g‘lini nazorat qilish
-                  imkoniyatidan ayrilishini anglab yetishi mumkin.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  Shu bois ular “onasining erkatoyi” bo‘lgan o‘g‘illariga siz
-                  munosib emasligingiz va “toychoqlariga” yaxshi g‘amxo‘rlik
-                  qila olmasligingiz bahonasida sizni kelin qilmaslik uchun
-                  to‘sqinlik qilgan bo‘lishlari ham mumkin.
-                </div>
-              </div>
+            <div className="s24 f500">
+              <span className="toq_fil f600">
+                Siz turli sabablarga ko‘ra sizni o‘z o‘g‘liga munosib ko‘rmagan
+                qaynona va qaynotani
+              </span>{" "}
+              hayotingizga jalb qilgansiz. Axir otangiz, oiladagi 1-chi shaxs
+              bo‘la turib, sizni bu dunyoga kelish uchun nomunosib deb bilgan,
+              shunday emasmi?! Xuddi shu kabi sevgan insoningizning oilasidagi
+              avtoritar odamlar ham otangizning sizga avvalboshdan ko‘rsatgan
+              munosabatini ko‘zgu qilib aks ettirgan, xolos.
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500 s24">
+              <span className="toq_fil f600">Bunga qo‘shimcha ravishda,</span>{" "}
+              yigitingiz / sevgan insoningizning ota-onasi bir qarashdayoq
+              sizning kuchli qiz ekaningizni sezib, kelajakda ularga
+              bo’ysunmasligingiz natijasida ular o‘z o‘g‘lini nazorat qilish
+              imkoniyatidan ayrilishini anglab yetishi mumkin.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              Shu bois ular “onasining erkatoyi” bo‘lgan o‘g‘illariga siz
+              munosib emasligingiz va “toychoqlariga” yaxshi g‘amxo‘rlik qila
+              olmasligingiz bahonasida sizni kelin qilmaslik uchun to‘sqinlik
+              qilgan bo‘lishlari ham mumkin.
             </div>
           </div>
 
-          <div className="harf mt-5">
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">G.</div>
             <div className="">
-              <div className="s28 ">
-                <span className="s30 kok f600">
+              <div className="s24 f500">
+                <span className="kok f600">
                   Siz sevgan yigitlar / yoki erkaklar / yoki eringiz (va hatto
                   otangiz ham)
-                </span>
+                </span>{" "}
                 har doim sizni qayta tarbiyalashga / sindirishga / yoki
                 o'zgartirishga intilishganlari bilan to’qnashasiz. Chunki ular
                 sizning kuchli irodangizdan hamda erkaklarga xos mantiqiy
                 fikrlashingizdan cho'chiydilar.
               </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500 s24">
-                  Axir, ularning o'zida bunday xislatlar yo'q-ku. Ular hattoki
-                  sizning qaror qabul qilishingizga xam hasad bilan qarashadi.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  Ya'ni siz ulardan kuchli va aqlli ekaningizni, energetikangiz
-                  ularnikidan kuchliroq ekanini his qilish ularga yoqmaydi.
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500 s24">
-                  Biroq buni tan olmaslik va bildirmaslik uchun otangiz / yoki
-                  yigitingiz / yoki eringiz / yoki sizga yaqin bo'lgan boshqa
-                  erkak sizni ruhan sindirishga / yoki juda bo'lmaganda din
-                  orqali sizni itoatkor ayol qilishga va hatto o'z xohishingizga
-                  qarshi hijobga tiqishga uringan holatlar ham bo'lgan bo'lishi
-                  mumkin.
-                </div>
-              </div>
             </div>
           </div>
-
-          <div className="harf mt-5">
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500 s24">
+              Axir, ularning o'zida bunday xislatlar yo'q-ku. Ular hattoki
+              sizning qaror qabul qilishingizga xam hasad bilan qarashadi.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              Ya'ni siz ulardan kuchli va aqlli ekaningizni, energetikangiz
+              ularnikidan kuchliroq ekanini his qilish ularga yoqmaydi.
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500 s24">
+              Biroq buni tan olmaslik va bildirmaslik uchun otangiz / yoki
+              yigitingiz / yoki eringiz / yoki sizga yaqin bo'lgan boshqa erkak
+              sizni ruhan sindirishga / yoki juda bo'lmaganda din orqali sizni
+              itoatkor ayol qilishga va hatto o'z xohishingizga qarshi hijobga
+              tiqishga uringan holatlar ham bo'lgan bo'lishi mumkin.
+            </div>
+          </div>
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">H.</div>
             <div className="">
-              <div className="s28 ">
-                <span className="s30 yashil f600">
+              <div className="s24 f500">
+                <span className="yashil f600">
                   Siz o‘zingizni ko‘p izlaysiz
-                </span>
+                </span>{" "}
                 (o‘zingizdan doimiy ravishda ko‘nglingiz to‘lmasligining belgisi
                 sifatida) katta ehtimol bilan, erkakcha kasbni tanlagansiz yoki
                 tanlashni istaysiz.
               </div>
 
-              <div className="s28 yashil mt-5">Masalan:</div>
+              <div className="s28 yashil mt-2">Masalan:</div>
 
-              <div className="list_item pl">
+              <div className="list_item mt-2 pl">
                 <img src="/icon_cor.png" alt="" />
                 <div className="f500 s24">advokat,</div>
               </div>
-              <div className="list_item pl">
+              <div className="list_item mt-2 pl">
                 <img src="/icon_cor.png" alt="" />
                 <div className="f500 s24">yurist, </div>
               </div>
-              <div className="list_item pl">
+              <div className="list_item mt-2 pl">
                 <img src="/icon_cor.png" alt="" />
                 <div className="f500 s24">ichki ishlar organlari xodimi, </div>
               </div>
-              <div className="list_item pl">
+              <div className="list_item mt-2 pl">
                 <img src="/icon_cor.png" alt="" />
                 <div className="f500 s24">rejissyor, </div>
               </div>
-              <div className="list_item pl">
+              <div className="list_item mt-2 pl">
                 <img src="/icon_cor.png" alt="" />
                 <div className="f500 s24">jurnalist, </div>
               </div>
-              <div className="list_item pl">
+              <div className="list_item mt-2 pl">
                 <img src="/icon_cor.png" alt="" />
                 <div className="f500 s24">tashkilotchi,</div>
               </div>
-              <div className="list_item pl">
+              <div className="list_item mt-2 pl">
                 <img src="/icon_cor.png" alt="" />
                 <div className="f500 s24">menejer,</div>
               </div>
-              <div className="list_item pl">
+              <div className="list_item mt-2 pl">
                 <img src="/icon_cor.png" alt="" />
                 <div className="f500 s24">ishbilarmon ayol, </div>
               </div>
-              <div className="list_item pl">
+              <div className="list_item mt-2 pl">
                 <img src="/icon_cor.png" alt="" />
                 <div className="f500 s24">sport murabbiyisi va</div>
               </div>
-              <div className="list_item pl">
+              <div className="list_item mt-2 pl">
                 <img src="/icon_cor.png" alt="" />
                 <div className="f500 s24">
                   huquq muhofazachisi (ehtimol, siz ayollar huquqlarini muhofaza
                   qilish bo‘yicha tashkilotiga ham a'zo bo‘lib ulgurgansiz yoki
                   ayollarga yordam berish imkoniyati bor bo‘lgan ishda
-                  ishlaysiz),
-                </div>
-              </div>
-              <div className="ta f700 s30 mt-5">
-                ya'niki boshqaruv bilan bog‘liq kasblar.
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  <span className="yashil f600">
-                    Siz, hattoki, o‘qituvchi yoki maktab psixologi kasbini
+                  ishlaysiz),{" "}
+                  <span className="f600">
+                    ya'niki boshqaruv bilan bog‘liq kasblar.
                   </span>
-                  ham tanlagan bo‘lishingiz mumkin (chunki bu kasblar ham
-                  boshqaruv, ya'ni bolalar ustidan boshqaruvni amalga oshirish
-                  imkoniyatini beradi).
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  <span className="toq_fil f600">
-                    Yoki shifokor bo‘lib ishlaysiz
-                  </span>
-                  (negaki, o‘zgalar hayoti uchun mas'uliyatni o‘z zimmangizga
-                  olasiz, ya'ni bu ham erkaklarga xos xislat).
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  <span className="red f600">Yoki eng yomon holatda</span>
-                  (ruhiyatingiz faoliyatining anomal natijasi sifatida) – siz
-                  sehr-jodu olamining biron-bir vakiliga aylangansiz
-                  (issiq-sovuqchi, o‘qiydigan ayol, gadalka, ekstrasens va
-                  x.k.); chunki bu hunarlar ko‘zbo‘yamachilik va o‘zini-o‘zi
-                  ishontirish bilan bog‘liq bo‘lishiga qaramay, ular ham odamlar
-                  ustidan nazorat o‘rnatish imkonini beradi.
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="harf mt-5">
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              <span className="yashil f600">
+                Siz, hattoki, o‘qituvchi yoki maktab psixologi kasbini
+              </span>{" "}
+              ham tanlagan bo‘lishingiz mumkin (chunki bu kasblar ham boshqaruv,
+              ya'ni bolalar ustidan boshqaruvni amalga oshirish imkoniyatini
+              beradi).
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              <span className="toq_fil f600">
+                Yoki shifokor bo‘lib ishlaysiz
+              </span>{" "}
+              (negaki, o‘zgalar hayoti uchun mas'uliyatni o‘z zimmangizga
+              olasiz, ya'ni bu ham erkaklarga xos xislat).
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              <span className="red f600">Yoki eng yomon holatda</span>{" "}
+              (ruhiyatingiz faoliyatining anomal natijasi sifatida) – siz
+              sehr-jodu olamining biron-bir vakiliga aylangansiz
+              (issiq-sovuqchi, o‘qiydigan ayol, gadalka, ekstrasens va x.k.);
+              chunki bu hunarlar ko‘zbo‘yamachilik va o‘zini-o‘zi ishontirish
+              bilan bog‘liq bo‘lishiga qaramay, ular ham odamlar ustidan nazorat
+              o‘rnatish imkonini beradi.
+            </div>
+          </div>
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">I.</div>
             <div className="">
-              <div className="s28 ">
-                Siz hayotingizga
-                <span className="s30 color_main f600">
+              <div className="s24 f600">
+                Siz hayotingizga{" "}
+                <span className="color_main f600">
                   “O‘g‘il bola va istalmagan qiz farzand kompleksi”ga ega
                   bo‘lgan kundoshni
-                </span>
+                </span>{" "}
                 ya'ni xuddi o‘zingizga o‘xshagan rafiqasi bor turmush o‘rtoq /
                 yoki erkaklarni jalb qilyapsiz yoki qilgansiz. Chunki bu holatda
                 ham siz o‘zingiz uchun aziz bo‘lgan insonni sevgisi uchun
@@ -793,14 +800,14 @@ const Prarobotka1 = () => {
               </div>
             </div>
           </div>
-          <div className="harf mt-5">
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">J.</div>
             <div className="">
               <div className="s28 ">
                 <span className="s30 toq_fil f600">
                   Otangiz sizni qiz farzand sifatida rad etganiga nisbatan
                   bo‘lgan sizdagi Ong osti darajasidagi xafalik bois,
-                </span>
+                </span>{" "}
                 siz o‘zingiz anglamagan holda erkaklardan nafratlanasiz. Siz
                 yoki ularni o‘z hayotingizdan itarib chiqarish uchun o‘nlab
                 sabablar o‘ylab topasiz yoki turli sabablarga ko‘ra siz bilan
@@ -816,14 +823,14 @@ const Prarobotka1 = () => {
               </div>
             </div>
           </div>
-          <div className="harf mt-5">
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">K.</div>
             <div className="">
               <div className="s28 ">
                 <span className="s30 toq_fil f600">
                   Siz eskort (zamonaviy fohishalik) xizmatida ham ishlashingiz
                   mumkin.
-                </span>
+                </span>{" "}
                 Chunki bu hayotiy stsenariyda siz har safar erkaklarga nisbatan
                 bo‘lgan nafratingizga ishonch hosil qilib, shu bilan bir vaqtda,
                 erkaklar siz bilan jiddiy munosabat o‘rnatishdan cho‘chiydigan
@@ -839,125 +846,122 @@ const Prarobotka1 = () => {
             </div>
           </div>
 
-          <div className="harf mt-5">
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">L.</div>
             <div className="">
-              <div className="s28 ">
-                <span className="s30 fil f600">
+              <div className="s24 f500">
+                <span className="s28 fil f600">
                   Agar sizning gen to'plamingizda “o'zgargan XQ 28 geni” bo'lsa
-                </span>
+                </span>{" "}
                 (bu haqida darsimizning boshida batafsil aytib o'tilgan) u holda
                 sizda jinsiy deviatsiya rivojlanib, siz bir vaqtning o'zida
                 ikkita erkak bilan jinsiy aloqaga kirishish istagi bilan
                 yashashingiz ham mumkin / yoki aksincha shunday fantaziyalari
                 bor erni hayotingizga jalb qilgan bo'lishingiz mumkin.
               </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  Chunki Ong osti darajasida siz o'zingizga o'xshagan, ya'ni
-                  XQ-28 gen tashuvchisini hayotingizga jalb qilgan bo'lasiz.
-                  Bunday erkaklar esa har doim geylar bo'ladilar. Va aytgancha,
-                  ular ko'pincha geyligini tan olishdan qo'rqib, juda qattiq
-                  dinga berilib ketgan holatlar ham bo'ladi. Ya'ni ular
-                  o'zlaridan taqvodorlarni yasab olgan insonlar ham bo'lishlari
-                  mumkin.
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/2.png" alt="" />
-                <div className="f500  s24">
-                  <span className="f600 toq_fil">
-                    Biroq gen mutatsiyasi bilan bog'liq ushbu illatlari xuruj
-                    qilgan paytda
-                  </span>
-                  bunday turdagi erkaklar dinni – Ollohning aytgan gaplarini
-                  chetga surib qo'yib:
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  yoki beto'xtov ayol almashtirishadi / yoki o'zini aldash va
-                  tinchlantirish maqsadida nikohlab 3-4ta va hatto 10ta xotin
-                  olib tashlashadi *** (ya'ni, ular bu ishni – xotin
-                  almashtirishni – geyligi borasidagi qo'rquvidan qutilish hamda
-                  erkakligini o'ziga qayta-qayta isbotlash uchun qilishadi,
-                  shuning uchun ham ularning tug'dirib tashlagan bolalari ular
-                  uchun ayollar kutgan darajada katta ahamiyatga ega bo'lmaydi);
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  yoki o'z ayolidan nafratlangan holda ichkilikka berilib
-                  ketishadi;
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  yoki aynan o'zining ayoli bilan jinsiy aloqa qilishni umuman
-                  istamay qolishadi, chunki xotin eridan har doim u haqiqiy
-                  erkak bo'lishini talab qiladi va er vazifasini bajarishini
-                  kutadi. Ya'ni erkak bu holda ayolidan jinsiy aloqa qilmaslik
-                  orqali o'ch oladi;
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  yoki berkitib bari-bir boshqa erkaklar bilan aloqa qilishadi;
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  yoki juda bo'lmaganda gey-porno-filьmlar ko'rib, o'zlarini
-                  tinchlantirishadi;
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  va hattoki shunday holatlar ham bor-ki, ular o'zining ayoliga
-                  / yoki ko'chada pullik fohishalarga / yoki jazmanlariga
-                  (strapon taqib) erkak rolida bo'lishni ham taklif qilishadi;
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  yoki eng yomon holda – bexosdan jinoyat sodir etib, qamalib
-                  ketishadi...
-                </div>
-              </div>
-              <div className="list_item ms-3">
-                <div className="f500  s24 pl">
-                  <span className="color_main f600">
-                    Aytgancha, shu bois ham sizda ko'pincha
-                  </span>{" "}
-                  geylar yoki besoqolbozligini qattiq berkitadigan begona yigit
-                  / erkaklar bilan yaxshi do'stona aloqalar ham bo'lishi mumkin
-                  va ba'zi-bir holatlarda bunday aloqalar ishqiy munosabatlarga
-                  ham o'tib ketishi mumkin. Va ular, albatta, sizga: “Sen meni
-                  hech kim tushuna olmaydigan darajada tushunasan” – deb
-                  aytishadi. Chunki ular sizda ham ularda mavjud bo'lgan o'sha
-                  gen-mutatsiyasi borligini energetik tarzda his qilishadi,
-                  faqat o'zlari buni yaxshi tushunishmaydi.
-                </div>
-              </div>
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              Chunki Ong osti darajasida siz o'zingizga o'xshagan, ya'ni XQ-28
+              gen tashuvchisini hayotingizga jalb qilgan bo'lasiz. Bunday
+              erkaklar esa har doim geylar bo'ladilar. Va aytgancha, ular
+              ko'pincha geyligini tan olishdan qo'rqib, juda qattiq dinga
+              berilib ketgan holatlar ham bo'ladi. Ya'ni ular o'zlaridan
+              taqvodorlarni yasab olgan insonlar ham bo'lishlari mumkin.
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/2.png" alt="" />
+            <div className="f500  s24">
+              <span className="f600 toq_fil">
+                Biroq gen mutatsiyasi bilan bog'liq ushbu illatlari xuruj qilgan
+                paytda
+              </span>{" "}
+              bunday turdagi erkaklar dinni – Ollohning aytgan gaplarini chetga
+              surib qo'yib:
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              yoki beto'xtov ayol almashtirishadi / yoki o'zini aldash va
+              tinchlantirish maqsadida nikohlab 3-4ta va hatto 10ta xotin olib
+              tashlashadi *** (ya'ni, ular bu ishni – xotin almashtirishni –
+              geyligi borasidagi qo'rquvidan qutilish hamda erkakligini o'ziga
+              qayta-qayta isbotlash uchun qilishadi, shuning uchun ham ularning
+              tug'dirib tashlagan bolalari ular uchun ayollar kutgan darajada
+              katta ahamiyatga ega bo'lmaydi);
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              yoki o'z ayolidan nafratlangan holda ichkilikka berilib ketishadi;
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              yoki aynan o'zining ayoli bilan jinsiy aloqa qilishni umuman
+              istamay qolishadi, chunki xotin eridan har doim u haqiqiy erkak
+              bo'lishini talab qiladi va er vazifasini bajarishini kutadi. Ya'ni
+              erkak bu holda ayolidan jinsiy aloqa qilmaslik orqali o'ch oladi;
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              yoki berkitib bari-bir boshqa erkaklar bilan aloqa qilishadi;
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              yoki juda bo'lmaganda gey-porno-filьmlar ko'rib, o'zlarini
+              tinchlantirishadi;
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              va hattoki shunday holatlar ham bor-ki, ular o'zining ayoliga /
+              yoki ko'chada pullik fohishalarga / yoki jazmanlariga (strapon
+              taqib) erkak rolida bo'lishni ham taklif qilishadi;
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              yoki eng yomon holda – bexosdan jinoyat sodir etib, qamalib
+              ketishadi...
+            </div>
+          </div>
+          <div className="list_item ms-3 ta">
+            <div className="f500  s24 pl">
+              <span className="color_main f600">
+                Aytgancha, shu bois ham sizda ko'pincha
+              </span>{" "}
+              geylar yoki besoqolbozligini qattiq berkitadigan begona yigit /
+              erkaklar bilan yaxshi do'stona aloqalar ham bo'lishi mumkin va
+              ba'zi-bir holatlarda bunday aloqalar ishqiy munosabatlarga ham
+              o'tib ketishi mumkin. Va ular, albatta, sizga: “Sen meni hech kim
+              tushuna olmaydigan darajada tushunasan” – deb aytishadi. <br />Chunki
+              ular sizda ham ularda mavjud bo'lgan o'sha gen-mutatsiyasi
+              borligini energetik tarzda his qilishadi, faqat o'zlari buni
+              yaxshi tushunishmaydi.
             </div>
           </div>
 
-          <div className="harf mt-5">
+          <div className="list_item mt-5">
             <div className="s30 f700 me-lg-4 me-0 ta">M.</div>
             <div className="">
-              <div className="s28 ">
-                <span className="s30 fil f600">
+              <div className="s24 f500">
+                <span className="s24 fil f600">
                   Agar siz Xq28 uchastkasining 50% dan ortiq maydonini egallab
                   oladigan gen duplikatsiyasining tashuvchisi bo'lsangiz,
-                </span>
+                </span>{" "}
                 yoki bu narsa sizga onangizdan o'tgan bo'lsa (bunaqasi ham
                 uchrab turadi – ushbu gen onadan bolaga nasl-nasab orqali
                 o'tishi mumkin, ya'ni onadan qizga, otadan o'g'ilga), katta
@@ -967,205 +971,198 @@ const Prarobotka1 = () => {
                 o'zining asl xususiyatlarini, ya'ni besoqolbozligini
                 usta-omonlik bilan yashiradigan haqiqiy geyni jalb qilgansiz.
               </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  Bu holda sizning Ong ostingiz o'g'il farzand bo'lgan homilaga
-                  to'siq qo'ygan bo'lishi mumkin. Ya'ni, siz aksariyat
-                  holatlarda qiz farzand tug'asiz. Y-xromosomali spermatozoidlar
-                  esa, ya'ni o'g'il bola spermatozoidlari:
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  yoki sizning tuxumdondagi folekulalaringizdan chiqqan
-                  hujayralaringiz bilan bog'lanmaydi,
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  yoki sizda bachadondan tashqaridagi homiladorlik yuz beradi,
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/3.png" alt="" />
-                <div className="f500  s24">
-                  yoki bola tushish / yoki o'g'lingiz tug'ilayotgan paytda
-                  o'lish holati bo'lgan bo'lishi ham mumkin.
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  Biroq sizning eringiz (yana o'sha-o'sha o'zini erkakligini his
-                  qilish maqsadida, axir u ich-ichidan hezalak-sifatligini
-                  yaxshi biladi-ku) sizdan ko'proq o'g'il tug'ib berishingizni
-                  kutadi yoki talab ham qiladi. Unga siz tug'ib beradigan uning
-                  zurriyotining hayoti, joni, sog'lom bo'lib tug'ilishi qadrli
-                  emas, balki aynan bolaning jinsi muhimroqdir.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  <span className="f600 seriy">
-                    Chunki har bir yashirin turdagi besoqolboz erkak
-                  </span>
-                  qalbining tubida ich-ichidan ayollarni yomon ko'radi. Qo'yib
-                  bersangiz ular – hamma ayollarni ezib, yanchib, yo'q qilib
-                  tashlash kerak – deb o'ylashadi va shuning uchun ham ular
-                  tug'ilgan qiz farzandlarini maksimal darajada payqamaslikga,
-                  ularni qadrlamaslikga harakat qilishadi va o'g'il kutib
-                  yashashadi yoki oilada bir-amallab tug'ilib qolgan o'g'il
-                  farzandning mavqesini aytib bo'lmaydigan darajada yuqoriga
-                  ko'tarishga urinishadi.
-                </div>
-              </div>
-              <div className="list_item ">
-                <img src="/img/2.png" alt="" />
-                <div className="f500  s24">
-                  <span className="f600 seriy">
-                    Agar siz turli kalendarlar asosida yoki qonidan hisoblatib,
-                  </span>
-                  yokigin kuchli ugroza holatiga qaramay homilani saqlash
-                  bo'limida 9 oy davomida yotib, yoki EKO qildirib, ya'ni barcha
-                  omillarga qarshi borgan holda o'g'il farzand tuqqan
-                  taqdiringizda ham sizning o'g'lingiz kuchsiz va qizlarga xos
-                  xislatlar bilan / yoki yashirin yoki hatto faol besoqolboz
-                  bo'lib / yoki xunasa bo'lib / yoki juda bo'lmaganda olati juda
-                  kichkina o'g'il bo'lib, tug'ilishining ehtimoli bir necha
-                  barobar ko'p bo'ladi.
-                </div>
-              </div>
-              <div className="list_item pl50">
-                <img src="/img/2.png" alt="" />
-                <div className="f500  s24">
-                  Agarda siz eringizga (Ong osti darajangizda esa otangizga)
-                  yoqish va uni o'g'il tug'ib berish bilan ushlab qolish
-                  maqsadida juda ham qattiq o'g'il xohlab, ya'ni ikkiqat
-                  bo'lganingizda, shunisi aniq o'g'il bo'ladi, deb tuqqan
-                  bo'lsangiz, ko'pincha 3-chi yoki 4-chi homilangizdagi qizingiz
-                  (bir-hil paytda 1-chi, 2-chi homila ham ham bo'lishi mumkin)
-                  gen mutatsiyasi sababli, ya'ni nasl-nasab tizimda kuchli
-                  o'zgarish sodir bo'lganligi tufayli jiddiy kasallik bilan
-                  tug'ilgan bo'lishi mumkin.
-                </div>
-              </div>
-              <div className="list_item ">
-                <img src="/img/1.png" alt="" />
-                <div className="f500  s24">
-                  <span className="f600 seriy">
-                    Ya'ni uning xromosomalar to'plamida
-                  </span>
-                  normal ayollarnikidek ikkita iks (XX) emas, balki 3ta va hatto
-                  5ta (XXX - XXXXX) iks-xromosomalar bog'lanmasi bo'lib / yoki
-                  aksincha ikkinchi xromosoma o'rniga xech qanday xromosoma
-                  bo'lmasdan (XO), ushbu anomaliyalar shunga olib keladiki, qiz
-                  bola:
-                </div>
-              </div>
-
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">
-                  yoki gapira olmaydigan bo'lib (eshitish qobiliyati bo'lsa ham
-                  o'zi gapira olmaydigan bo'lib);
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">yoki umuman kar-soqov bo'lib;</div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">
-                  yoki ko'zida / ko'rish qobiliyatida katta nuqson bilan;
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">yoki umuman ko'r bo'lib,</div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">
-                  yoki badanida katta hajmdagi xol/ yoki ko'plab mayda xollar /
-                  yoki nor / yoki anomal dog' bilan
-                </div>
-              </div>
-              <div className="ta f500 color_main s28">
-                tug'ilgan bo'lishi mumkin.
-              </div>
-              <div className="ta f500 color_main s30 mt-5">
-                Yoki bu nasl mutatsiyasi bilan bog'liq kasalliklar keyinchalik:
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">
-                  qiz bolaning bachadonida katta muammolar paydo bo'lganida
-                  (bachadoni rivojlanmasdan “detskaya matka” holatida qolib
-                  ketganida, yoki u umuman bachadonsiz tug'ilgan bo'lishi ham
-                  mumkin);
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">
-                  yoki qizlik pardasi yo'q bo'lib chiqqanida,
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">
-                  yoki ko'kragi juda kichkina bo'lganida,
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">
-                  yoki vazni haddan tashqari ortib borishni boshlaganida,
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">
-                  yoki aqli zaiflashishni boshlaganida,
-                </div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">yoki tili chuchukligida,</div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">yoki duduqlanib gapirishida,</div>
-              </div>
-              <div className="list_item pl">
-                <img src="/icon_cor.png" alt="" />
-                <div className="f500 s24">
-                  yoki bo'yi haddan tashqari baland (180 sm.dan ortiq), yoki
-                  haddan tashqari past bo'lib chiqqanda (150 sm.dan past bo'lib
-                  qolib ketganda){" "}
-                </div>
-              </div>
-              <div className="ta f500 color_main s28 mt-2">
-                bilinishi mumkin.
-              </div>
-              <div className="mt-5 s28 ta">
-                Ha, sizning tug'ilgan bechora qizingiz aslida eringizni va hatto
-                sizning o'zingizni ham qizlarga, ya'ni ayol zotiga bo'lgan
-                nafratingizni – Qiz kerak emas, chunki men / yoki biz erimiz
-                ikkalamiz qiz zotini yomon ko'ramiz – degan destruktiv Ong osti
-                dasturingizni aks ettirgan qurbon bo'lgan, xolos. Va siz albatta
-                qiz farzandingizning kasallik va nuqsonlarini Ollohning amriga
-                to'nkab, o'zlaringizni aybingizni tan olishni istamasangiz
-                kerak.{" "}
-              </div>
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              Bu holda sizning Ong ostingiz o'g'il farzand bo'lgan homilaga
+              to'siq qo'ygan bo'lishi mumkin. Ya'ni, siz aksariyat holatlarda
+              qiz farzand tug'asiz. Y-xromosomali spermatozoidlar esa, ya'ni
+              o'g'il bola spermatozoidlari:
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              yoki sizning tuxumdondagi folekulalaringizdan chiqqan
+              hujayralaringiz bilan bog'lanmaydi,
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              yoki sizda bachadondan tashqaridagi homiladorlik yuz beradi,
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/3.png" alt="" />
+            <div className="f500  s24">
+              yoki bola tushish / yoki o'g'lingiz tug'ilayotgan paytda o'lish
+              holati bo'lgan bo'lishi ham mumkin.
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              Biroq sizning eringiz (yana o'sha-o'sha o'zini erkakligini his
+              qilish maqsadida, axir u ich-ichidan hezalak-sifatligini yaxshi
+              biladi-ku) sizdan ko'proq o'g'il tug'ib berishingizni kutadi yoki
+              talab ham qiladi. Unga siz tug'ib beradigan uning zurriyotining
+              hayoti, joni, sog'lom bo'lib tug'ilishi qadrli emas, balki aynan
+              bolaning jinsi muhimroqdir.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              <span className="f600 seriy">
+                Chunki har bir yashirin turdagi besoqolboz erkak
+              </span>{" "}
+              qalbining tubida ich-ichidan ayollarni yomon ko'radi. Qo'yib
+              bersangiz ular – hamma ayollarni ezib, yanchib, yo'q qilib
+              tashlash kerak – deb o'ylashadi va shuning uchun ham ular
+              tug'ilgan qiz farzandlarini maksimal darajada payqamaslikga,
+              ularni qadrlamaslikga harakat qilishadi va o'g'il kutib yashashadi
+              yoki oilada bir-amallab tug'ilib qolgan o'g'il farzandning
+              mavqesini aytib bo'lmaydigan darajada yuqoriga ko'tarishga
+              urinishadi.
+            </div>
+          </div>
+          <div className="list_item ">
+            <img src="/img/2.png" alt="" />
+            <div className="f500  s24">
+              <span className="f600 seriy">
+                Agar siz turli kalendarlar asosida yoki qonidan hisoblatib,
+              </span>{" "}
+              yokigin kuchli ugroza holatiga qaramay homilani saqlash bo'limida
+              9 oy davomida yotib, yoki EKO qildirib, ya'ni barcha omillarga
+              qarshi borgan holda o'g'il farzand tuqqan taqdiringizda ham
+              sizning o'g'lingiz kuchsiz va qizlarga xos xislatlar bilan / yoki
+              yashirin yoki hatto faol besoqolboz bo'lib / yoki xunasa bo'lib /
+              yoki juda bo'lmaganda olati juda kichkina o'g'il bo'lib,
+              tug'ilishining ehtimoli bir necha barobar ko'p bo'ladi.
+            </div>
+          </div>
+          <div className="list_item pl50">
+            <img src="/img/2.png" alt="" />
+            <div className="f500  s24">
+              Agarda siz eringizga (Ong osti darajangizda esa otangizga) yoqish
+              va uni o'g'il tug'ib berish bilan ushlab qolish maqsadida juda ham
+              qattiq o'g'il xohlab, ya'ni ikkiqat bo'lganingizda, shunisi aniq
+              o'g'il bo'ladi, deb tuqqan bo'lsangiz, ko'pincha 3-chi yoki 4-chi
+              homilangizdagi qizingiz (bir-hil paytda 1-chi, 2-chi homila ham
+              ham bo'lishi mumkin) gen mutatsiyasi sababli, ya'ni nasl-nasab
+              tizimda kuchli o'zgarish sodir bo'lganligi tufayli jiddiy kasallik
+              bilan tug'ilgan bo'lishi mumkin.
+            </div>
+          </div>
+          <div className="list_item ">
+            <img src="/img/1.png" alt="" />
+            <div className="f500  s24">
+              <span className="f600 seriy">
+                Ya'ni uning xromosomalar to'plamida
+              </span>{" "}
+              normal ayollarnikidek ikkita iks (XX) emas, balki 3ta va hatto 5ta
+              (XXX - XXXXX) iks-xromosomalar bog'lanmasi bo'lib / yoki aksincha
+              ikkinchi xromosoma o'rniga xech qanday xromosoma bo'lmasdan (XO),
+              ushbu anomaliyalar shunga olib keladiki, qiz bola:
             </div>
           </div>
 
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">
+              yoki gapira olmaydigan bo'lib (eshitish qobiliyati bo'lsa ham o'zi
+              gapira olmaydigan bo'lib);
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">yoki umuman kar-soqov bo'lib;</div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">
+              yoki ko'zida / ko'rish qobiliyatida katta nuqson bilan;
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">yoki umuman ko'r bo'lib,</div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">
+              yoki badanida katta hajmdagi xol/ yoki ko'plab mayda xollar / yoki
+              nor / yoki anomal dog' bilan
+            </div>
+          </div>
+          <div className="ta f500 color_main s28">
+            tug'ilgan bo'lishi mumkin.
+          </div>
+          <div className="ta f500 color_main s30 mt-5">
+            Yoki bu nasl mutatsiyasi bilan bog'liq kasalliklar keyinchalik:
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">
+              qiz bolaning bachadonida katta muammolar paydo bo'lganida
+              (bachadoni rivojlanmasdan “detskaya matka” holatida qolib
+              ketganida, yoki u umuman bachadonsiz tug'ilgan bo'lishi ham
+              mumkin);
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">
+              yoki qizlik pardasi yo'q bo'lib chiqqanida,
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">
+              yoki ko'kragi juda kichkina bo'lganida,
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">
+              yoki vazni haddan tashqari ortib borishni boshlaganida,
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">
+              yoki aqli zaiflashishni boshlaganida,
+            </div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">yoki tili chuchukligida,</div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">yoki duduqlanib gapirishida,</div>
+          </div>
+          <div className="list_item pl">
+            <img src="/icon_cor.png" alt="" />
+            <div className="f500 s24">
+              yoki bo'yi haddan tashqari baland (180 sm.dan ortiq), yoki haddan
+              tashqari past bo'lib chiqqanda (150 sm.dan past bo'lib qolib
+              ketganda){" "}
+            </div>
+          </div>
+          <div className="ta f500 color_main s28 mt-2">bilinishi mumkin.</div>
+          <div className="mt-5 s28 ta">
+            Ha, sizning tug'ilgan bechora qizingiz aslida eringizni va hatto
+            sizning o'zingizni ham qizlarga, ya'ni ayol zotiga bo'lgan
+            nafratingizni – Qiz kerak emas, chunki men / yoki biz erimiz
+            ikkalamiz qiz zotini yomon ko'ramiz – degan destruktiv Ong osti
+            dasturingizni aks ettirgan qurbon bo'lgan, xolos. Va siz albatta qiz
+            farzandingizning kasallik va nuqsonlarini Ollohning amriga to'nkab,
+            o'zlaringizni aybingizni tan olishni istamasangiz kerak.{" "}
+          </div>
           <div className="list_item ta f400 seriy s28 pl50">
             Demak, bizning variant javoblarimiz tugadi va biz siz bilan
             prorabotkalarimizni yozishga o'tamiz.
@@ -1298,7 +1295,7 @@ const Prarobotka1 = () => {
             <div className="s24 f500">
               <span className="color_main f600">
                 Ya'ni 30 yoshda ham, 40 va 50 yoshda ham{" "}
-              </span>
+              </span>{" "}
               Ong osti darajasida men hali ham ota-onamga o'g'il bola ekanimni
               isbotlashni davom etayotganimni tushunib yetyapman.
             </div>
@@ -1401,7 +1398,7 @@ const Prarobotka1 = () => {
             <div className="s24 f500">
               <span className="f600 color_main">
                 Va eng asosiysi men nima uchun hali ham turmushga chiqa
-                olmayaptganimning
+                olmayaptganimning{" "}
               </span>
               yoki turmushim hech o'xshamayaptganining sababini tushunib yetdim.
             </div>
@@ -1811,7 +1808,7 @@ const Prarobotka1 = () => {
           <div className="list_item">
             <img src="icon_cor.png" alt="" />
             <div className="s24 f500">
-              Aynan bugun va hozirda, otamni kechirgan holda, men hayotimdagi
+              Aynan bugun va hozirda, otamni kechirgan holda, men hayotimdagi{" "}
               <span className="seriy f600">
                 “Qabul qilinmaslik va rad etilish” modeliga blok qo'yyapman.
               </span>
@@ -2156,175 +2153,264 @@ const Prarobotka1 = () => {
         </div>
 
         {/* umumiy */}
-        <div className=" seriy s28 mt-5 ta seriy">
-          Hammasini yozib bo'lganingizdan keyin, barcha qog'ozlarni rasmga olib,
-          (ism-familiyangizni va darsingizni nomerini tepasiga yozib) <br />
-          <span className="f600">“UY VAZIFA” degan tugmani bosgan holda </span>
-          <br />
-          (gallereyangizdan belgilab) hamma qog'ozlaringizni ketma-ketlikda
-          yuklaysiz.
-        </div>
-        <div className="w-100 tort seriy s30 ta mt-5 f600">
-          FAQ: Darsliklar bo'yicha beriladigan savollarga tayyor javoblar
-        </div>
-        <div className="w-100 tort seriy s30  f600 ">
-          1. Uy vazifa necha varoqni tashkil etish kerak?
-        </div>
-        <div className="w-100 tort seriy s30  f600 ">
-          2. Keyingi dars menga qachon beriladi?
-        </div>
-        <div className="w-100 tort seriy s30  f600 ">
-          3. Uy vazifamni kim va nechi kunda tekshiradi?
-        </div>
-        <div className="w-100 tort seriy s30  f600 ">
-          4. Uy vazifalarni vaqtida bajara olmasam nima bo'ladi?
-        </div>
-        <div className="w-100 tort seriy s30  f600 ">
-          5. Prorabotkalarni yozayotganimda sog'lig'im yomonlashsa-chi?
-        </div>
-        <div className="d-flex flex-column justify-content-center">
-          <div className="toq_fil s24 mt-4 f500">
-            <span className="toq_fil s28 pl me-4">1.</span> Uy
-            vazifalaringizning varaqlar soni eng kamida 4-5 varoqdan boshlanishi
-            kerak. Istasangiz 30 varoqqacha ham biriktirsangiz bo'ladi. Bu yerda
-            eng asosiy shart – ichingiz bo'shagunga qadar siz beto'xtov
-            yozishingiz kerak.
+        <div className="umumiy">
+          <div className=" seriy s28 mt-5 ta seriy">
+            Hammasini yozib bo'lganingizdan keyin, barcha qog'ozlarni rasmga
+            olib, (ism-familiyangizni va darsingizni nomerini tepasiga yozib){" "}
+            <br />
+            <span className="f600">
+              “UY VAZIFA” degan tugmani bosgan holda{" "}
+            </span>
+            <br />
+            (gallereyangizdan belgilab) hamma qog'ozlaringizni ketma-ketlikda
+            yuklaysiz.
           </div>
-          <div className="toq_fil ta s24 mt-4 f500">
-            Yodingizda bo'lsinkim, har bitta darsni bajarishga sizga uzog'i
-            bilan 2-3 kun vaqt beriladi.
+          <div className="tort seriy s30 ta mt-5 f600">
+            FAQ: Darsliklar bo'yicha beriladigan savollarga tayyor javoblar
           </div>
-          <div className="toq_fil s24 mt-4 f500">
-            <span className="toq_fil s28 pl me-4">2.</span> Uy vazifani yuklab
-            bo'lganingizdan so'ng sizga keyingi darsingiz avtomatik ravishda
-            ochiladi.
+          <Accordion
+            className="mt-2"
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <div className=" my_acc seriy s30  f600 ">
+                1. Uy vazifa necha varoqni tashkil etish kerak?
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <div className="toq_fil s24 mt-4 f500">
+                  <span className="toq_fil s28 pl me-4">1.</span> Uy
+                  vazifalaringizning varaqlar soni eng kamida 4-5 varoqdan
+                  boshlanishi kerak. Istasangiz 30 varoqqacha ham biriktirsangiz
+                  bo'ladi. Bu yerda eng asosiy shart – ichingiz bo'shagunga
+                  qadar siz beto'xtov yozishingiz kerak.
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            expanded={expanded === "panel2"}
+            onChange={handleChange("panel2")}
+            className="mt-2"
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <div className="my_acc seriy s30  f600 ">
+                2. Keyingi dars menga qachon beriladi?
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <div className="toq_fil s24 mt-4 f500">
+                  <span className="toq_fil s28 pl me-4">2.</span> Uy vazifani
+                  yuklab bo'lganingizdan so'ng sizga keyingi darsingiz avtomatik
+                  ravishda ochiladi.
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            expanded={expanded === "panel3"}
+            className="mt-2"
+            onChange={handleChange("panel3")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <div className="my_acc seriy s30  f600 ">
+                3. Uy vazifamni kim va nechi kunda tekshiradi?
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <div className="toq_fil s24 mt-4 f500">
+                  <span className="toq_fil s28 pl me-4">3.</span> Sizning uy
+                  vazifangiz yetuk klinik psixologlarimiz tomonidan 3 kun
+                  davomida tekshirilib, baholanadi va siz bahoyingizni shaxsiy
+                  kabinetga kirganingizda darsingizni tagida ko'rsangiz bo'ladi.
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            expanded={expanded === "panel4"}
+            className="mt-2"
+            onChange={handleChange("panel4")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              {" "}
+              <div className="my_acc seriy s30  f600 ">
+                4. Uy vazifalarni vaqtida bajara olmasam nima bo'ladi?
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <div className="toq_fil s24 mt-4 f500">
+                  <span className="toq_fil s28 pl me-4">4.</span> Agarda siz uy
+                  vazifalarni o'z vaqtida bajarmasangiz, kursdan qolib
+                  ketishingiz mumkin va bunday holda yana qaytadan pul to'lab
+                  o'qishingizga to'g'ri keladi. Agarda uy vazifani
+                  bajarayotganda sizda jiddiy va zarur savolingiz / yoki
+                  iltimosingiz paydo bo'lsa, siz psixologlarimizga Telegram
+                  messendjeri orqali murojaat etsangiz bo'ladi:{" "}
+                  <span className="f600 kok">@bahtwoman_psixolog</span>
+                </div>
+                <div className="toq_fil s24 mt-4 f500 ms-4">
+                  Yodingizda bo'lsinkim, har bitta darsni bajarishga sizga
+                  uzog'i bilan 2-3 kun vaqt beriladi.
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            expanded={expanded === "panel5"}
+            className="mt-2"
+            onChange={handleChange("panel5")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <div className="my_acc seriy s30  f600 ">
+                5. Prorabotkalarni yozayotganimda sog'lig'im yomonlashsa-chi?
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <div className="toq_fil s24 mt-4 f500">
+                  <span className="toq_fil s28 pl me-4">5.</span> Agarda
+                  prorabotkalarni yozgan paytingizda bezovtalik his qilsangiz,
+                  yoki ruhiyatingiz ezilganligi sababli mazangiz qochib,
+                  sog'ligingiz yomonlashganini sezsangiz (biling – bu normal
+                  holat), demak, bunday holda siz bizning 10 yil davomida
+                  yaratilgan mo''jizaviy{" "}
+                  <span className="f600 color_main">
+                    Sog'liq trenajorimizni
+                  </span>{" "}
+                  eshitishingiz mumkin.
+                  <div className="toq_fil s24 mt-4 f500">
+                    Ushbu trenajyor 936 megagertsli binaural ritmlar va 1 500ga
+                    yaqin juda kuchli shifobaxsh Ong osti tasdiqlarini o'z
+                    ichiga olgan bo'lib, o'zining ulkan samarasini bizning
+                    kurslarimizni bitirgan yuzlab ayollarda ko'rsatgan.
+                  </div>
+                  <div className="toq_fil s24 mt-4 f500">
+                    Ushbu meditatsiyani har kuni ertalab va kechqurun
+                    eshitsangiz, sizning barcha kasalliklaringiz o'z-o'zidan
+                    yo'q bo'lib ketayotganini, hamda mental sog'lig'ingiz
+                    yaxshilanib, ko'tarinki ruhda hayot kechiryaptganingizni
+                    guvohi bo'lasiz.
+                  </div>
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <div className="ta f600 kok s30 mt-5">
+            Sizga ushbu darsimiz yoqdimi?
           </div>
-          <div className="toq_fil s24 mt-4 f500">
-            <span className="toq_fil s28 pl me-4">3.</span> Sizning uy
-            vazifangiz yetuk klinik psixologlarimiz tomonidan 3 kun davomida
-            tekshirilib, baholanadi va siz bahoyingizni shaxsiy kabinetga
-            kirganingizda darsingizni tagida ko'rsangiz bo'ladi.
+          <div className="ta f600 kok s30 mt-1">
+            Iltimos, quyida keltirilgan baholash shkalasi bo'yicha baholang!
           </div>
-          <div className="toq_fil s24 mt-4 f500">
-            <span className="toq_fil s28 pl me-4">4.</span> Agarda siz uy
-            vazifalarni o'z vaqtida bajarmasangiz, kursdan qolib ketishingiz
-            mumkin va bunday holda yana qaytadan pul to'lab o'qishingizga
-            to'g'ri keladi. Agarda uy vazifani bajarayotganda sizda jiddiy va
-            zarur savolingiz / yoki iltimosingiz paydo bo'lsa, siz
-            psixologlarimizga Telegram messendjeri orqali murojaat etsangiz
-            bo'ladi: <span className="f600 kok">@bahtwoman_psixolog</span>
+          <div className="d-flex justify-content-center mt-2">
+            <FormControl>
+              <FormLabel id="demo-controlled-radio-buttons-group">
+                <RadioGroup className="my_radio_group">
+                  <FormControlLabel
+                    value="1"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "silver",
+                          "&.Mui-checked": {
+                            color: "#FFD0D4",
+                          },
+                        }}
+                      />
+                    }
+                    label="1"
+                  />
+                  <FormControlLabel
+                    value="2"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "silver",
+                          "&.Mui-checked": {
+                            color: "#FFD0D4",
+                          },
+                        }}
+                      />
+                    }
+                    label="2"
+                  />
+                  <FormControlLabel
+                    value="3"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "silver",
+                          "&.Mui-checked": {
+                            color: "#FFD0D4",
+                          },
+                        }}
+                      />
+                    }
+                    label="3"
+                  />
+                  <FormControlLabel
+                    value="4"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "silver",
+                          "&.Mui-checked": {
+                            color: "#FFD0D4",
+                          },
+                        }}
+                      />
+                    }
+                    label="4"
+                  />
+                  <FormControlLabel
+                    value="5"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "silver",
+                          "&.Mui-checked": {
+                            color: "#FFD0D4",
+                          },
+                        }}
+                      />
+                    }
+                    label="5"
+                  />
+                </RadioGroup>
+              </FormLabel>
+            </FormControl>
           </div>
-          <div className="toq_fil s24 mt-4 f500">
-            <span className="toq_fil s28 pl me-4">5.</span> Agarda
-            prorabotkalarni yozgan paytingizda bezovtalik his qilsangiz, yoki
-            ruhiyatingiz ezilganligi sababli mazangiz qochib, sog'ligingiz
-            yomonlashganini sezsangiz (biling – bu normal holat), demak, bunday
-            holda siz bizning 10 yil davomida yaratilgan mo''jizaviy{" "}
-            <span className="f600 color_main">Sog'liq trenajorimizni</span>{" "}
-            eshitishingiz mumkin.
+          <div
+            onClick={() => nav("/dashboard")}
+            className="prorabotka_what tort f600 color_main s36 mt-5 ta"
+          >
+            Shaxsiy kabinetga qaytish
           </div>
-        </div>
-        <div className="toq_fil s24 mt-4 f500">
-          Ushbu trenajyor 936 megagertsli binaural ritmlar va 1 500ga yaqin juda
-          kuchli shifobaxsh Ong osti tasdiqlarini o'z ichiga olgan bo'lib,
-          o'zining ulkan samarasini bizning kurslarimizni bitirgan yuzlab
-          ayollarda ko'rsatgan.
-        </div>
-        <div className="toq_fil s24 mt-4 f500">
-          Ushbu meditatsiyani har kuni ertalab va kechqurun eshitsangiz, sizning
-          barcha kasalliklaringiz o'z-o'zidan yo'q bo'lib ketayotganini, hamda
-          mental sog'lig'ingiz yaxshilanib, ko'tarinki ruhda hayot
-          kechiryaptganingizni guvohi bo'lasiz.
-        </div>
-        <div className="ta f600 kok s30 mt-5">
-          Sizga ushbu darsimiz yoqdimi?
-        </div>
-        <div className="ta f600 kok s30 mt-1">
-          Iltimos, qo'yida keltirilgan baho shkalasi bo'yicha baholang!
-        </div>
-        <div className="d-flex justify-content-center mt-2">
-          <FormControl>
-            <FormLabel id="demo-controlled-radio-buttons-group">
-              <RadioGroup className="my_radio_group">
-                <FormControlLabel
-                  value="1"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "silver",
-                        "&.Mui-checked": {
-                          color: "#FFD0D4",
-                        },
-                      }}
-                    />
-                  }
-                  label="1"
-                />
-                <FormControlLabel
-                  value="2"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "silver",
-                        "&.Mui-checked": {
-                          color: "#FFD0D4",
-                        },
-                      }}
-                    />
-                  }
-                  label="2"
-                />
-                <FormControlLabel
-                  value="3"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "silver",
-                        "&.Mui-checked": {
-                          color: "#FFD0D4",
-                        },
-                      }}
-                    />
-                  }
-                  label="3"
-                />
-                <FormControlLabel
-                  value="4"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "silver",
-                        "&.Mui-checked": {
-                          color: "#FFD0D4",
-                        },
-                      }}
-                    />
-                  }
-                  label="4"
-                />
-                <FormControlLabel
-                  value="5"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "silver",
-                        "&.Mui-checked": {
-                          color: "#FFD0D4",
-                        },
-                      }}
-                    />
-                  }
-                  label="5"
-                />
-              </RadioGroup>
-            </FormLabel>
-          </FormControl>
-        </div>
-        <div
-          onClick={() => nav("/dashboard")}
-          className="prorabotka_what tort f600 color_main s36 mt-5 ta w-100"
-        >
-          Shaxsiy kabinetga qaytish
         </div>
       </div>
     </>

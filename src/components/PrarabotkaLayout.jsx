@@ -82,7 +82,7 @@ const PrarabotkaLayout = () => {
   };
 
   return (
-    <div className="NavigationLayout2 HundredQuestionsLayout">
+    <div className="NavigationLayout HundredQuestionsLayout">
       <div className="row">
         <div className="col-12 top">
           <Link to="/" className="logo nav_110_logo">
@@ -175,7 +175,7 @@ const PrarabotkaLayout = () => {
             5. Савол
           </Link>
         </div>
-        <div className="col-lg-9 right">
+        <div className={`col-lg-9 right ${burger ? "d-none" : ""}`}>
           <Outlet />
         </div>
       </div>

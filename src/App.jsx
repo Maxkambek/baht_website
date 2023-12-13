@@ -59,6 +59,9 @@ import Prarobotka3 from "./Prorabotka/Prarobotka3";
 import Prarobotka4 from "./Prorabotka/Prarobotka4";
 import Prarobotka5 from "./Prorabotka/Prarobotka5";
 import WhatPro from "./Prorabotka/WhatPro";
+import ResultPage2 from "./pages/workproblem/ResultPage2";
+import { useEffect } from "react";
+import DisablePrintScreen from "./components/DisablePrintScreen";
 
 const App = () => {
   return (
@@ -67,6 +70,7 @@ const App = () => {
         <HashRouter>
           <Provider store={store}>
             <ScrollToTop />
+            <DisablePrintScreen />
             <Routes>
               <Route path="/" element={<MainPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
@@ -117,6 +121,7 @@ const App = () => {
               </Route>
 
               <Route path="/result-page" element={<ResultPage />} />
+              <Route path="/result-page-2" element={<ResultPage2 />} />
               <Route path="/elon" element={<Elon />} />
 
               <Route path="/end-questions" element={<EndQuestionsPage />} />

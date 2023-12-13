@@ -111,12 +111,7 @@ const LocationPage = () => {
                 </option>
               ))}
           </select> */}
-          <input
-            value={distric}
-            onChange={(e) => setDistric(e.target.value)}
-            type="text"
-            className="form-control"
-          />
+
           {/* <select
             placeholder=""
             className="form-control "
@@ -133,25 +128,76 @@ const LocationPage = () => {
                   {item.name}
                 </option>
               ))}
-          </select>
+          </select> */}
 
-          <select
-            placeholder=""
-            className="form-control "
-            name="viloyat"
-            id="1234"
-            onChange={handleChangeDistric}
-          >
+          <select className="form-control " name="viloyat" id="1234">
             <option selected disabled hidden value="">
               {getText("inp_q_8")}
             </option>
-            {districs &&
-              districs.map((item) => (
-                <option key={item.id} value={item.name}>
-                  {item.name}
-                </option>
-              ))}
-          </select> */}
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_1")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_2")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_3")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_4")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_5")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_6")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_7")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_8")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_9")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_10")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_11")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_12")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_13")}
+            </option>
+
+            <option key="1" value="Andijon viloyati">
+              {getText("add_14")}
+            </option>
+          </select>
+          <input
+            value={distric}
+            onChange={(e) => setDistric(e.target.value)}
+            type="text"
+            className="form-control"
+            placeholder={getText("manzil_yoz")}
+          />
 
           <button type="submit" className="btn myBtn">
             {getText("next")}

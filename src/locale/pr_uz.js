@@ -28,7 +28,8 @@ export const pr_uz = {
   pr1_361: `	Ushbu trenajyor 936 megagertsli binaural ritmlar va 1 500ga yaqin juda kuchli shifobaxsh Ong osti tasdiqlarini o'z ichiga olgan bo'lib, o'zining ulkan samarasini bizning kurslarimizni bitirgan yuzlab ayollarda ko'rsatgan.`,
   pr1_362: `	Ushbu meditatsiyani har kuni ertalab va kechqurun eshitsangiz, sizning barcha kasalliklaringiz o'z-o'zidan yo'q bo'lib ketayotganini, hamda mental sog'lig'ingiz yaxshilanib, ko'tarinki ruhda hayot kechiryaptganingizni guvohi bo'lasiz`,
   pr1_363: `Sog’liq trenajorini tinglash`,
-  pr1_364: `Sizga ushbu darsimiz yoqdimi? Iltimos, qo'yida keltirilgan baho shkalasi bo'yicha baholang!`,
+  pr1_364: `Sizga ushbu darsimiz yoqdimi?`,
+  pr1_iltimos: `Iltimos, qo'yida keltirilgan baho shkalasi bo'yicha baholang!`,
   pr1_365: `Shaxsiy kabinetga qaytish`,
 
   // 1 - savol

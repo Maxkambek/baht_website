@@ -1,341 +1,581 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CheckIcon from "@mui/icons-material/Check";
+import { ScrollToTop } from "../components";
+import { useNavigate } from "react-router-dom";
 
 const WhatPro = () => {
+  const nav = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
-    <div className="Pro1">
-      <div className="row">
-        <div className="colo-12">
-          <div className="kok f700 s36 what">
-            Prorabotka degani – nima degani?
+    <div className="ProWhat">
+      <ScrollToTop />
+      <div className="pro_box">
+        <div className="f700 s36 kok ta">Проработка дегани – нима дегани?</div>
+        <div className=" s24 f500 ab mt-5">
+          <span className="color_main f600 s28">Проработка – бу </span> махсус
+          психологик атамадир. Уни биринчи маротаба психологиянинг отаси бўлмиш
+          Зигмунд Фрейд 1914 йилда ўзининг "Эслаш, такрорлаш, ва қайта англаш"
+          мақоласида ишлатган ва кейинчалик у ўз издошларига психоанализ
+          усуллари ҳақида маслаҳат берганда айнан шу услубни қўллаш кераклигини
+          ҳар доим таъкидлаган.
+        </div>
+        <div className=" s24 f500 ab mt-3">
+          Фрейд психоаналитик мижознинг муаммоларини аниқлаганидан ва
+          кўрсатгандан сўнг, ишининг кейинги босқичи сифатида "проработка"
+          атамасини киритди.
+        </div>
+        <div className="list_item">
+          <img src="/img/3.png" alt="" />
+          <div className="f500 s24">
+            <span className="s28 kok f600">Фрейднинг таъкидлашича,</span>{" "}
+            мижозларга уларнинг симптом, хулқ-атвор, реакцияси, муаммолардан
+            қандай қилиб қочаётганларини ва тузалиш учун қандай қаршиликларни
+            кўрсатаётганларини аниқлаш ва уларга тақдим этиш етарли эмас.
           </div>
-          <div className="s24 f500 mt-5">
-            &nbsp; &nbsp; &nbsp; Prorabotka – bu maxsus psixologik atamadir. Uni
-            birinchi marotaba psixologiyaning otasi bo'lmish Zigmund Freyd 1914
-            yilda o'zining{" "}
+        </div>
+        <div className="list_item">
+          <img src="/img/1.png" alt="" />
+          <div className="f500 s24">
+            <span className="s28 kok f600">
+              Яъни, сиз бир нарсани тушунишингиз керак
+            </span>{" "}
+            - психолог муаммонинг номини топиб, уни мижозига айтгани билан
+            муаммонинг ўзи бундан йўқолмайди, сувга тушган тошдек йўқ бўлиб
+            кетмайди ва албатта ҳал этилмайди.
           </div>
-          <span className="s24 f500 span">
-            <b>"Eslash, takrorlash, va qayta anglash" </b>
-          </span>
-          <span className="s24 f500">
-            maqolasida ishlatgan va keyinchalik u o'z izdoshlariga psixoanaliz
-            usullari haqida maslahat berganda aynan shu uslubni qo'llash
-            kerakligini har doim ta'kidlagan.
-          </span>
         </div>
-        <div className="s24 f500 mt-3">
-          &nbsp; &nbsp; &nbsp; Freyd psixoanalitik mijozning muammolarini
-          aniqlaganidan va ko'rsatgandan so'ng, ishining keyingi bosqichi
-          sifatida "prorabotka" atamasini kiritdi. Freydning ta'kidlashicha,
-          mijozlarga ularning simptom, xulq-atvor, reaktsiyasi, muammolardan
-          qanday qilib qochayotganlarini va tuzalish uchun qanday qarshiliklarni
-          ko'rsatayotganlarini aniqlash va ularga taqdim etish yetarli emas.
+        <div className="list_item pl50">
+          <img src="/img/3.png" alt="" />
+          <div className="f500 s24">
+            Муаммони проработка қилишни давом этиш керак, яъни ҳар ҳил тарафдан
+            кўриб чиқиш, кучли таҳлил қилиш ва янги установкаларни сингдириш
+            керак, гарчи бу руҳий муолажа ҳар жиҳатдан мижоз учун энг оғриқли
+            муолажа бўлса ҳам.
+          </div>
         </div>
-        <div className="s24 f500 mt-2 ">
-          &nbsp; &nbsp; &nbsp; Ya'ni, siz bir narsani tushunishingiz kerak -
-          psixolog muammoning nomini topib, uni mijoziga aytgani bilan
-          muammoning o'zi bundan yo'qolmaydi, suvga tushgan toshdek yo'q bo'lib
-          ketmaydi va albatta hal etilmaydi. Muammoni prorabotka qilishni davom
-          etish kerak, ya'ni har xil tarafdan ko'rib chiqish, kuchli tahlil
-          qilish va yangi ustanovkalarni singdirish kerak, garchi bu ruhiy
-          muolaja har jihatdan mijoz uchun eng og'riqli muolaja bo'lsa ham.
+        <div className="title pl50">
+          <div className="f600 s30 seriy">
+            Проработка – бу сизнинг ҳаёт сценарийингизни ўзгартиришни англатади.
+          </div>
         </div>
-        <div className="s24 f500 mt-2">
-          <span className="seriy">
-            &nbsp; &nbsp; &nbsp; Prorabotka – bu sizning hayot stsenariyingizni
-            o'zgartirishni anglatadi.
-          </span>
-          Shunda ta'qiq va og'riq bo'lgan joyga ruxsat, erkinlik va baxt kirib
-          kelishini bildiradi
+        <div className="title pl50">
+          <div className="f500 s24 seriy">
+            Шунда таъқиқ ва оғриқ бўлган жойга рухсат, эркинлик ва бахт кириб
+            келишини билдиради.
+          </div>
         </div>
-        <div className="s24 f500 mt-2">
-          &nbsp; &nbsp; &nbsp; Misol uchun, siz ko'zgu oldida turib o'zingizga
-          10 marta aytishingiz mumkin - "Men qimmatli va ahamiyatliman, men
-          yangi his-tuyg'ularimni his qila olaman, muvaffaqiyatga erishyapman va
-          o'zimni namoyon qilish huquqiga egaman. Men dam olaman va o'zimga
-          g'amxo'rlik qila olaman" – deb.
+        <div className="list_item">
+          <img src="/img/2.png" alt="" />
+          <div className="f500 s24">
+            <span className="s28 kok f600">Мисол учун,</span> сиз кўзгу олдида
+            туриб ўзингизга 10 марта айтишингиз мумкин - "Мен қимматли ва
+            аҳамиятлиман, мен янги ҳис-туйғуларимни ҳис қила оламан,
+            муваффақиятга эришяпман ва ўзимни намоён қилиш ҳуқуқига эгаман. Мен
+            дам оламан ва ўзимга ғамхўрлик қила оламан" – деб.
+          </div>
         </div>
-        <div className="s24 f500 mt-2">
-          &nbsp; &nbsp; &nbsp; Ammo bu sizning hayotingizda hech narsani
-          o'zgartirmaydi, siz umringiz davomida ushbu ruxsatdan foydalanishga
-          to'sqinlik qilgan muammolaringizning ildizlarini topib, ular haqida
-          yozishni boshlamaguningizcha: o'zingizni namoyon qilish,
-          muvaffaqiyatga erishish, erkaklar va farzandlaringiz bilan sog'lom
-          munosabatlarni o'rnatish, pul topish, o'zingizni tanlash va o'zingiz
-          bilan uyg'unlikda yashashni hech qachon o'rgana olmaysiz.
+        <div className="list_item">
+          <img src="/img/2.png" alt="" />
+          <div className="f500 s24">
+            <span className="s28 seriy f600">
+              Аммо бу сизнинг ҳаётингизда ҳеч нарсани ўзгартирмайди,
+            </span>{" "}
+            сиз умрингиз давомида ушбу рухсатдан фойдаланишга тўсқинлик қилган
+            муаммоларингизнинг илдизларини топиб, улар ҳақида ёзишни
+            бошламагунингизча:
+          </div>
         </div>
-        <div className="s24 f500 mt-2">
-          &nbsp; &nbsp; &nbsp; Albatta Freyd va uning ko'plab mashhur
-          izdoshlarini hamda ulardan tashqari bizning mobil ilovamizni bosh
-          sahifasida keltirilgan “Qo'llanilgan adabiyotlarimiz” bo'limidagi
-          dunyoda tan olingan mashhur psixolog va psixo-terapevtlarning kitob va
-          mehnatlarini o'zbek mentalitetiga moslashtirish uchun 12 yildan ortiq
-          vaqtimiz ketsada, hozirda ushbu mobil ilovamizda biz sizga taqdim
-          etgan prorabotkalarimiz yagona, noyob, va 100% natija berishiga biz
-          kafolat bera olamiz.
+        <div className="list_item pl50 mt-1">
+          <img src="icon_cor.png" alt="" />
+          <div className="f500 s24">ўзингизни намоён қилиш,</div>
         </div>
-        <div className="f700 kok s30 mt-5 ta">
-          Nima uchun ovozli fayl qilib, yoki pechat qilib yozish orqali
-          prorabotkani bajarish mumkin emas?
+        <div className="list_item pl50 mt-1">
+          <img src="icon_cor.png" alt="" />
+          <div className="f500 s24">муваффақиятга эришиш,</div>
         </div>
-        <div className="f700 kok s30 mt-5 ta">
-          Nima uchun faqat daftarga yozish kerak?
+        <div className="list_item pl50 mt-1">
+          <img src="icon_cor.png" alt="" />
+          <div className="f500 s24">
+            эркаклар ва фарзандларингиз билан соғлом муносабатларни ўрнатиш,
+          </div>
         </div>
-        <div className="s24 f500 mt-2">
-          &nbsp; &nbsp; &nbsp; Yozish – bu negativ his-tuyg'ularni yengish,
-          maqsadlarga moslashish hamda oldingizga qo'ygan maqsadlaringizni
-          shakllantirishning eng yaxshi usuli hisoblanadi.
+        <div className="list_item pl50 mt-1">
+          <img src="icon_cor.png" alt="" />
+          <div className="f500 s24">пул топиш, </div>
         </div>
-        <div className="s24 f500 mt-2">
-          &nbsp; &nbsp; &nbsp; Yozma nutq og'zaki nutqqa qaraganda ancha yuqori
-          darajada tashkil etilgan. Yozishda miyaning tahlil qiladigan bir necha
-          kotalizatorlari ishtirok etadi. Ya'ni, bizning miyamiz maksimal
-          darajada ishlashni boshlaydi, chunki aynan yozish paytida uning eng
-          kadimdan shakllangan chuqur qatlamlari (ya'ni, Ong ostimiz bilan
-          bevosita bog'liq qatlamlari) ishga tushadi.
+        <div className="list_item pl50 mt-1">
+          <img src="icon_cor.png" alt="" />
+          <div className="f500 s24">ўзингизни танлаш</div>
         </div>
-        <div className="s24 f500 mt-2">
-          &nbsp; &nbsp; &nbsp; Boshqa tomondan esa, yozayotgan vaqtimizda biz
-          o'zimiz bilan yolg'iz qolamiz. Bu esa o'z navbatida stress darajasini
-          pasaytiradi. Fikr va his-tuyg'ularni ruchkada yozish orqali qog'ozda
-          tasvirlash, ovozli xabarlarni yozish yoki pechat qilish paytida
-          albatta paydo bo'ladigan qo'rquv va xijolatni yengishga yordam beradi.
+        <div className="list_item pl50 mt-1">
+          <img src="icon_cor.png" alt="" />
+          <div className="f500 s24">
+            {" "}
+            ва ўзингиз билан уйғунликда яшашни{" "}
+            <span className="seriy f600 s28">ҳеч қачон ўргана олмайсиз.</span>
+          </div>
         </div>
-        <div className="s24 f500 mt-2">
-          &nbsp; &nbsp; &nbsp; Nisbatan aytganda, yozish mantiqiy fikrlashning
-          eng zo'r usuli hisoblanadi. Negaki bu fikrlaringiz va
-          his-tuyg'ularingizni tuzilishini ifoda etishingiz uchun va Ong
-          ostingizga yangi ustanovkalarni kiritish uchun yordam beradigan eng
-          samarali vositadir.
+        <div className="list_item">
+          <img src="/img/2.png" alt="" />
+          <div className="f500 s24">
+            Албатта Фрейд ва унинг кўплаб машҳур издошларини ҳамда улардан
+            ташқари бизнинг ўқув платформамизни бош саҳифасида келтирилган
+            <span className="f600 kok">
+              {" "}
+              “Қўлланилган адабиётларимиз”{" "}
+            </span>{" "}
+            бўлимидаги дунёда тан олинган 170та машҳур психолог ва
+            психо-терапевтларнинг китоб ва меҳнатларини ўзбек менталитетига
+            мослаштириш учун 15 йилдан ортиқ вақтимиз кетсада, биз сизга тақдим
+            этган проработкаларимиз ягона, ноёб, ва 100% натижа беришига биз
+            кафолат бера оламиз.
+          </div>
         </div>
-        <div className="s24 f500 mt-2">
-          &nbsp; &nbsp; &nbsp; AQShdagi Stenford universiteti qoshidagi Tadqiqot
-          markazida o'tkazilgan psixologiya sohasidagi so'ngi izlanishlar shuni
-          isbotladiki, psixolog bilan ovozli muloqot emas, balki psixolog bergan
-          vazifalarni qog'ozda aniq, to'g'ri va batafsil ifodalash barcha
-          negativ his-tuyg'ular va salbiy o'ylardan xalos bo'lishga yordam
-          beradi.
+        <div className="title">
+          <div className="s28 seriy f600">
+            Нима учун овозли файл қилиб, ёки печат қилиб ёзиш орқали
+            проработкани бажариш мумкин эмас?{" "}
+          </div>
         </div>
-        <div className="f700 kok s30 mt-5 ta">
-          Prorabotka bir necha bosqichlardan iborat bo'lib, siz ularni ketma-ket
-          bosib o'tasiz.
+        <div className="title">
+          <div className="s28 kok f600">
+            Нима учун фақат дафтарга ёзиш керак?
+          </div>
+        </div>{" "}
+        <div className="list_item">
+          <div className="f500 s24 ab">
+            <span className="kok s28 f600"> Ёзиш – бу</span> негатив
+            ҳис-туйғуларни енгиш, мақсадларга мослашиш ҳамда олдингизга қўйган
+            мақсадларингизни шакллантиришнинг энг яхши усули ҳисобланади.
+          </div>
         </div>
-
-        <div className="mt-3 ta">
-          <span className="f700 color_main s30 mt-5 ta">Birinchi bosqich-</span>
-          <span className="s24 f500 mt-2">
-            <b>bu anglash va o'rganish.</b>
-          </span>
+        <div className="list_item pl">
+          <img src="/img/2.png" alt="" />
+          <div className="f500 s24">
+            Ёзма нутқ оғзаки нутққа қараганда анча юқори даражада ташкил
+            этилган. Ёзишда миянинг таҳлил қиладиган бир неча котализаторлари
+            иштирок этади.
+          </div>
         </div>
-        <div className="s24 f500 mt-5">
-          Siz o'zingizni va hayot tajribangizni klinik psixologiya bilimlari
-          asosida o'rganasiz.
+        <div className="list_item pl">
+          <img src="/img/1.png" alt="" />
+          <div className="f500 s24">
+            <span className="seriy f600">
+              Яъни, бизнинг миямиз максимал даражада ишлашни бошлайди,{" "}
+            </span>{" "}
+            чунки айнан ёзиш пайтида унинг энг кадимдан шаклланган чуқур
+            қатламлари (яъни, Онг остимиз билан бевосита боғлиқ қатламлари) ишга
+            тушади.
+          </div>
         </div>
-        <div className="s24 f500 mt-2">
-          Sizga har bir savolda taklif qilingan variantlardan kelib chiqib, siz
-          Qachon, Qanday tarzda va Nima uchun u yoki bu hayotiy stsenariy yoki
-          Ong osti ta'qiqi paydo bo'lganini anglab yetasiz
+        <div className="list_item pl">
+          <img src="/img/3.png" alt="" />
+          <div className="f500 s24">
+            <span className="f-600 color_main">Бошқа томондан эса, </span>{" "}
+            ёзаётган вақтимизда биз ўзимиз билан ёлғиз қоламиз. Бу эса ўз
+            навбатида стресс даражасини пасайтиради. Фикр ва ҳис-туйғуларни
+            ручкада ёзиш орқали қоғозда тасвирлаш, овозли хабарларни ёзиш ёки
+            печат қилиш пайтида албатта пайдо бўладиган қўрқув ва хижолатни
+            енгишга ёрдам беради.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          Ya'ni, nima uchun sizning hayotingizda bir xil stsenariylar doimo
-          takrorlanishini yoki nima uchun aynan shunday yigitni, erkakni,
-          qaynonani, ajralishni, yoki turmushga chiqa olmayaptganingizni,
-          adolatsizlikni, dard va turli-xil xafagarchiliklarni jalb
-          qilganingizni tushunasiz. Qanday vaziyat va kimning qanday munosabati
-          bunga olib kelganini anglashni boshlaysiz.
+        <div className="list_item">
+          <img src="/img/3.png" alt="" />
+          <div className="f500 s24">
+            <span className="seriy f600">
+              Нисбатан айтганда, ёзиш мантиқий фикрлашнинг энг зўр усули
+              ҳисобланади.{" "}
+            </span>
+            Негаки бу фикрларингиз ва ҳис-туйғуларингизни тузилишини ифода
+            этишингиз учун ва Онг остингизга янги установкаларни киритиш учун
+            ёрдам берадиган энг самарали воситадир.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          <span>
-            <b> Yodingizda tursin- </b>
-          </span>
-          anglashni o'ziga sizda 1 soatdan 1 sutkagacha vaqtingiz ketishi
-          mumkin.
+        <div className="list_item pl">
+          <img src="/img/2.png" alt="" />
+          <div className="f500 s24">
+            АҚШдаги Стенфорд университети қошидаги{" "}
+            <span className="f600 kok">Тадқиқот Марказида</span> ўтказилган
+            психология соҳасидаги сўнги изланишлар шуни исботладики, психолог
+            билан овозли мулоқот эмас, балки психолог берган вазифаларни қоғозда
+            аниқ, тўғри ва батафсил ифодалаш барча негатив ҳис-туйғулар ва
+            салбий ўйлардан ҳалос бўлишга ёрдам беради.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          &nbsp; &nbsp; &nbsp; Anglab yetganingizdan so'ng, prorabotkalarni
-          ichidan sizga to'g'ri keladigan variantga tegishli gaplarini topasiz.
-          Boshida o’sha salbiy kechinmalaringiz borasidagi prorabotkalaringizni
-          yozayotgan paytingizda esingizga tushgan barcha voqealarni qo'shib
-          batafsil yozishingiz kerak bo'ladi.
+        <div className="title">
+          <div className="s28 seriy f600">
+            Проработка учта босқичдан иборат бўлиб, сиз уларни кетма-кет босиб
+            ўтасиз.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          &nbsp; &nbsp; &nbsp; Siz (bayon tariqasida) nafaqat hayotingiz
-          tarixidagi aynan sodir bo'lgan faktlarni yozasiz, balki o'sha paytda
-          va hozir ham boshingizdan kechirgan his-tuyg'ularingizni hikoya kabi
-          yozib chiqishingiz kerak bo'ladi. Nimani his qilgansiz – o'sha paytda
-          va hatto hozir ham – hammasini yozib chiqasiz
+        <div className="title">
+          <div className="s28 f600">
+            <span className="color_main"> Биринчи босқич</span> – бу англаш ва
+            ўрганиш.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          &nbsp; &nbsp; &nbsp; Ya'ni, siz o'z his-tuyg'ularingizni bariga
-          tashqariga chiqishga ruxsat berasiz.
+        <div className="list_item pl">
+          <img src="/img/3.png" alt="" />
+          <div className="f500 s24">
+            Сиз ўзингизни ва ҳаёт тажрибангизни клиник психология билимлари
+            асосида ўрганасиз.
+          </div>
         </div>
-        <div className="s24 f500 mt-3 chapga">
-          Shuni ham aytib o'tish lozimki, yozayotgan paytingizda siz
-          yig'lashingiz mumkin yoki hammadan uzoqlashishni istashingiz mumkin.
-          Yoki sizning ko'nglingiz aynishi mumkin. Suyaklaringiz og'rishi yoki
-          shamollab qolishingiz mumkin. Yoki surunkali kasalliklaringiz xuruj
-          qilishi mumkin. Biling – bularning barchasi normal holat.
+        <div className="list_item pl">
+          <img src="/img/3.png" alt="" />
+          <div className="f500 s24">
+            Сизга ҳар бир саволда таклиф қилинган вариантлардан келиб чиқиб, сиз{" "}
+            <span className="fil f600 s28">
+              {" "}
+              Қачон, Қандай тарзда ва Нима учун
+            </span>{" "}
+            у ёки бу ҳаётий сценарий ёки Онг ости таъқиқи пайдо бўлганини англаб
+            етасиз.
+          </div>
         </div>
-        <div className="s24 f500 mt-3 ">
-          Chunki sizning psixikangiz yillar davomida qalbingizda va tabiiy
-          ravishda tanangizda to'plangan barcha hissiy yukdan xalos bo'lar ekan
-          – bu u uchun albatta shok holatidek qabul qilinadi.
+        <div className="list_item pl50">
+          <div className="f500 s24 ab">
+            <span className="f600 s28 seriy">
+              Яъни, нима учун сизнинг ҳаётингизда бир хил сценарийлар
+            </span>{" "}
+            доимо такрорланишини ёки нима учун айнан шундай йигитни, эркакни,
+            қайнонани, ажралишни, ёки турмушга чиқа олмаяптганингизни,
+            адолатсизликни, дард ва турли-ҳил хафагарчиликларни жалб
+            қилганингизни тушунасиз. Қандай вазият ва кимнинг қандай муносабати
+            бунга олиб келганини англашни бошлайсиз.{" "}
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          Shuning uchun ham biz siz uchun har bir savolning oxirida
-          biriktirilgan maxsus “Sog'liq trenajyori”ni ishlab chiqqanmiz. Yillar
-          davomida yuzlab ayollardan tashkil topgan bir nechta guruhlarda
-          sinalgan ushbu shifobaxsh meditatsiyamiz sizga juda katta yordam
-          berishiga ishonchimiz komil.
+        <div className="list_item pl50">
+          <img src="/img/2.png" alt="" />
+          <div className="f600 s24">
+            <span className="color_main f600 s28">Ёдингизда турсин</span> –
+            англашни ўзига сизда 1 соатдан 1 суткагача вақтингиз кетиши мумкин.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          Yodingizda bo'lsinki, ushbu trenajyordagi original binaural ritmlar va
-          (maxsus tezlashtirilgan ovozda pasaytirib yozilgan) sabliminallar
-          meditatsiyada siz eshitgan gaplarni to'g'ridan-to'g'ri Ong ostingizga
-          olib kirib, mo''jizaviy ishni bajaradi.
+        <div className="list_item">
+          <img src="/img/3.png" alt="" />
+          <div className="f500 s24">
+            Англаб етганингиздан сўнг,
+            <span className="seriy f600">
+              {" "}
+              проработкаларни ичидан сизга тўғри келадиган вариантга тегишли
+              гапларини топасиз.
+            </span>{" "}
+            Бошида ўша салбий кечинмаларингиз борасидаги проработкаларингизни
+            ёзаётган пайтингизда эсингизга тушган барча воқеаларни қўшиб
+            батафсил ёзишингиз керак бўлади.
+          </div>
         </div>
-        <div className="center mt-5 s24 f500 ">
-          <span className="color_main f600 s30 ">Ikkinchi bosqich </span>
-          <b>-bu qayta fikrlash va o'zingizni o'zgartirish.</b>
+        <div className="list_item pl50">
+          <img src="/img/1.png" alt="" />
+          <div className="f500 s24">
+            Сиз (баён тариқасида) нафақат ҳаётингиз тарихидаги айнан содир
+            бўлган фактларни ёзасиз, балки ўша пайтда ва ҳозир ҳам бошингиздан
+            кечирган ҳис-туйғуларингизни ҳикоя каби ёзиб чиқишингиз керак
+            бўлади. Нимани ҳис қилгансиз – ўша пайтда ва хатто ҳозир ҳам –
+            ҳаммасини ёзиб чиқасиз.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          &nbsp; &nbsp; &nbsp; Ota-onangizga va hayotingizdagi ko'plab
-          personajlarga turli salbiy his-tuyg'ularni boshdan kechirganingizdan
-          so'ng, siz asta-sekin tinchlanasiz. Ha, bu uchun ham albatta vaqt
-          kerak bo'ladi. Kimgadir bir oy, kimgadir 2-3 oy.
+        <div className="list_item">
+          <img src="/img/3.png" alt="" />
+          <div className="f600 s24 seriy">
+            Яъни, сиз ўз ҳис-туйғуларингизни барига ташқарига чиқишга рухсат
+            берасиз.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          &nbsp; &nbsp; &nbsp; Qachondir, bir kun kelib siz o'tmishdagi og'riqli
-          holatni eslaganingizda, siz uni ilgari sizni qiynagan og'riqli
-          his-tuyg'ularsiz, faqat aqlingiz bilan eslayotganingizni sezishni
-          boshlaysiz.
+        <div className="list_item pl50">
+          <img src="/img/2.png" alt="" />
+          <div className="f500 s24">
+            <span className="kok f600"> Шуни ҳам айтиб ўтиш лозимки,</span>{" "}
+            ёзаётган пайтингизда сиз йиғлашингиз мумкин ёки ҳаммадан узоқлашишни
+            исташингиз мумкин. Ёки сизнинг кўнглингиз айниши мумкин.
+            Суякларингиз оғриши ёки шамоллаб қолишингиз мумкин. Ёки сурункали
+            касалликларингиз хуруж қилиши мумкин.{" "}
+            <span className="seriy f600">
+              Билинг – буларнинг барчаси нормал ҳолат!
+            </span>
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          Ya'ni, siz ana shu o'tmishda bo'lib o'tgan voqeani yodga olganingizda,
-          yuragingiz endi siqilmaydi, tomog'ingizga tosh qadalmaydi, boshingiz
-          og'rimaydi, g'azab yoki nafrat tuyg'usi qiynamaydi
+        <div className="list_item pl50">
+          <img src="/img/3.png" alt="" />
+          <div className="f500 s24">
+            Чунки сизнинг психикангиз{" "}
+            <span className="seriy f600"> йиллар давомида </span> қалбингизда ва
+            табиий равишда танангизда тўпланган барча ҳиссий юкдан ҳалос бўлар
+            экан – бу у учун албатта шок холатидек қабул қилинади.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          Ha, asta-sekin siz albatta tinchlanasiz. Ishoning! Chunki siz
-          endilikda muammolaringiz qayerdaligini tushunib, ularni qanday hal
-          qilishni bilib olgan yetuk inson bo'lasiz. Siz o'zingizdan yangi
-          shaxsni yaratayotganingizdan va boshqacha yashash huquqiga ega
-          bo'layotganingizdan o'zingizni baxtiyor his qilishni boshlaysiz.
-          Negaki siz o'z muammoyingizni hal qilib bo'lganingizni va o'z
-          hayotingiz uchun mas'uliyatni o'z zimmangizga olgan katta insonga
-          aylanganingizni tushunasiz
+        <div className="list_item">
+          <img src="/img/1.png" alt="" />
+          <div className="f500 s24 ">
+            Шунинг учун ҳам биз сиз учун ҳар бир саволнинг оҳирида бириктирилган
+            махсус <br />{" "}
+            <span className="color_main f600"> “Соғлиқ тренажёри”</span> ни
+            ишлаб чиққанмиз. Йиллар давомида юзлаб аёллардан ташкил топган бир
+            нечта гуруҳларда синалган ушбу шифобахш медитациямиз сизга жуда
+            катта ёрдам беришига ишончимиз комил.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          &nbsp; &nbsp; &nbsp; Prorabotkalarni barchasini yozib bo'lganingizdan
-          so'ng, siz ota-onangizni ayblashni to'xtatasiz va ularga sizni
-          ezuvchi, sizni manipulyatsiya qiluvchi va hayotingizni barbod etuvchi
-          shaxslarga emas, balki o'zingizni tuqqan kichik yoshdagi
-          farzandlaringizga qaragandek qaray boshlaysiz. Ularga faqat kechirim
-          va tushunish bilan yordam berishingiz mumkinligini bilasiz, xolos.
+        <div className="list_item pl50">
+          <img src="/img/3.png" alt="" />
+          <div className="f500 s24 ">
+            Ёдингизда бўлсинки, ушбу тренажёрдаги оригинал бинаурал ритмлар ва
+            (махсус тезлаштирилган овозда пасайтириб ёзилган){" "}
+            <span className="color_main f600">саблиминаллар</span> медитацияда
+            сиз эшитган гапларни тўғридан-тўғри Онг остингизга олиб кириб,
+            мўъжизавий ишни бажаради.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          <b>Bundan tashqari</b>, atrofingizdagi barcha odamlar sizga bo'lgan
-          munosabatini qanday qilib ijobiy tomonga tubdan o'zgarayotganini
-          ko'rib, o'zingiz hayron qolasiz.
+        <div className="title">
+          <div className="f28 f700">
+            <span className="color_main">Иккинчи босқич</span> <br /> – бу қайта
+            фикрлаш ва ўзингизни ўзгартириш.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          Chunki har bir yangi prorabotka bilan siz hech qanday issiq-sovuq,
-          sehr-jodu, na qora, na oq magiya, na psixologik piramidalar, na
-          orzular xaritasi, “o'zicha psixolog bo'lib qolgan” murabbiylarning
-          iqror va ruxsatnoma xatlari, va hatto allaqanday "mental
-          psixogenetika" sohasidagi ixtirolar (ya'ni, biz buvi-dodalarimizni
-          gunohi uchun javob berishimiz haqidagi afsonalar), va x.k.zlar –
-          mutlaqo yo'q narsaligiga – bularning hammasini odamlar bilimsizligidan
-          (klinik psixologiya olamidagi bilimlardan xolis ekanligidan) va
-          albatta nochorligidan o'ylab chiqqan fantaziyalari ekanligiga 100%
-          amin bo'lasiz.
+        <div className="list_item ab mt-5 pl">
+          <div className="f600 s24">
+            Ота-онангизга ва ҳаётингиздаги кўплаб персонажларга турли салбий
+            ҳис-туйғуларни бошдан кечирганингиздан сўнг, сиз аста-секин
+            тинчланасиз. Ҳа, бу учун ҳам албатта вақт керак бўлади. Кимгадир бир
+            ой, кимгадир 2-3 ой.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          &nbsp; &nbsp; &nbsp; Bizning jamiki bor muammolarimiz va
-          kasalliklarimizning barcha kalitlari faqat va faqat bizning Ong
-          ostimizda va bolaligimizda ekanligiga ishonch hosil qilasiz.
+        <div className="list_item ab pl">
+          <div className="s24 f500">
+            <span className="f600 seriy">
+              Қачондир, бир кун келиб сиз ўтмишдаги оғриқли ҳолатни
+              эслаганингизда,
+            </span>{" "}
+            сиз уни илгари сизни қийнаган оғриқли ҳис-туйғуларсиз, фақат
+            ақлингиз билан эслаётганингизни сезишни бошлайсиз.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          &nbsp; &nbsp; &nbsp; Prorabotkalarni to'g'ri bajarganingiz uchun
-          hayotingizda mo''jizalar ro'y berayotganini ko'ra boshlaganingizda,
-          Xudo – bu o'zining suyib yaratgan bandalariga faqat va faqat
-          yaxshilikni ravo ko'radigan Muqaddas Zot ekanligini ham tushunib
-          yetasiz.
+        <div className="list_item">
+          <img src="img/2.png" alt="" />
+          <div className="s24 f500">
+            Яъни, сиз ана шу ўтмишда бўлиб ўтган воқеани ёдга олганингизда:
+          </div>
         </div>
-        <div className="s24 f600 mt-5 ta">
-          <span className="color_main ">Va oxirgi uchinchi bosqich</span>– bu
-          yangi ustanovkalaringizni amalga oshirish jarayoni.
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">юрагингиз энди сиқилмайди,</div>
         </div>
-        <div className="s24 f500 mt-5 mb-5">
-          &nbsp; &nbsp; &nbsp; Va, aytgancha, bu eng qiyin jarayondir. Siz
-          hayotingizdagi katta yangi o'zgarishlarni qabul qilishni
-          o'rganishingiz kerak bo'ladi.
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">томоғингизга тош қадалмайди, </div>
         </div>
-        <div className="s24 f500 mt-3">
-          <span className="checked_icon">
-            <CheckIcon />
-          </span>
-          O'zingizni ko'rsatish,{" "}
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">бошингиз оғримайди, </div>
         </div>
-        <div className="s24 f500 mt-3">
-          <span className="checked_icon">
-            <CheckIcon />
-          </span>
-          His-tuyg'ularingizni to'liq ifoda etish,{" "}
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">ғазаб ёки нафрат туйғуси қийнамайди.</div>
         </div>
-        <div className="s24 f500 mt-3">
-          <span className="checked_icon">
-            <CheckIcon />
-          </span>
-          Boshqacha, ya'ni o'zingiz istagan yo'lni tanlash,{" "}
+        <div className="list_item">
+          <img src="img/2.png" alt="" />
+          <div className="s24 seriy f600">
+            Ҳа, аста-секин сиз албатта тинчланасиз. Ишонинг!
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          <span className="checked_icon">
-            <CheckIcon />
-          </span>
-          Odamlar bilan boshqacha munosabatda bo'lish,{" "}
+        <div className="list_item">
+          <img src="img/3.png" alt="" />
+          <div className="s24  f500">
+            <span className="color_main f600"> Чунки сиз эндиликда</span>{" "}
+            муаммоларингиз қаердалигини тушуниб, уларни қандай ҳал қилишни билиб
+            олган етук инсон бўласиз. Сиз ўзингиздан янги шахсни
+            яратаётганингиздан ва бошқача яшаш ҳуқуқига эга бўлаётганингиздан
+            ўзингизни бахтиёр ҳис қилишни бошлайсиз.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          <span className="checked_icon">
-            <CheckIcon />
-          </span>
-          Qadriyatlaringiz ko'lamini o'zgartirish,{" "}
+        <div className="list_item">
+          <img src="img/3.png" alt="" />
+          <div className="s24  f500">
+            Негаки сиз ўз муаммойингизни ҳал қилиб бўлганингизни ва ўз ҳаётингиз
+            учун масъулиятни ўз зиммангизга олган катта инсонга айланганингизни
+            тушунасиз.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          <span className="checked_icon">
-            <CheckIcon />
-          </span>
-          Farzandlaringizni boshqacha tarbiyalash
+        <div className="list_item ab pl">
+          <div className="s24 f500 ta">
+            <span className="f600  s28 kok">
+              Проработкаларни барчасини ёзиб бўлганингиздан сўнг,
+            </span>{" "}
+            сиз ота-онангизни айблашни тўхтатасиз ва уларга сизни эзувчи, сизни
+            манипуляция қилувчи ва ҳаётингизни барбод этувчи шахсларга эмас,
+            балки ўзингизни туққан кичик ёшдаги фарзандларингизга қарагандек
+            қарай бошлайсиз. Уларга фақат кечирим ва тушуниш билан ёрдам
+            беришингиз мумкинлигини биласиз, холос.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          <span className="checked_icon">
-            <CheckIcon />
-          </span>
-          Va ilgari o'zingizdan voz kechgan joyda endi o'zingizni tanlash
+        <div className="list_item">
+          <img src="img/1.png" alt="" />
+          <div className="s24  f500">
+            <span className="color_main f600">Бундан ташқари,</span>{" "}
+            атрофингиздаги барча одамлар сизга бўлган муносабатини қандай қилиб
+            ижобий томонга тубдан ўзгараётганини кўриб, ўзингиз ҳайрон қоласиз.
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          <b>uchun albatta vaqt va shijoat kerak bo'ladi.</b>
+        <div className="list_item">
+          <img src="img/2.png" alt="" />
+          <div className="s24 f600 seriy">
+            Чунки ҳар бир янги проработка билан сиз ҳеч қандай
+          </div>
         </div>
-        <div className="s24 f500 mt-3">
-          &nbsp; &nbsp; &nbsp; Va eng muhimi, bizning mobil ilovamizdagi
-          prorabotkalarni bajarganingizdan so'ng ijobiy va hatto mo''jizaviy
-          natijalarga erishishni boshlaganingizda, baxtdan boshingizni
-          yo'qotmasdan, inson bo'lib qolishga harakat qiling.
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500 ">иссиқ-совуқ,</div>
         </div>
-        <div className="s24 f500 mt-3">
-          <span className="">
-            <b>Hayotiy stsenariylarni prorabotka qilish</b>{" "}
-          </span>
-          – katta kvartirada qilinadigan kapital ta'mirlashga o'xshaydi. Faqat
-          bu kvartira sizning shaxsiy hayotingizdir
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500 ">сеҳр-жоду, </div>
         </div>
-        <div className="seriy s24 f500 mt-4">
-          Anglash, tushunish va aqlli yondashuv sizga hamroh bo'lsin.
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500 ">на қора, на оқ магия, </div>
         </div>
-        <div className="color_main seriy s24 f500 mt-4 ongdan">
-          Hurmat ila, BahtWoman Baxt maktabi asoschisi, Dilobar Ismailova
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">на психологик пирамидалар, </div>
         </div>
-        <div className="chiziq"></div>
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">на орзулар харитаси,</div>
+        </div>
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">
+            “ўзича психолог бўлиб қолган” мураббийларнинг иқрор ва рухсатнома
+            хатлари,{" "}
+          </div>
+        </div>
+        <div className="list_item mt-2 pl50">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">
+            ва ҳатто аллақандай "ментал психогенетика" соҳасидаги ихтиролар
+            (яъни, биз буви-додаларимизни гуноҳи учун жавоб беришимиз ҳақидаги
+            афсоналар), ва х.к.злар
+          </div>
+        </div>
+        <div className="list_item mt-2 pl50">
+          <div className="s24 f500">
+            – <span className="seriy f600">мутлақо йўқ нарсалигига</span> –
+            буларнинг ҳаммасини одамлар билимсизлигидан (клиник психология
+            оламидаги билимлардан холис эканлигидан) ва албатта ночорлигидан
+            ўйлаб чиққан фантазиялари эканлигига{" "}
+            <span className="f600 seriy">100% амин бўласиз.</span>
+          </div>
+        </div>
+        <div className="list_item pl">
+          <img src="img/1.png" alt="" />
+          <div className="s24 f500">
+            Бизнинг жамики бор муаммоларимиз ва касалликларимизнинг барча
+            калитлари{" "}
+            <span className="kok f600">
+              фақат ва фақат бизнинг Онг остимизда ва болалигимизда
+            </span>{" "}
+            эканлигига ишонч ҳосил қиласиз.
+          </div>
+        </div>
+        <div className="list_item ab ">
+          <div className="s24 f500 ta">
+            Проработкаларни тўғри бажарганингиз учун{" "}
+            <span className="seriy f600">
+              ҳаётингизда мўъжизалар рўй бераётганини кўра бошлаганингизда,
+            </span>{" "}
+            Худо – бу ўзининг суйиб яратган бандаларига фақат ва фақат яхшиликни
+            раво кўрадиган Муқаддас Зот эканлигини ҳам тушуниб етасиз.
+          </div>
+        </div>
+        <div className="title mt-5">
+          <div className="s28 f700">
+            <span className="color_main">Ва охирги учинчи босқич</span> <br />–
+            бу янги установкаларингизни амалга ошириш жараёни.
+          </div>
+        </div>
+        <div className="list_item ab">
+          <div className="s24 f500">
+            Ва, айтганча,{" "}
+            <span className="kok f600">бу энг қийин жараёндир.</span> Сиз
+            ҳаётингиздаги катта янги ўзгаришларни қабул қилишни ўрганишингиз
+            керак бўлади.
+          </div>
+        </div>
+        <div className="list_item pl50 mt-2">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">Ўзингизни кўрсатиш,</div>
+        </div>
+        <div className="list_item pl50 mt-2">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">Ҳис-туйғуларингизни тўлиқ ифода этиш, </div>
+        </div>
+        <div className="list_item pl50 mt-2">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">
+            Бошқача, яъни ўзингиз истаган йўлни танлаш,{" "}
+          </div>
+        </div>
+        <div className="list_item pl50 mt-2">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">
+            Одамлар билан бошқача муносабатда бўлиш,{" "}
+          </div>
+        </div>
+        <div className="list_item pl50 mt-2">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">Қадриятларингиз кўламини ўзгартириш, </div>
+        </div>
+        <div className="list_item pl50 mt-2">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">Фарзандларингизни бошқача тарбиялаш </div>
+        </div>
+        <div className="list_item pl50 mt-3">
+          <img src="icon_cor.png" alt="" />
+          <div className="s24 f500">
+            {" "}
+            Ва илгари ўзингиздан воз кечган жойда энди ўзингизни танлаш{" "}
+            <span className="seriy f600">
+              учун албатта вақт ва шижоат керак бўлади.
+            </span>{" "}
+          </div>
+        </div>
+        <div className="list_item">
+          <img src="img/2.png" alt="" />
+          <div className="s24 f500">
+            <span className="color_main f600 s28"> Ва энг муҳими, </span>{" "}
+            бизнинг ўқув платформамиздаги проработкаларни бажарганингиздан сўнг
+            ижобий ва хатто мўъжизавий натижаларга эришишни бошлаганингизда,
+            бахтдан бошингизни йўқотмасдан, инсон бўлиб қолишга ҳаракат қилинг.
+          </div>
+        </div>
+        <div className="list_item pl50">
+          <img src="img/1.png" alt="" />
+          <div className="s24 f500">
+            Ҳаётий сценарийларни проработка қилиш – катта квартирада қилинадиган
+            капитал таъмирлашга ўхшайди. Фақат бу квартира сизнинг шахсий
+            ҳаётингиздир.
+          </div>
+        </div>
+        <div className="title">
+          <div className="s24 f600 seriy">
+            {" "}
+            Англаш, тушуниш ва ақлли ёндашув сизга ҳамроҳ бўлсин.
+          </div>
+        </div>
+        <div className="asoschi mt-5 f600 color_main s20">
+          Ҳурмат ила, BahtWoman Бахт мактаби асосчиси, <br />
+          <span className=" mt-2 s24">Дилобар Исмаилова</span>
+        </div>
+        {/*  */}
+        {/*  */}
+      </div>
+      <div
+        onClick={() => nav("/prorabotka-1")}
+        className="w-100 prorabotka_what tort f600 color_main s36 mt-5 ta"
+      >
+        Shaxsiy kabinetga qaytish
       </div>
     </div>
   );

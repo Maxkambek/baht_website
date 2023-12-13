@@ -26,6 +26,7 @@ const Login = () => {
         navigate("/dashboard");
         localStorage.setItem("token", res.data.token);
         localStorage.setItem(TOKEN, res.data.token);
+        document.location.reload(true);
       })
       .catch((err) => {
         toast.error("Ma'lumotlaringizni to'g'ri kiriting");

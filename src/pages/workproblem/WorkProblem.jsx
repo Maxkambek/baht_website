@@ -94,7 +94,7 @@ const WorkProblem = () => {
         });
     });
     toast.success("Malumotingiz muvaffaqiyatli jo'natildi");
-    navigate("/end-questions", { replace: true });
+    navigate("/result-page-2", { replace: true });
   };
 
   return (

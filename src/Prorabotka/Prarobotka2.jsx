@@ -6,11 +6,22 @@ import {
   FormLabel,
   RadioGroup,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { getText2 } from "../locale";
 
 const Prarobotka2 = () => {
   const nav = useNavigate();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
   return (
     <div className="Pro1">
       <div className="pro_box">
@@ -35,7 +46,7 @@ const Prarobotka2 = () => {
           dadangizni mutlaqo ko'rmasdan katta bo'lgan qiz bo'lganmisiz?
         </div>
         <div className="list_item">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/icon_cor.png" alt="" />
           <div className="f500 seriy s24">
             Hozir siz quyida keltirilgan 5ta muhim jihat to'g'risida o'ylab
             ko'rasiz, qaysi biri sizga tegishliligini o'zingiz uchun
@@ -43,7 +54,7 @@ const Prarobotka2 = () => {
           </div>
         </div>
         <div className="list_item">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/icon_cor.png" alt="" />
           <div className="f500 seriy s24">
             Shundan so'ng har bir punkt bo'yicha (ichingiz bo'shagunga qadar)
             yodingizga tushgan barcha qalb kechinmalaringiz yuzasidan kichik
@@ -51,7 +62,7 @@ const Prarobotka2 = () => {
           </div>
         </div>
         <div className="list_item">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/icon_cor.png" alt="" />
           <div className="f500 seriy s24">
             Undan keyin esa aynan sizga tegishli gapni prorabotkalarni ichidan
             topib, yozib chiqasiz.
@@ -104,7 +115,7 @@ const Prarobotka2 = () => {
           shunday o'g'ilni voyaga yetkazgan bo'lishingiz mumkin.
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/1.png" alt="" />
           <div>
             Va tabiiy holda siz hozir ham boshqa ayollar bilan o'zingizni
             solishtirib, ular sizdan baxtliroq ekanini o'ylab, siqilib
@@ -112,7 +123,7 @@ const Prarobotka2 = () => {
           </div>
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/1.png" alt="" />
           <div>
             Aslida esa sizning Ong ostingiz va bolalikda jarohatlangan
             ruhiyatingiz ushbu hayotiy stsenariyni{" "}
@@ -129,7 +140,7 @@ const Prarobotka2 = () => {
           istaysiz va bularni olmasangiz, qanchalik siqilib, azob chekasiz?
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>
             Agar javobingizda
             <span className="seriy">
@@ -149,7 +160,7 @@ const Prarobotka2 = () => {
           boshqa erkak personajga ko'chirib o'tyaptgan bo'lasiz.
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/1.png" alt="" />
           <div>
             <span className="seriy">Bu degani, siz</span> yaxshi ko'rgan
             erkagingizga aybdorlik tuyg'usini singdirish orqali / uni kuchli
@@ -171,23 +182,23 @@ const Prarobotka2 = () => {
           er (yoki shunchaki erkak) bo'lishi uchungina siz:
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/icon_cor.png" alt="" />
           <div>haqorat va so'kishlarga,</div>
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/icon_cor.png" alt="" />
           <div>jismoniy zo'ravonlikka,</div>
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/icon_cor.png" alt="" />
           <div>uzoq muddatli ayriliqqa,</div>
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/icon_cor.png" alt="" />
           <div>pulsizlik va sovg'a olmaslikka,</div>
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/icon_cor.png" alt="" />
           <div>yoki kuchli rashk va xiyonatga,</div>
         </div>
         <div className="s24 mt-4 f500">
@@ -205,7 +216,7 @@ const Prarobotka2 = () => {
           rolida hayot kechirishga ham roziman – deydi.
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>
             Va, tabiiy ravishda, siz oilangizni saqlab qolish uchun, aniqrog'i
             soxta mustahkam nikohni ushlab qolish maqsadida o'zingizni hammaga
@@ -219,7 +230,7 @@ const Prarobotka2 = () => {
           ketganlarmi / yoki hayotingizdan chiqib ketishganmi?
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>
             Masalan, eringiz / yoki o'g'lingiz chet davlatga yoki boshqa
             shaharga ishlashga / yoki o'qishga ketib (va hattoki o'sha yerda
@@ -227,19 +238,19 @@ const Prarobotka2 = () => {
           </div>
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>Yoki u qamalib ketgan bo'lishi mumkin;</div>
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>Yoki bedarak yo'qolib qetgan bo'lishi mumkin;</div>
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>Yoki olamdan o'tib qolgan bo'lishi mumkin;</div>
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>Yoki shunchaki siz bilan ajrashib ketgan bo'lishi mumkin.</div>
         </div>
         <div className="s24 mt-4 f500">
@@ -251,20 +262,25 @@ const Prarobotka2 = () => {
           degan dasturni bilvosita Ong ostingizga muxrlab qoldirgan.
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>
             Bu Ong osti dasturi ishlayaptganini qanday bilsangiz bo'ladi? Bu
             uchun quyidagi kalit haqida o'ylab ko'ring –{" "}
           </div>
         </div>
-        <div className="s24 mt-4 f500">
-          Mana shu erkaklar hayotingizdan chiqib ketishgan holatlarda siz
-          bolalikda dadangizni yo'qotgan paytingizdagi aynan o'sha o'xshash
-          his-tug'ular va kechinmalarni boshdan kechirganmisiz?
-          <span className="toq_fil s28 pl">Solishtirib ko'ring-chi!</span>{" "}
+        <div className="list_item s24 mt-4 f500">
+          <img src="/img/2.png" alt="" />
+          <div>
+            Mana shu erkaklar hayotingizdan chiqib ketishgan holatlarda siz
+            bolalikda dadangizni yo'qotgan paytingizdagi aynan o'sha o'xshash
+            his-tug'ular va kechinmalarni boshdan kechirganmisiz?
+            <div className="mt-2 toq_fil s28 pl">
+              Solishtirib ko'ring-chi!
+            </div>{" "}
+          </div>
         </div>
         <div className="list_item pl50 s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>
             Ya'ni biz hozir miyadagi ongsiz relslarning ishi haqida siz bilan
             gaplashyapmiz – u yoki bu travmatik his-tuyg'uning qayta-qayta faqat
@@ -281,20 +297,21 @@ const Prarobotka2 = () => {
           Demak, savolni diqqat bilan o'qiymiz.
         </div>
         <div className="list_item  s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>
             Otasini yo'qotgan qizlar ko'pincha onasini yo'qotgan yigit yoki
             erkaklar bilan aloqaga kirishadi.{" "}
           </div>
         </div>{" "}
         <div className="list_item  s24 mt-4 f500">
-          <img src="img/pro_ptich.svg" alt="" />
+          <img src="/img/3.png" alt="" />
           <div>
             Onasini yo'qotgan qizlar esa ko'pincha otasini yo'qotgan yigit va
             erkaklarni hayotlariga jalb qilishadi.
           </div>
         </div>
         <div className="list_item pl s24 mt-4 f500">
+          <img src="img/2.png" alt="" />
           <div>
             <span className="color_main">
               Va bu yerda eng achinarlisi shundaki
@@ -329,11 +346,11 @@ const Prarobotka2 = () => {
             Keyin esa pozitiv prorabotkalarga o'tamiz.
           </div>
           <div className="list_item  s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             <div>Salom, dada.</div>
           </div>
           <div className="list_item  s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             <div>
               Bolalik / o'smirlik chog'imda, ya'ni mening Ong ostim aynan
               shakllanyaptgan vaqtda men sizsiz o'sganim chog'larimni eslar
@@ -342,7 +359,7 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item  s24 mt-4 f500 ms-5">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Chunki dugonalarimning dadasi bo'lar edi, meni esa hayotimdagi ilk
               erkak, ya'ni siz meni hayotimda yo'q edingiz. Mening otam yo'q –
@@ -352,7 +369,7 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item  s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             <div>
               Bu faktor shunga olib keldiki, men hayotimning qolgan yillari
               davomida – to hozirgi kungacha “yo'qotish” qo'rquvi bilan kurashib
@@ -361,7 +378,7 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item  s24 mt-4 f500 pl">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/2.png" alt="" />
             <div>
               <span className="seriy f600">Lekin eng asosiysi </span> – hozirda
               men erkaklardan / yigitlardan / va hatto o'g'illarimdan ular
@@ -372,7 +389,7 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item  s24 mt-4 f500 pl50 ms-5">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Ha, bugun men havotirli-yopishqoq shaxs turiga kiradigan qiz /
               yoki ayolga aylanib qolganimni aniqladim. Ha, men ko'pincha
@@ -383,7 +400,7 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item  s24 mt-4 f500 pl50 ms-5">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Dada, men sizdan ajrab qolganim tufayli kelajakdagi hayotimda ham
               sevgan insonlarimdan ajrab qolish borasida katta shubha va
@@ -394,18 +411,22 @@ const Prarobotka2 = () => {
               yetdim.
             </div>
           </div>
-          <div className="list item s24 mt-4 f500 ms-3 pl">
-            <span className="color_main f600 s28 ">
-              Biroq shu bilan birga men bugun{" "}
-            </span>{" "}
-            meni qiynayotgan savollardan biriga javob topdim – men o'zimga yaqin
-            bo'lgan erkakni o'zimga qattiq bog'lab olishni istashim sababli
-            ishlashga toqati yo'q va ko'plab vaqtini men bilan o'tkazishni
-            istaydigan (va hatto ruhiyati nosog'lom) erni yoki yigitni hayotimga
-            jalb qilgan ekanman. Yoki shunday o'g'ilni voyaga yetkazgan ekanman.
+          <div className="list_item s24 mt-4 f500 ms-3 pl">
+            <img src="img/2.png" alt="" />
+            <div>
+              <span className="color_main f600 s28 ">
+                Biroq shu bilan birga men bugun{" "}
+              </span>{" "}
+              meni qiynayotgan savollardan biriga javob topdim – men o'zimga
+              yaqin bo'lgan erkakni o'zimga qattiq bog'lab olishni istashim
+              sababli ishlashga toqati yo'q va ko'plab vaqtini men bilan
+              o'tkazishni istaydigan (va hatto ruhiyati nosog'lom) erni yoki
+              yigitni hayotimga jalb qilgan ekanman. Yoki shunday o'g'ilni
+              voyaga yetkazgan ekanman.
+            </div>
           </div>
           <div className="list_item  s24 mt-4 f500 pl">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Va tabiiy holda men hozir ham boshqa ayollar bilan o'zimni
               solishtirib, ular mendan baxtliroq ekanini o'ylab, siqilib
@@ -413,7 +434,7 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item  s24 mt-4 f500 pl50">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/3.png" alt="" />
             <div>
               Aslida esa mening Ong ostim va bolalikda jarohatlangan ruhiyatim
               ushbu hayotiy stsenariyni “Nima bo'lsa ham, yomon bo'lsa ham, eng
@@ -428,7 +449,7 @@ const Prarobotka2 = () => {
             chekishimni sabablarini tushunib yetyapman.
           </div>
           <div className="list_item  s24 mt-4 f500 pl">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Chunki men Ong osti darajasida bolalikda otamdan to'liq ololmagan
               hissiyotlarimni turmush o'rtog'im / yoki yigitimdan / yoki
@@ -436,7 +457,7 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item  s24 mt-4 f500 pl50 ms-5">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/3.png" alt="" />
             <div>
               Shunday bo'lsa-da, men u(lar)ning o'zini ayblash uchun sabab
               topaman. Negaki Ong osti darajasida men hali ham otamni u mening
@@ -447,7 +468,7 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item  s24 mt-4 f500 pl">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Bu degani, men yaxshi ko'rgan erkagimga aybdorlik tuyg'usini
               singdirish orqali / uni kuchli vijdon azobida qoldirish orqali
@@ -457,48 +478,53 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item  s24 mt-4 f500 pl50 ms-5">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/3.png" alt="" />
             <div>
               Axir, mening bolalikdagi ta'sirchan ruhiyatim va Ong ostim “Yaqin
               insonni yo'qotish” modelini ko'rgan-ku va bolalikda qolib ketgan
               qo'rquvlarim o'zining salbiy ishini qilyaptgan ekan.
             </div>
           </div>
-          <div className="list item s24 mt-4 f500 pl">
-            <img src="img/pro_ptich.svg" alt="" />
-            <span className="color_main f600 s28 ">Bugun men nima uchun</span>
-            turmush o'rtog'imni, yigitimni yoki o'zimga yaqin bo'lgan erkakni
-            yo'qotishdan vahimaga tushishim oqibatida hayotimda erkak bo'lishi
-            uchungina haqorat, zo'ravonlik, qashshoqlik yoki uzoq muddatli
-            ayriliq va hayotning boshqa adolatsizliklariga chidab
-            kelayotganimning sabablarini tushunib yetdim.
+          <div className="list_item s24 mt-4 f500 pl">
+            <img src="/icon_cor.png" alt="" />
+            <div>
+              <span className="color_main f600 s28 ">Bugun men nima uchun</span>{" "}
+              turmush o'rtog'imni, yigitimni yoki o'zimga yaqin bo'lgan erkakni
+              yo'qotishdan vahimaga tushishim oqibatida hayotimda erkak bo'lishi
+              uchungina haqorat, zo'ravonlik, qashshoqlik yoki uzoq muddatli
+              ayriliq va hayotning boshqa adolatsizliklariga chidab
+              kelayotganimning sabablarini tushunib yetdim.
+            </div>
           </div>
           <div className="list_item  s24 mt-4 f500 pl">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Chunki Ong osti darajasida men otamni yo'qotganman va shu
               yo'qotish hayotimda boshqa qaytarilmasligi uchun men o'zimga
               baxtsiz hayotni ravo ko'rishga ham tayyor ekanman.
             </div>
           </div>
-          <div className="list item s24 mt-4 f500 pl">
-            <img src="img/pro_ptich.svg" alt="" />
-            <span className="color_main f600 s28 ">
-              Bugun men hayotimda nima uchun
-            </span>
-            xuddi o'zimga o'xshagan otasidan yoki onasidan ayrilib qolgan, ya'ni
-            yarim-etim yigit / yoki erkakni uchratib, u bilan turmush qurganimni
-            / yoki turmush qurish istagida yashamayaptganimni angladim.
+          <div className="list_item s24 mt-4 f500">
+            <img src="/icon_cor.png" alt="" />
+            <div>
+              <span className="color_main f600 s28 ">
+                Bugun men hayotimda nima uchun{" "}
+              </span>
+              xuddi o'zimga o'xshagan otasidan yoki onasidan ayrilib qolgan,
+              ya'ni yarim-etim yigit / yoki erkakni uchratib, u bilan turmush
+              qurganimni / yoki turmush qurish istagida yashamayaptganimni
+              angladim.
+            </div>
           </div>
-          <div className="list_item  s24 mt-4 f500 pl">
-            <img src="img/pro_ptich.svg" alt="" />
+          <div className="list_item  s24 mt-4 f500 pl50">
+            <img src="/img/1.png" alt="" />
             <div>
               Chunki Ong osti darajasida insonlar o'zlariga o'xshagan
               sheriklarni jalb qilar ekanlar.
             </div>
           </div>
-          <div className="list_item  s24 mt-4 f500 pl">
-            <img src="img/pro_ptich.svg" alt="" />
+          <div className="list_item  s24 mt-4 f500 pl50">
+            <img src="/img/1.png" alt="" />
             <div>
               Va mening yigitim yoki erim ham yaqin insonini yo'qotishdan
               qo'rqib (negaki bolaligida u ham kutmagan vaqtda otasini yoki
@@ -509,13 +535,13 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Bugun mening Ong ostim katta bo'lgandagi hayotimda sevilish modelini
             qaytara olmayaptgani uchun, dada, sizni, oyimni, o'zimni va
             Taqdirimni kechiraman.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Bugun mening Ong ostim katta bo'lgandagi hayotimda sevilish modelini
             qaytara olmayaptgani uchun, dada, sizni, oyimni, o'zimni va
             Taqdirimni kechiraman.
@@ -528,43 +554,43 @@ const Prarobotka2 = () => {
             marotabagacha yozishingiz kerak bo'ladi.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Bugundan boshlab, dada, mening sevgan erkakgim / yigitim va hatto
             o'g'illarim ham siz emas. Men siz bilan his qilgan yo'qotish
             tuyg'usini va qo'rquvini ular bilan bo'lgan munosabatlarga olib
             o'tishni boshqa istamayman.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Men boshqa sizning sevgi-muhabbatingizga ortiqcha muhtoj emasman.
           </div>
           <div className="list_item  s24 mt-4 f500 pl50 ms-5">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Chunki men ulg'aygan hamda sevgi-muhabbatni osonlik bilan
               hayotimga jalb qilayotgan shaxsga aylanyapman.
             </div>
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Bugundan boshlab men yigitim / yoki turmush o'rtog'im / yoki sevgan
             insonim meni tashlab ketishidan qo'rqmayman ham, ortiq cho'chimayman
             ham.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Tashlab ketilish holati meni hayotimda boshqa qaytarilmaydi, chunki
             men bekamu-ko'st insonman va meni sevgan insonim men aslida mukammal
             qizligimni / yoki ayolligimni biladi va meni chin taqdirim shundoq
             ham men bilan qolishni istaydi.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Men o'zimga so'z beraman - Bundan buyon hayotim tamomila boshqacha
             bo'ladi.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Bugun Men o'tmishimni va meni tashlab ketgan barcha erkaklar/
             yigitlarni (shu yerda yigit / erkaklarning barchasini
             ism-familiyalarni yozib chiqing) kechirib, qo'yib yubordim va
@@ -573,21 +599,21 @@ const Prarobotka2 = () => {
             kesib tashladim.
           </div>
           <div className="list_item  s24 mt-4 f500 pl50 ms-5">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Chunki ular mening Ong-osti dasturlarimni aks ettirgan personajlar
               bo'lgan ekan, xolos.
             </div>
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Aynan hozir va bugun men fikrlarimning va idrokimning kuchi bilan
             hamda shu yozayotgan prorabotkalarim yordamida “Sevgan insonimni
             yo'qotish va tashlab ketilish” dasturini Ong ostimda butkul
             blokladim.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Men hozirda turmush o'rtog'im / yoki yigitim /yoki o'g'illarim bilan
             bog'liq bo'lgan barcha qo'rquvlarni qo'yib yuboryapman va ushbu
             qo'rquvlarimni butunlay bloklayapman.
@@ -596,7 +622,7 @@ const Prarobotka2 = () => {
           <div className="ta s24 mt-4 f500">
             (<span className="f600 color_main">Eslatma: </span>
             Sevgan insoningiz bilan bog'liq qanday qo'rquvlaringiz bo'lsa,
-            hammasini yozib chiqing va har bir yozgan qo'ruvingizni oxirida
+            hammasini yozib chiqing va har bir yozgan qo'ruvingizni oxirida{" "}
             <span className=" color_main">
               “Qo'rquvim, men seni bloklayapman. Bugundan boshlab mening
               hayotimda miyamda aylanadigan ushbu negativ sahnalar hech-qachon
@@ -606,27 +632,27 @@ const Prarobotka2 = () => {
           </div>
 
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Bugundan boshlab men soxta baxtga to'la hayotdan voz kechaman va
             o'zimni yon-atrofdagi barcha insonlar bilan (tashlab ketilish
             qo'rquvidan qutilgan holda) samimiy tutishni boshlayapman.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Men erimni / yigitimni yoki o'g'illarimni (ular meni tashlab
             ketmasliklari uchun) ortiqcha oldimda ushlab o'tirish uchun
             turli-hil hayotiy voqealarni hamda omadsizliklarni jalb qilishni
             to'xtatdim.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Men ularni katta hayotga xursandchilik bilan qo'yib yuboryapman va
             ularni mustaqil, omadli, zo'r ishlarga joylashib ketgan va baxtli
             shaxslarga aylanyaptganlarini ko'rib, faqat xursand bo'lyapman.
           </div>
 
           <div className="list_item  s24 mt-4 f500 pl50 ms-5">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Chunki mening o'zimni hayotim ham turli-hil xursandchiliklarga
               to'lyapti va men yaqin erkaklarimni uyda yoki yonimda doimiy
@@ -635,7 +661,7 @@ const Prarobotka2 = () => {
             </div>
           </div>
           <div className="list_item  s24 mt-4 f500 pl50 ms-5">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/img/1.png" alt="" />
             <div>
               Axir men o'zimga o'zim kerakli bo'lishni / o'zimni sevib, hurmat
               qilishni va mening hayotimda men o'zim borligimdan o'zimni baxtli
@@ -644,203 +670,256 @@ const Prarobotka2 = () => {
           </div>
 
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Bugundan boshlab meni sevgan yigitim / yoki erim meni ruhiyati
             nosog'lom insonlar kabi axmoqona rashk qilishni / yoki har bir
             ishimga aralashib, asabimni yeb tamom qilishni butkul to'xtatganini
             ko'ryapman.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Men uning ruhiyati tamomila sog'lomlashyaptganini guvohi bo'lyapman,
             hamda ushbu holat mening hayotimda boshqa qaytarilmasligi uchun
             Ollohga ming shukr deb aytyapman.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Hozir va shu yerda men hayotimning barcha jabhalariga Ollohning
             yuksak Muhabbat energiyasini jalb etyapman.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             O'z idrokim va Yaratganning madadi bilan men misli magnit kabi
             hayotimga yaqinlarimning sadoqatini va haqiqiy sevgini jalb
             qilyapman.
           </div>
           <div className="list_item s24 mt-4 f500">
-            <img src="img/pro_ptich.svg" alt="" />
+            <img src="/icon_cor.png" alt="" />
             Men bugun menga nisbatan sodiq / meni chin dildan sevadigan sog'lom
             ruhiyatli turmush o'rtog'im / yoki sevgan yigitim bor yangi olamimga
             qadam qo'yyapman va Ollohning o'zi men uchun chinakam yangi baxt
             yo'llarini ochyapti. Omin.
           </div>
         </div>
-        <div className=" seriy s28 mt-5 ta seriy">
-          Hammasini yozib bo'lganingizdan keyin, barcha qog'ozlarni rasmga olib,
-          (ism-familiyangizni va darsingizni nomerini tepasiga yozib) <br />
-          <span className="f600">“UY VAZIFA” degan tugmani bosgan holda </span>
-          <br />
-          (gallereyangizdan belgilab) hamma qog'ozlaringizni ketma-ketlikda
-          yuklaysiz.
-        </div>
-        <div className="tort seriy s30 ta mt-5 f600">
-          FAQ: Darsliklar bo'yicha beriladigan savollarga tayyor javoblar
-        </div>
-        <div className="tort seriy s30  f600 ">
-          1. Uy vazifa necha varoqni tashkil etish kerak?
-        </div>
-        <div className="tort seriy s30  f600 ">
-          2. Keyingi dars menga qachon beriladi?
-        </div>
-        <div className="tort seriy s30  f600 ">
-          3. Uy vazifamni kim va nechi kunda tekshiradi?
-        </div>
-        <div className="tort seriy s30  f600 ">
-          4. Uy vazifalarni vaqtida bajara olmasam nima bo'ladi?
-        </div>
-        <div className="tort seriy s30  f600 ">
-          5. Prorabotkalarni yozayotganimda sog'lig'im yomonlashsa-chi?
-        </div>
-        <div className="toq_fil s24 mt-4 f500">
-          <span className="toq_fil s28 pl me-4">1.</span> Uy vazifalaringizning
-          varaqlar soni eng kamida 4-5 varoqdan boshlanishi kerak. Istasangiz 30
-          varoqqacha ham biriktirsangiz bo'ladi. Bu yerda eng asosiy shart –
-          ichingiz bo'shagunga qadar siz beto'xtov yozishingiz kerak.
-        </div>
-        <div className="toq_fil s24 mt-4 f500 ms-4">
-          Yodingizda bo'lsinkim, har bitta darsni bajarishga sizga uzog'i bilan
-          2-3 kun vaqt beriladi.
-        </div>
-        <div className="toq_fil s24 mt-4 f500">
-          <span className="toq_fil s28 pl me-4">2.</span> Uy vazifani yuklab
-          bo'lganingizdan so'ng sizga keyingi darsingiz avtomatik ravishda
-          ochiladi.
-        </div>
-        <div className="toq_fil s24 mt-4 f500">
-          <span className="toq_fil s28 pl me-4">3.</span> Sizning uy vazifangiz
-          yetuk klinik psixologlarimiz tomonidan 3 kun davomida tekshirilib,
-          baholanadi va siz bahoyingizni shaxsiy kabinetga kirganingizda
-          darsingizni tagida ko'rsangiz bo'ladi.
-        </div>
-        <div className="toq_fil s24 mt-4 f500">
-          <span className="toq_fil s28 pl me-4">4.</span> Agarda siz uy
-          vazifalarni o'z vaqtida bajarmasangiz, kursdan qolib ketishingiz
-          mumkin va bunday holda yana qaytadan pul to'lab o'qishingizga to'g'ri
-          keladi. Agarda uy vazifani bajarayotganda sizda jiddiy va zarur
-          savolingiz / yoki iltimosingiz paydo bo'lsa, siz psixologlarimizga
-          Telegram messendjeri orqali murojaat etsangiz bo'ladi:{" "}
-          <span className="f600 kok">@bahtwoman_psixolog</span>
-        </div>
-        <div className="toq_fil s24 mt-4 f500">
-          <span className="toq_fil s28 pl me-4">5.</span> Agarda prorabotkalarni
-          yozgan paytingizda bezovtalik his qilsangiz, yoki ruhiyatingiz
-          ezilganligi sababli mazangiz qochib, sog'ligingiz yomonlashganini
-          sezsangiz (biling – bu normal holat), demak, bunday holda siz bizning
-          10 yil davomida yaratilgan mo''jizaviy{" "}
-          <span className="f600 color_main">Sog'liq trenajorimizni</span>{" "}
-          eshitishingiz mumkin.
-        </div>
-        <div className="toq_fil s24 mt-4 f500">
-          Ushbu trenajyor 936 megagertsli binaural ritmlar va 1 500ga yaqin juda
-          kuchli shifobaxsh Ong osti tasdiqlarini o'z ichiga olgan bo'lib,
-          o'zining ulkan samarasini bizning kurslarimizni bitirgan yuzlab
-          ayollarda ko'rsatgan.
-        </div>
-        <div className="toq_fil s24 mt-4 f500">
-          Ushbu meditatsiyani har kuni ertalab va kechqurun eshitsangiz, sizning
-          barcha kasalliklaringiz o'z-o'zidan yo'q bo'lib ketayotganini, hamda
-          mental sog'lig'ingiz yaxshilanib, ko'tarinki ruhda hayot
-          kechiryaptganingizni guvohi bo'lasiz.
-        </div>
-        <div className="ta f600 kok s30 mt-5">
-          Sizga ushbu darsimiz yoqdimi?
-        </div>
-        <div className="ta f600 kok s30 mt-1">
-          Iltimos, qo'yida keltirilgan baho shkalasi bo'yicha baholang!
-        </div>
-        <div className="d-flex justify-content-center mt-2">
-          <FormControl>
-            <FormLabel id="demo-controlled-radio-buttons-group">
-              <RadioGroup className="my_radio_group">
-                <FormControlLabel
-                  value="1"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "silver",
-                        "&.Mui-checked": {
-                          color: "#FFD0D4",
-                        },
-                      }}
-                    />
-                  }
-                  label="1"
-                />
-                <FormControlLabel
-                  value="2"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "silver",
-                        "&.Mui-checked": {
-                          color: "#FFD0D4",
-                        },
-                      }}
-                    />
-                  }
-                  label="2"
-                />
-                <FormControlLabel
-                  value="3"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "silver",
-                        "&.Mui-checked": {
-                          color: "#FFD0D4",
-                        },
-                      }}
-                    />
-                  }
-                  label="3"
-                />
-                <FormControlLabel
-                  value="4"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "silver",
-                        "&.Mui-checked": {
-                          color: "#FFD0D4",
-                        },
-                      }}
-                    />
-                  }
-                  label="4"
-                />
-                <FormControlLabel
-                  value="5"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "silver",
-                        "&.Mui-checked": {
-                          color: "#FFD0D4",
-                        },
-                      }}
-                    />
-                  }
-                  label="5"
-                />
-              </RadioGroup>
-            </FormLabel>
-          </FormControl>
-        </div>
-        <div
-          onClick={() => nav("/dashboard")}
-          className="prorabotka_what tort f600 color_main s36 mt-5 ta"
-        >
-          Shaxsiy kabinetga qaytish
+        <div className="umumiy">
+          <div className=" seriy s28 mt-5 ta seriy">
+            {getText2("pr1_341")} <br />
+            <span className="f600">{getText2("pr1_342")} </span>
+            <br />
+            {getText2("pr1_343")} {getText2("pr1_344")}{" "}
+          </div>
+          <div className="tort seriy s30 ta mt-5 f600">
+            {getText2("pr1_345")}
+          </div>
+          <Accordion
+            className="mt-2"
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <div className=" my_acc seriy s30  f600 ">
+                {getText2("pr1_346")}
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <div className="toq_fil s24 mt-4 f500">
+                  {getText2("pr1_351")}
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            expanded={expanded === "panel2"}
+            onChange={handleChange("panel2")}
+            className="mt-2"
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <div className="my_acc seriy s30  f600 ">
+                {getText2("pr1_347")}
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <div className="toq_fil s24 mt-4 f500">
+                  {getText2("pr1_353")}
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            expanded={expanded === "panel3"}
+            className="mt-2"
+            onChange={handleChange("panel3")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <div className="my_acc seriy s30  f600 ">
+                {getText2("pr1_348")}
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <div className="toq_fil s24 mt-4 f500">
+                  {getText2("pr1_354")}
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            expanded={expanded === "panel4"}
+            className="mt-2"
+            onChange={handleChange("panel4")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              {" "}
+              <div className="my_acc seriy s30  f600 ">
+                {getText2("pr1_349")}
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <div className="toq_fil s24 mt-4 f500">
+                  {getText2("pr1_355")} {getText2("pr1_356")}
+                  <span className="f600 kok">{getText2("pr1_357")}</span>
+                </div>
+                <div className="toq_fil s24 mt-4 f500 ms-4">
+                  {getText2("pr1_352")}
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            expanded={expanded === "panel5"}
+            className="mt-2"
+            onChange={handleChange("panel5")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <div className="my_acc seriy s30  f600 ">
+                {getText2("pr1_350")}
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <div className="toq_fil s24 mt-4 f500">
+                  {getText2("pr1_358")}{" "}
+                  <span className="f600 color_main">{getText2("pr1_359")}</span>{" "}
+                  {getText2("pr1_360")}
+                  <div className="toq_fil s24 mt-4 f500">
+                    {getText2("pr1_361")}
+                  </div>
+                  <div className="toq_fil s24 mt-4 f500">
+                    {getText2("pr1_362")}
+                  </div>
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <div className="ta f600 kok s30 mt-5">{getText2("pr1_364")}</div>
+          <div className="ta f600 kok s30 mt-1">{getText2("pr1_iltimos")}</div>
+          <div className="d-flex justify-content-center mt-2">
+            <FormControl>
+              <FormLabel id="demo-controlled-radio-buttons-group">
+                <RadioGroup className="my_radio_group">
+                  <FormControlLabel
+                    value="1"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "silver",
+                          "&.Mui-checked": {
+                            color: "#FFD0D4",
+                          },
+                        }}
+                      />
+                    }
+                    label="1"
+                  />
+                  <FormControlLabel
+                    value="2"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "silver",
+                          "&.Mui-checked": {
+                            color: "#FFD0D4",
+                          },
+                        }}
+                      />
+                    }
+                    label="2"
+                  />
+                  <FormControlLabel
+                    value="3"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "silver",
+                          "&.Mui-checked": {
+                            color: "#FFD0D4",
+                          },
+                        }}
+                      />
+                    }
+                    label="3"
+                  />
+                  <FormControlLabel
+                    value="4"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "silver",
+                          "&.Mui-checked": {
+                            color: "#FFD0D4",
+                          },
+                        }}
+                      />
+                    }
+                    label="4"
+                  />
+                  <FormControlLabel
+                    value="5"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "silver",
+                          "&.Mui-checked": {
+                            color: "#FFD0D4",
+                          },
+                        }}
+                      />
+                    }
+                    label="5"
+                  />
+                </RadioGroup>
+              </FormLabel>
+            </FormControl>
+          </div>
+          <div
+            onClick={() => nav("/dashboard")}
+            className="prorabotka_what tort f600 color_main s36 mt-5 ta"
+          >
+            {getText2("pr1_365")}
+          </div>
         </div>
       </div>
     </div>
